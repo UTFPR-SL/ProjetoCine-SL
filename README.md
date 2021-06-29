@@ -16,4 +16,4 @@ Sistema gerenciador de cinema
 
 -Gerenciar assentos disponíveis na sessão: Gerenciar os assentos na sala mostrando em forma grafica para o cliente final
 
--Compra de Ingresso:
+-Compra de Ingresso:Forma de pagamento e gera um recibo de pagamento
