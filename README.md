@@ -8,4 +8,6 @@ Funções:
 
 -Cadastrar Sessões
 
+-Mostrar Sessões da Semana
+
 -Gerenciar assentos disponíveis na sessão
