@@ -4,7 +4,7 @@ Sistema gerenciador de cinema
 
 ### Funções
 
--Cadastrar Filmes: Implementar filmes como 
+-Cadastrar Filmes: Implementar filmes 
 
 -Cadastrar Sessões: Implementar filmes nas salas durante determinado horario
 
