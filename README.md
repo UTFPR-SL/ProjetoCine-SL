@@ -4,10 +4,10 @@ Sistema gerenciador de cinema
 
 Funções:
 
--Cadastrar Filmes
+-Cadastrar Filmes: Implementar filmes no banco de dados 
 
--Cadastrar Sessões
+-Cadastrar Sessões: Implementar filmes nas salas durante determinado horario
 
--Mostrar Sessões da Semana
+-Mostrar Sessões da Semana: Listar todos as sessões da semana 
 
--Gerenciar assentos disponíveis na sessão
+-Gerenciar assentos disponíveis na sessão: Gerenciar os assentos na sala mostrando em forma grafica para o cliente final
