@@ -1,8 +1,8 @@
 # Projeto-Integrador
-
+# Propostas do Projeto-Integrador
 Sistema gerenciador de cinema
 
-# Funções:
+# Funções
 
 -Cadastrar Filmes: Implementar filmes no banco de dados 
 
