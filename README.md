@@ -1,6 +1,8 @@
 # Projeto-Integrador
-###
-### Propostas do Projeto-Integrador
+##Linguagens utilizadas
+###CSS/HTML/javascript
+
+## Propostas do Projeto-Integrador
 Sistema gerenciador de cinema
 
 ### Funções
