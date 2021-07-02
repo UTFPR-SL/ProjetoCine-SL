@@ -12,7 +12,7 @@ Sistema gerenciador de cinema
 
 -Cadastrar Sessões: Implementar filmes nas salas durante determinado horario, cadastrar horário, filme, e se está ou não lotada.
 
--Mostrar Sessões da Semana: Listar todos as sessões da semana indicando com um alerta para aquelas que estão já lotadas. 
+-Mostrar Sessões da Semana: Listar todos as sessões da semana indicando quantidade de assentos disponíveis, caso contrário mostrar um alerta para aquelas que estão já lotadas. 
 
 -Gerenciar assentos disponíveis na sessão: Gerenciar os assentos na sala mostrando em forma grafica para o cliente final, caso não há mais nenhum lugar vago, colocar estado da sessão como "lotada".
 
