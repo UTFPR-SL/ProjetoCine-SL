@@ -1,7 +1,7 @@
 # Projeto-Integrador
 
 Linguagens utilizadas:
-CSS/HTML/javascript
+JavaScript com HTML/CSS
 
 ## Propostas do Projeto-Integrador
 Sistema gerenciador de cinema
