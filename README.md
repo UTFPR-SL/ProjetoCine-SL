@@ -8,7 +8,7 @@ Sistema gerenciador de cinema
 
 ### Funções
 
--Cadastrar Filmes: Implementar filmes, cadastrar informações no banco de dados como nome, duração, gênero, classificação indicativa e sinopse. 
+-Cadastrar Filmes: Implementar filmes, cadastrar informações no banco de dados como nome, duração, gênero, classificação indicativa, se é 3D, Idioma e sinopse. 
 
 -Cadastrar Sessões: Implementar filmes nas salas durante determinado horario, cadastrar horário, filme, e se está ou não lotada.
 
