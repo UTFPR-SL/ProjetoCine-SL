@@ -10,9 +10,9 @@ Sistema gerenciador de cinema
 
 -Cadastrar Filmes: Implementar filmes, cadastrar informações no banco de dados como nome, duração, gênero, classificação indicativa e sinopse. 
 
--Cadastrar Sessões: Implementar filmes nas salas durante determinado horario
+-Cadastrar Sessões: Implementar filmes nas salas durante determinado horario, cadastrar horário, filme, e se está ou não lotada.
 
--Mostrar Sessões da Semana: Listar todos as sessões da semana 
+-Mostrar Sessões da Semana: Listar todos as sessões da semana indicando com um alerta para aquelas que estão já lotadas. 
 
 -Gerenciar assentos disponíveis na sessão: Gerenciar os assentos na sala mostrando em forma grafica para o cliente final
 
