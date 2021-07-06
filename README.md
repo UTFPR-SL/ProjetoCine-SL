@@ -17,3 +17,6 @@ Sistema gerenciador de cinema
 -Gerenciar assentos disponíveis na sessão: Gerenciar os assentos na sala mostrando em forma grafica para o cliente final, caso não há mais nenhum lugar vago, colocar estado da sessão como "lotada".
 
 -Compra de Ingresso:Escolhe forma de pagamento e gera um recibo do pagamento, valores serão somados de acordo com a quantidade de assentos reservados e os do tipo meia entrada o valor é dividido por 2.
+### Inicialização
+
+----Não definido----
