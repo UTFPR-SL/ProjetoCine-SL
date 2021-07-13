@@ -1,0 +1,22 @@
+Antes de comecar, verificar se teve alguma mudança:
+    * git pull origin brach
+por padrao usaremos a branch dev
+
+
+Criar e entrar numa nova branch para as tarefas:
+    * git checkout -b NewBrach
+
+
+Para fazer commit e push da tarefa para o GitHub:
+    * git add .
+    * git commit -am "Mensagem do commit"
+    (MERGE)
+    * git push origin NewBranch
+
+
+MERGE
+-Verificar e fazer as mudanças caso outra pessoa tenha feito algum push Antes;
+-Repetir o proceso para o commit:
+    * git add .
+    * git commit -am "Mensagem do commit"
+    * git push origin NewBranch
