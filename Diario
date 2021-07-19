@@ -8,6 +8,7 @@ Marcando e conversando sobre as perguntas individualmente, sendo elas:
 -O que vou fazer amanhã
 -Os problemas que eu tive/terei
 
+<<<<<<< HEAD
 
 
 
@@ -66,6 +67,34 @@ Vinicius:
 
 
 ==================== Diario 13/07 (terça) ====================
+=======
+==================== Diario --/07 ====================
+Caio:
+-O que eu fiz ontem
+  nada
+-O que vou fazer amanhã
+  nada
+-Os problemas que eu tive/terei
+  nada
+
+Gustavo:
+-O que eu fiz ontem
+  nada
+-O que vou fazer amanhã
+  nada
+-Os problemas que eu tive/terei
+  nada
+  
+Vinicius:
+-O que eu fiz ontem
+  nada
+-O que vou fazer amanhã
+  nada
+-Os problemas que eu tive/terei
+  nada
+
+==================== Diario 13/07 ====================
+>>>>>>> 37b9caa9214771f10494317b5acdfafc04729df2
 Caio:
 -O que eu fiz ontem
   nada
@@ -76,12 +105,21 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
+<<<<<<< HEAD
   Estudei jquery e sua funcionalildade na pagina.
 -O que vou fazer amanhã
   Esboço da sessão.
 -Os problemas que eu tive/terei
   Funcionalidades com o front-end.
 
+=======
+  Vi as funcionalidades do gitbash
+-O que vou fazer amanhã
+  Desenvolver  basico para implementar a tarefa
+-Os problemas que eu tive/terei
+  Pouco tempo para realizar a tarefa devido ao grande quantidade de atividades em um curto periodo de tempo
+  
+>>>>>>> 37b9caa9214771f10494317b5acdfafc04729df2
 Vinicius:
 -O que eu fiz ontem
   Aprendi GitHub
