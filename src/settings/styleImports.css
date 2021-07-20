@@ -7,3 +7,6 @@
 @import '../sections/header/header.css'; 
 @import '../sections/footer/footer.css'; 
 @import '../paginas/home/home.css'; 
+@import '../paginas/adm/adm.css'; 
+@import '../sections/menuADM/menuADM.css'; 
+@import '../components/botoesADM/botoesADM.css'; 
