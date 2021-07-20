@@ -34,7 +34,7 @@ id int auto_increment NOT NULL,
 nome varchar(80) NOT NULL,
 duracao varchar(80),
 genero varchar(80),
-classificacaoIndicativa char,
+classificacaoIndicativa char(2),
 sinopse varchar(256),
 PRIMARY KEY (id)
 );
@@ -52,7 +52,7 @@ CONSTRAINT id_filme FOREIGN KEY (id_filme) REFERENCES Filmes(id)
 );
 
 CREATE TABLE IF NOT EXISTS Lugares(
-cod char PRIMARY KEY
+cod char(3) PRIMARY KEY
 );
 
 CREATE TABLE IF NOT EXISTS Ingresso(

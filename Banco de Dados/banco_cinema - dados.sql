@@ -13,7 +13,7 @@ VALUES ("Viúva Negra", "2h 14min", "Ação/Ficção Científica", "12", "Ao nas
 		("Velozes e Furiosos 9", "2h 25min", "Ação/Aventura", "12", "O longa vem dando continuidade às corridas eletrizantes da equipe de amigos liderada por Dominic Toretto.");
 		
 
-INSERT INTO Sessoes (id_filme, horario, 3d, idioma, sala, qtd_lugares, id_seesaoLugar)
+INSERT INTO Sessoes (id_filme, horario, 3d, idioma, sala, qtd_lugares)
 VALUES (1, "20:30", false, "Dublao", 1, 30),
 		(2, "20:00", true, "Dublao", 2, 30),
 		(2, "22:00", false, "Dublao", 3, 30);
