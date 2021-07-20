@@ -43,12 +43,10 @@ CREATE TABLE IF NOT EXISTS Sessoes(
 id int auto_increment NOT NULL,
 id_filme int,
 horario time,
-data date,
 3d bool,
 idioma varchar(32),
 sala varchar(16),
 qtd_lugares int,
-id_sessaoLugar int,
 PRIMARY KEY(id),
 CONSTRAINT id_filme FOREIGN KEY (id_filme) REFERENCES Filmes(id)
 );
