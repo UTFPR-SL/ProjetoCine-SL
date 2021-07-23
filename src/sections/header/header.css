@@ -2,6 +2,14 @@
   width: 110px;
 }
 
+.backgroundHEADER{
+    background-color: #1f2021;
+}
+
+.textoItens{
+  color: #dcdcdc !important;
+}
+
 .main-menubox {
   display: none;
 }

@@ -14,9 +14,9 @@ VALUES ("Viúva Negra", "2h 14min", "Ação/Ficção Científica", "12", "Ao nas
 		
 
 INSERT INTO Sessoes (id_filme, horario, 3d, idioma, sala, qtd_lugares)
-VALUES (1, "20:30", false, "Dublao", 1, 30),
-		(2, "20:00", true, "Dublao", 2, 30),
-		(2, "22:00", false, "Dublao", 3, 30);
+VALUES (1, "20:30", false, "Dublado", 1, 30),
+		(2, "20:00", true, "Dublado", 2, 30),
+		(2, "22:00", false, "Dublado", 3, 30);
 
 
 

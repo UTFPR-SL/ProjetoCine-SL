@@ -13,3 +13,5 @@ $.getScript('../../settings/componentsImports.js', function() {});
 $.getScript('../../sections/header/header.js', function() {}); 
 $.getScript('../../sections/footer/footer.js', function() {}); 
 $.getScript('../../paginas/home/home.js', function() {}); 
+$.getScript('../../paginas/adm/adm.js', function() {}); 
+$.getScript('../../components/botoesADM/botoesADM.js', function() {}); 
