@@ -1,21 +1,6 @@
 const banco = require("../server/config");
 
 
-exports.select = async (req, res) => {
-    console.log("rota test");
-
-  banco.query("SELECT * FROM Lugares", function (err, result) {
-    if (err) throw err;
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    
-    res.json(result);
-  });
-  
-  console.log("asdadsadsadsadsa");
-  
-};
-
 
 exports.test = async (req, res) => {
   console.log("rota test");

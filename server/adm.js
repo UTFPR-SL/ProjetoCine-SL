@@ -1,12 +1,9 @@
 const banco = require("../server/config");
 const admController = require("../server/admController");
-
-console.log("Abriu!");
+const sessoes = require("../server/admController");
 
 var express = require("express");
 var app = express();
-
-
 
 app.use(
     express.urlencoded({
@@ -14,11 +11,12 @@ app.use(
     })
   )
   
-  app.use(express.json())
+app.use(express.json())
 
   
-app.get("/select", admController.select); 
-
 app.post("/test", admController.test); 
+
+app.get("/listarSessoes", sessoes.listarSessoes); 
+
 
 app.listen(80);
