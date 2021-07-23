@@ -42,6 +42,7 @@ PRIMARY KEY (id)
 CREATE TABLE IF NOT EXISTS Sessoes(
 id int auto_increment NOT NULL,
 id_filme int,
+status bool,
 horario time,
 3d bool,
 idioma varchar(32),
