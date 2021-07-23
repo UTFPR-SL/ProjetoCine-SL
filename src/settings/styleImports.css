@@ -4,7 +4,9 @@
 
 
 
-@import '../sections/asd/asd.css'; 
-@import '../paginas/index/index.css'; 
 @import '../sections/header/header.css'; 
 @import '../sections/footer/footer.css'; 
+/* @import '../paginas/home/home.css';  */
+/* @import '../paginas/adm/adm.css';  */
+@import '../components/botoesADM/botoesADM.css'; 
+@import '../components/criarSessao/criarSessao.css'; 
