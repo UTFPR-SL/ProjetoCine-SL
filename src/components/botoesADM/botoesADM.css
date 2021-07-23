@@ -1,5 +1,27 @@
 .botoesADM{
-    margin: 200px;
-    background-color: brown;
+    background-color:#b69007;
+    margin: 160px auto 0px auto !important;
+    padding: 1%;
+    width: 85%;
+    height: 70px;
+    border: 5px solid black;
+    border-top-left-radius: 7% 50%;
+    border-top-right-radius: 7% 50%;
+}
 
+.botaoADM{
+    margin: 0.8% auto;
+    height: 100%;
+    text-align: center;
+}
+
+.iconsADM{
+    color: darkred;
+    height: 80%;
+}
+
+.iconsADM:hover{
+    margin-top: -1%;
+    color: pink;
+    height: 85%;
 }

@@ -5,4 +5,3 @@
 
 $(function () { $("#header").load("../../sections/header/header.html"); }); 
 $(function () { $("#footer").load("../../sections/footer/footer.html"); }); 
-$(function () { $("#menuADM").load("../../sections/menuADM/menuADM.html"); }); 
