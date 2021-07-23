@@ -1,27 +1,23 @@
-var filme = document.getElementById("filme").value;
-var horario = document.getElementById("horario").value;
-var td = document.getElementById("3d").value;
-var idioma = document.getElementById("idioma").value;
-var sala = document.getElementById("sala").value;
+function criarSessao(filme,horario,tresd,idioma,sala){
+  var form = document.getElementById("sessao");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("Sessão Criada")
+  });
 
-console.log("filme");
-console.log(filme);
-
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "Cinema"
-});
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Conectado!");
-    var sql = "INSERT INTO Sessoes (id_filme, horario, 3d, idioma, sala, qtd_lugares) VALUES ?";
-    var values = [filme,horario,td,idioma,sala,30];
-    con.query(sql, [values], function (err, result) {
-        if (err) throw err;
-        console.log("Number of records inserted: " + result.affectedRows);
-      });
-    });
+  var myData = "["+filme+","+horario+","+tresd+","+idioma+","+sala+"]";
+  console.log(myData);
+  ajax.open("post", "http://localhost/test", true);
+  ajax.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  ajax.send(JSON.stringify(myData));
+  ajax.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+                    var data = ajax.responseText;
+                // Retorno do Ajax
+              console.log(data);
+              var resposta = JSON.parse(this.responseText);
+            //   resposta = data;
+              document.getElementById("teste").innerText = resposta[5].cod;
+          }
+      }
+    }

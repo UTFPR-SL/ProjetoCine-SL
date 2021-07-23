@@ -9,11 +9,18 @@ app.use(
 );
 
 
+// Rotas de Administradores
+const ADM = require("../server/admController");
+
+// app.post("/teste", ADM.teste);
+
+
 // Rotas de Sessoe
 const sessoes = require("../server/sessoesController");
 
 app.get("/listarSessoes", sessoes.listarSessoes);
 
+app.post("/criarSessao", sessoes.criarSessao);
 
 
 // Servidor escutando
