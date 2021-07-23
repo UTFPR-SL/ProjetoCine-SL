@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS Login;
 CREATE TABLE IF NOT EXISTS Login(
 id int auto_increment NOT NULL,
 nome varchar(80) NOT NULL,
-usuario varchar(80) NOT NULL,
+usuario varchar(80) NOT NULL UNIQUE,
 senha varchar(80) NOT NULL,
 adm bool NOT NULL,
 PRIMARY KEY(id)
@@ -36,18 +36,19 @@ duracao varchar(80),
 genero varchar(80),
 classificacaoIndicativa char(2),
 sinopse varchar(256),
+cartaz bool default true,
 PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS Sessoes(
 id int auto_increment NOT NULL,
 id_filme int,
-status bool,
+status bool default true,
 horario time,
 3d bool,
 idioma varchar(32),
 sala varchar(16),
-qtd_lugares int,
+qtd_lugares int default 30,
 PRIMARY KEY(id),
 CONSTRAINT id_filme FOREIGN KEY (id_filme) REFERENCES Filmes(id)
 );
