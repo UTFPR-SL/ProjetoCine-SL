@@ -1,4 +1,4 @@
--- CREATE DATABASE IF NOT EXISTS Cinema;
+CREATE DATABASE IF NOT EXISTS Cinema;
 
 USE Cinema;
 
@@ -45,7 +45,7 @@ id int auto_increment NOT NULL,
 id_filme int,
 status bool default true,
 horario time,
-3d bool,
+e3d bool,
 idioma varchar(32),
 sala varchar(16),
 qtd_lugares int default 30,
@@ -53,7 +53,7 @@ PRIMARY KEY(id),
 CONSTRAINT id_filme FOREIGN KEY (id_filme) REFERENCES Filmes(id)
 );
 
-CREATE TABLE IF NOT EXISTS Lugares(
+CREATE TABLE IF NOT EXISTS Assentos(
 cod char(3) PRIMARY KEY
 );
 

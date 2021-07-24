@@ -1,32 +1,6 @@
 
 var ajax = new XMLHttpRequest();
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-window.onload = async function asd(){
-  
-  await sleep(2000);
-  alert("asdsadsadasdsad");
-    const div = document.createElement('div');
-
-  // div.className = 'rowwww';
-
-  div.innerHTML = `
-    <input type="text" name="name" value="" />
-    <input type="text" name="value" value="" />
-    <label> 
-      <input type="checkbox" name="check" value="1" /> Checked? 
-    </label>
-    <input type="button" value="-" onclick="removeRow(this)" />
-  `;
-
-  document.getElementById('teste').appendChild(div);
-
-
-}
-
 
 function test(){
     alert("Agr vai");

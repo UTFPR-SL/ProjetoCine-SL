@@ -1,4 +1,4 @@
--- CREATE DATABASE IF NOT EXISTS Cinema;
+CREATE DATABASE IF NOT EXISTS Cinema;
 
 USE Cinema;
 
@@ -13,10 +13,10 @@ VALUES ("Viúva Negra", "2h 14min", "Ação/Ficção Científica", "12", "Ao nas
 		("Velozes e Furiosos 9", "2h 25min", "Ação/Aventura", "12", "O longa vem dando continuidade às corridas eletrizantes da equipe de amigos liderada por Dominic Toretto.");
 		
 
-INSERT INTO Sessoes (id_filme, horario, 3d, idioma, sala, qtd_lugares)
-VALUES (1, "20:30", false, "Dublado", 1, 30),
-		(2, "20:00", true, "Dublado", 2, 30),
-		(2, "22:00", false, "Dublado", 3, 30);
+INSERT INTO Sessoes (status, id_filme, horario, e3d, idioma, sala, qtd_lugares)
+VALUES (true, 1, "20:30", false, "Dublado", 1, 30),
+		(true, 2, "20:00", true, "Dublado", 2, 30),
+		(false, 2, "22:00", false, "Dublado", 3, 30);
 
 
 

@@ -1,23 +1,23 @@
 <div class="criarSessao">
         <center><b>Criar sessão</b></center><br>
-        <form id="sessao">
+        <form id="sessao" onsubmit="criarSessao(filme.value,horario.value,e3d.checked,idioma.value,sala.value)">
             <div class="field padding-bottom--15">
               
               <label for="filme">Filme:</label>
-              <select id="appearance-select" class="field" name="filme">
+              <select id="appearance-select" class="field" name="filme" />
                   <option value="1"> &nbsp Viúva Negra</option>
                   <option value="2"> &nbsp Velozes e Furiosos 9</option>
-                  <option value="Vingadores: Guerra Infinita"> &nbsp Vingadores: Guerra Infinita</option>
+                  <option value="3"> &nbsp Vingadores: Guerra Infinita</option>
             </div>
             <br><br>
             <div class="field padding-bottom--15">
               <br><br>
         <label for="horario">Horário:</label>
-            <input type="time" id="horario" name="horario">
+            <input type="time" id="horario" name="horario" required />
         </div>
         <div class="field field-checkbox padding-bottom--15 flex-flex align-center">
-            <label for="checkbox">
-              <input type="checkbox" name="tresd"> &nbsp Filme em 3D
+            <label>
+              <input type="checkbox" name="e3d" /> &nbsp Filme em 3D
             </label>
           </div> 
         <label for="idioma">Idioma:</label>
@@ -35,7 +35,7 @@
         <div class="field padding-bottom--15">
           <script>var form = document.getElementById("sessao");</script>
           <br><br>
-            <input type="submit" name="submit" onclick="criarSessao(filme.value,horario.value,tresd.value,idioma.value,sala.value)" value="Criar">
+            <input type="submit" name="submit" value="Criar">
           </div>
       </form>
     </center>
