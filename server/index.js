@@ -23,6 +23,13 @@ app.get("/listarSessoes", sessoes.listarSessoes);
 app.post("/criarSessao", sessoes.criarSessao);
 
 
+// Rotas de Filmes
+const filmes = require("../server/filmes");
+
+app.get("/filmesEmCartaz", filmes.filmesEmCartaz);
+
+
+
 // Servidor escutando
 app.listen(80);
 

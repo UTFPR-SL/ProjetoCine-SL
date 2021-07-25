@@ -2,7 +2,7 @@ const banco = require("../server/config");
 
 // Listar todas as sessoes
 exports.listarSessoes = async (req, res) => {
-  console.log("Listando Sessões Disponíveis");
+  console.log("\nListando Sessões Disponíveis");
 
   var sql =
     "SELECT Sessoes.id, horario, 3d, idioma, qtd_lugares, nome,duracao, " +
@@ -30,6 +30,7 @@ exports.criarSessao = async (req, res) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
+  console.log("\nCriando nova sessão");
 
   let data = "";
   req.on("data", (chunk) => {
@@ -50,7 +51,10 @@ exports.criarSessao = async (req, res) => {
       "INSERT INTO Sessoes (id_filme, horario, 3d, idioma, sala) VALUES (?)",
       [[id_filme, sql[1], e3d, sql[3], sala]],
       function (err, result) {
-        if (err) throw err;
+        if (err) {
+          console.log("ERRO!");
+          throw err;
+        }
         console.log("Number of records inserted: " + result.affectedRows);
       }
     );

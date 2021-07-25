@@ -1,4 +1,3 @@
--- CREATE DATABASE IF NOT EXISTS Cinema;
 
 USE Cinema;
 
@@ -20,7 +19,7 @@ VALUES (1, "20:30", false, "Dublado", 1, 30),
 
 
 
-INSERT INTO Lugares (cod)
+INSERT INTO Assentos (cod)
 VALUES ("A01"), ("A02"), ("A03"), ("A04"), ("A05"), ("A06"),
         ("B01"), ("B02"), ("B03"), ("B04"), ("B05"), ("B06"),
         ("C01"), ("C02"), ("C03"), ("C04"), ("C05"), ("C06"),

@@ -1,13 +1,14 @@
--- CREATE DATABASE IF NOT EXISTS Cinema;
+DROP DATABASE IF EXISTS Cinema;
+CREATE DATABASE IF NOT EXISTS Cinema;
 
 USE Cinema;
 
-DROP TABLE IF EXISTS Ingresso;
-DROP TABLE IF EXISTS Sessoes;
-DROP TABLE IF EXISTS Lugares;
-DROP TABLE IF EXISTS Filmes;
-DROP TABLE IF EXISTS Compras;
-DROP TABLE IF EXISTS Login;
+-- DROP TABLE IF EXISTS Ingresso;
+-- DROP TABLE IF EXISTS Sessoes;
+-- DROP TABLE IF EXISTS Assentos;
+-- DROP TABLE IF EXISTS Filmes;
+-- DROP TABLE IF EXISTS Compras;
+-- DROP TABLE IF EXISTS Login;
 
 
 CREATE TABLE IF NOT EXISTS Login(
@@ -45,7 +46,7 @@ id int auto_increment NOT NULL,
 id_filme int,
 status bool default true,
 horario time,
-3d bool,
+e3d bool,
 idioma varchar(32),
 sala varchar(16),
 qtd_lugares int default 30,
@@ -53,17 +54,17 @@ PRIMARY KEY(id),
 CONSTRAINT id_filme FOREIGN KEY (id_filme) REFERENCES Filmes(id)
 );
 
-CREATE TABLE IF NOT EXISTS Lugares(
+CREATE TABLE IF NOT EXISTS Assentos(
 cod char(3) PRIMARY KEY
 );
 
 CREATE TABLE IF NOT EXISTS Ingresso(
     id int auto_increment NOT NULL,
     id_sessao int,
-    id_lugar varchar(8),
+    id_assento varchar(8),
     id_compra int,
     PRIMARY KEY (id),
     CONSTRAINT id_sessao FOREIGN KEY (id_sessao) REFERENCES Sessoes(id),
-    CONSTRAINT id_lugar FOREIGN KEY (id_lugar) REFERENCES Lugares(cod),
+    CONSTRAINT id_assento FOREIGN KEY (id_assento) REFERENCES Assentos(cod),
 	CONSTRAINT id_compra FOREIGN KEY (id_compra) REFERENCES Compras(id)
 );
