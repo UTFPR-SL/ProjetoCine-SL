@@ -1,27 +1,44 @@
-var filme = document.getElementById("filme").value;
-var horario = document.getElementById("horario").value;
-var td = document.getElementById("3d").value;
-var idioma = document.getElementById("idioma").value;
-var sala = document.getElementById("sala").value;
+function criarSessao(filme, horario, e3d, idioma, sala) {
+  var form = document.getElementById("sessao");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
 
-console.log("filme");
-console.log(filme);
+  var msg;
+  msg =
+    `você tem certeza que deseja adicionar a Sessão?\n
+    Filme: ` +
+    filme +
+    `\n
+    horario: ` +
+    horario +
+    `\n
+    3D: ` +
+    e3d +
+    `\n
+    Idioma: ` +
+    idioma +
+    `\n
+    Sala: ` +
+    sala;
+  if (confirm(msg)) {
+    const obj = {
+      filme: filme,
+      horario: horario,
+      e3d: e3d,
+      idioma: idioma,
+      sala: sala,
+    };
 
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "Cinema"
-});
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Conectado!");
-    var sql = "INSERT INTO Sessoes (id_filme, horario, 3d, idioma, sala, qtd_lugares) VALUES ?";
-    var values = [filme,horario,td,idioma,sala,30];
-    con.query(sql, [values], function (err, result) {
-        if (err) throw err;
-        console.log("Number of records inserted: " + result.affectedRows);
-      });
-    });
+    ajax.open("post", "http://localhost/criarSessao", true);
+    ajax.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    ajax.send(JSON.stringify(obj));
+    ajax.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var data = ajax.responseText;
+        console.log(data);
+        alert(data);
+      }
+    };
+  }
+}

@@ -1,4 +1,6 @@
+const { json } = require("body-parser");
 const banco = require("../server/config");
+
 
 // Listar todas as sessoes
 exports.listarSessoes = async (req, res) => {
@@ -23,8 +25,10 @@ exports.listarSessoes = async (req, res) => {
   });
 };
 
+
 // Função Criar Sessao
 exports.criarSessao = async (req, res) => {
+  console.log("\nCriando uma sessão nova");
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -32,33 +36,22 @@ exports.criarSessao = async (req, res) => {
   );
   console.log("\nCriando nova sessão");
 
-  let data = "";
-  req.on("data", (chunk) => {
-    data += chunk;
-  });
+  var data = req.body;
 
-  req.on("end", () => {
-    var string = data.replace("[", "");
-    string = string.replace("]", "");
-    var sql = string.split(", ");
-
-    var id_filme = parseInt(sql[0], 10);
-    var sala = parseInt(sql[4], 10);
-    var e3d = false;
-    if (sql[3] == "true") e3d = true;
-
-    banco.query(
-      "INSERT INTO Sessoes (id_filme, horario, 3d, idioma, sala) VALUES (?)",
-      [[id_filme, sql[1], e3d, sql[3], sala]],
-      function (err, result) {
-        if (err) {
-          console.log("ERRO!");
-          throw err;
-        }
-        console.log("Number of records inserted: " + result.affectedRows);
+  banco.query(
+    "INSERT INTO Sessoes (id_filme, horario, e3d, idioma, sala) VALUES (?)",
+    [[data.id_filme, data.horario, data.e3d, data.idioma, data.sala]],
+    async function (err, result) {
+      if (err) {
+        console.log("ERRO!\n");
+        res.end("Erro ao criar a sessão");
+        throw err;
       }
-    );
 
-    res.end();
-  });
+      console.log("Sesao criada com sucesso\n");
+
+      res.write("Sessão Criada com Sucesso!");
+      res.end();
+    }
+  );
 };
