@@ -14,4 +14,5 @@
 /* @import '../paginas/adm/adm.css';  */
 @import '../components/botoesADM/botoesADM.css'; 
 @import '../components/criarSessao/criarSessao.css'; 
+@import '../sections/lista_sessao/lista_sessao.css'; 
 @import '../components/addFilme/addFilme.css'; 
