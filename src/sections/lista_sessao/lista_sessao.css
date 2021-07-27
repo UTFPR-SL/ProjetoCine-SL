@@ -1,0 +1,22 @@
+.lista_sessao{
+    margin-top: 160px !important;
+    width: 700px;
+    padding: 5px;
+    background-color: #292828;
+    margin: auto;
+
+  }
+
+
+
+table.center {
+  text-align: center;
+}
+table, th, td {
+  color: rgb(224, 224, 212) !important;
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  min-width: 100px;
+}

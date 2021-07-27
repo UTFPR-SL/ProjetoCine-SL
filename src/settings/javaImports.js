@@ -23,3 +23,4 @@ $.getScript('../../paginas/home/home.js', function() {});
 $.getScript('../../paginas/adm/adm.js', function() {}); 
 $.getScript('../../components/botoesADM/botoesADM.js', function() {}); 
 $.getScript('../../components/criarSessao/criarSessao.js', function() {}); 
+$.getScript('../../sections/lista_sessao/lista_sessao.js', function() {}); 
