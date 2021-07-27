@@ -31,6 +31,7 @@ const filmes = require("../server/filmes");
 
 app.get("/filmesEmCartaz", filmes.filmesEmCartaz);
 
+app.post("/addFilme", filmes.addFilme);
 
 
 // Servidor escutando

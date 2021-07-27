@@ -35,8 +35,9 @@ id int auto_increment NOT NULL,
 nome varchar(80) NOT NULL,
 duracao varchar(80),
 genero varchar(80),
-classificacaoIndicativa char(2),
-sinopse varchar(256),
+classificacaoIndicativa char(8),
+sinopse varchar(1024),
+cartazURL varchar(256),
 cartaz bool default true,
 PRIMARY KEY (id)
 );
