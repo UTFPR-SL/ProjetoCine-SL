@@ -7,7 +7,7 @@ exports.listarSessoes = async (req, res) => {
   console.log("\nListando Sessões Disponíveis");
 
   var sql =
-    "SELECT Sessoes.id, horario, e3d, idioma, qtd_lugares, nome,duracao, " +
+    "SELECT Sessoes.id, cartazURL, horario, e3d, idioma, qtd_lugares, nome,duracao, " +
     "classificacaoIndicativa FROM Sessoes " +
     "INNER JOIN Filmes " +
     "ON Sessoes.id_filme = Filmes.id " +
@@ -39,7 +39,7 @@ exports.criarSessao = async (req, res) => {
 
   banco.query(
     "INSERT INTO Sessoes (id_filme, horario, e3d, idioma, sala) VALUES (?)",
-    [[data.id_filme, data.horario, data.e3d, data.idioma, data.sala]],
+    [[data.filme, data.horario, data.e3d, data.idioma, data.sala]],
     async function (err, result) {
       if (err) {
         console.log("ERRO!\n");

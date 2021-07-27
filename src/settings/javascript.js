@@ -5,19 +5,18 @@ function sleep(ms) {
   }
 
   window.onload = async function() {
-    await sleep(200);
+    await sleep(100);
     var page = window.location.href.split('/');
+    
     if(page[page.length-2] == "adm"){
         limparTelaADM();
-        bttShowSessoes();
+        bttaddSessao();
     }
-  };
 
-
-
-
-
-
+    if(page[page.length-2] == "home"){
+        listarSessoes();
+    }
+};
 
 
 

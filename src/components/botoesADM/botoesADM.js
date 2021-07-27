@@ -12,6 +12,7 @@ function bttShowSessoes(){
 
 function bttAddSessao(){
     limparTelaADM();
+    listarFilmes();
     document.getElementById("criarSessao").style.display = "block";
 };
 

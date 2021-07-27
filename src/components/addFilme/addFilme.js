@@ -24,7 +24,7 @@ async function addFilme(nome, cartaz, tempo, classificacao, genero, sinopse) {
       nome: nome,
       cartazURL: cartaz,
       duracao: duracao,
-      classificacaoIndicativa: classificacao,
+      classificacao: classificacao,
       genero: genero,
       sinopse: sinopse,
     };

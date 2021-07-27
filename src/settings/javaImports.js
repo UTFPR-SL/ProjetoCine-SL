@@ -1,11 +1,4 @@
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-  
-  window.onload = async function (){
-    await sleep(500);
-    listarFilmes();
-  };
+
 // Não mexer!
 // Imports Necessários
 

@@ -20,3 +20,8 @@ td {
   text-align: center;
   min-width: 100px;
 }
+
+.cartaz{
+  max-height: 200px;
+  margin: 10px 0px;
+}
