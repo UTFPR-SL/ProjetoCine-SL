@@ -28,13 +28,12 @@ exports.listarSessoes = async (req, res) => {
 
 // Função Criar Sessao
 exports.criarSessao = async (req, res) => {
-  console.log("\nCriando uma sessão nova");
+  console.log("\nCriando nova sessão");
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
-  console.log("\nCriando nova sessão");
 
   var data = req.body;
 
@@ -48,7 +47,7 @@ exports.criarSessao = async (req, res) => {
         throw err;
       }
 
-      console.log("Sesao criada com sucesso\n");
+      console.log("Sessãao criada com sucesso\n");
 
       res.write("Sessão Criada com Sucesso!");
       res.end();

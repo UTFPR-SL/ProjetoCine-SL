@@ -9,6 +9,7 @@ function sleep(ms) {
 // Não mexer!
 // Imports Necessários
 
+$.getScript('../../settings/javascript.js', function() {}); 
 $.getScript('../../settings/sectionsImports.js', function() {}); 
 $.getScript('../../settings/componentsImports.js', function() {}); 
 
@@ -24,3 +25,4 @@ $.getScript('../../paginas/adm/adm.js', function() {});
 $.getScript('../../components/botoesADM/botoesADM.js', function() {}); 
 $.getScript('../../components/criarSessao/criarSessao.js', function() {}); 
 $.getScript('../../sections/lista_sessao/lista_sessao.js', function() {}); 
+$.getScript('../../components/addFilme/addFilme.js', function() {}); 
