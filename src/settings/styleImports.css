@@ -1,10 +1,18 @@
 
+/* NÃO MEXER! */
+/* Imports necessários */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+
 
 /* Imports dos css`s */
 
 
-
-@import '../sections/asd/asd.css'; 
-@import '../paginas/index/index.css'; 
 @import '../sections/header/header.css'; 
 @import '../sections/footer/footer.css'; 
+/* @import '../paginas/home/home.css';  */
+/* @import '../paginas/adm/adm.css';  */
+@import '../components/botoesADM/botoesADM.css'; 
+@import '../components/criarSessao/criarSessao.css'; 
+@import '../sections/lista_sessao/lista_sessao.css'; 
+@import '../components/addFilme/addFilme.css'; 

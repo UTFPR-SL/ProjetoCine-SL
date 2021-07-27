@@ -1,0 +1,39 @@
+<div class="criarSessao">
+        <center><b>Criar sessão</b></center><br>
+        <form id="sessao" onsubmit="criarSessao(filme.value,horario.value,e3d.checked,idioma.value,sala.value)"> 
+          <div class="field padding-bottom--15">
+              
+              <label for="filme">Filme:</label>
+              <select id="appearance-select" class="field" name="filme">
+            </div>
+            <br><br>
+            <div class="field padding-bottom--15">
+              <br><br>
+        <label for="horario">Horário:</label>
+            <input type="time" id="horario" name="horario" required />
+        </div>
+        <div class="field field-checkbox padding-bottom--15 flex-flex align-center">
+            <label>
+              <input type="checkbox" name="e3d" /> &nbsp Filme em 3D
+            </label>
+          </div> 
+        <label for="idioma">Idioma:</label>
+            <select id="appearance-select" class="field" name="idioma">
+                <option value="Dublado"> &nbsp Dublado</option>
+                <option value="Legendado"> &nbsp Legendado</option>
+                <option value="Nacional"> &nbsp Nacional</option>
+            </select><br><br>
+        <div class="field padding-bottom--15">
+          <label for="sala">Sala:</label>
+          <select id="appearance-select" class="field" name="sala">
+              <option value="1"> &nbsp 1</option>
+              <option value="2"> &nbsp 2</option>
+              <option value="3"> &nbsp 3</option>
+        <div class="field padding-bottom--15">
+          <script>var form = document.getElementById("sessao");</script>
+          <br><br>
+            <input type="submit" name="submit" value="Criar">
+          </div>
+      </form>
+    </center>
+</div>

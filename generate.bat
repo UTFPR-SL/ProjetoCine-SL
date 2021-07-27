@@ -24,12 +24,12 @@ if "%op%"=="paginas" goto pag
 
 echo $(function (^) { $("#%name%"^).load("../../%op%/%name%/%name%.html"^); }^); >> src\settings\%op%Imports.js
 (
-    echo #%name%{
+    echo .%name%{
     echo.
     echo }
 ) > src\%op%\%name%\%name%.css
 (
-    echo ^<div id="%name%"^>
+    echo ^<div class="%name%"^>
     echo.
     echo ^</div^>
 ) > src\%op%\%name%\%name%.html

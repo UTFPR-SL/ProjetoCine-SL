@@ -3,6 +3,6 @@
 // Imports das sections
 
 
-$(function () { $("#asd").load("../../sections/asd/asd.html"); }); 
 $(function () { $("#header").load("../../sections/header/header.html"); }); 
 $(function () { $("#footer").load("../../sections/footer/footer.html"); }); 
+$(function () { $("#lista_sessao").load("../../sections/lista_sessao/lista_sessao.html"); }); 

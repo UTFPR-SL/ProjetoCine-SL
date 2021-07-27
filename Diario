@@ -8,9 +8,32 @@ Marcando e conversando sobre as perguntas individualmente, sendo elas:
 -O que vou fazer amanhã
 -Os problemas que eu tive/terei
 
-<<<<<<< HEAD
 
+==================== Diario 23/07 (sexta) ====================
+Caio:
+-O que eu fiz ontem
+  Iniciei a página onde são criadas as sessões de exibição dos filmes
+-O que vou fazer amanhã
+  Terminar esta parte
+-Os problemas que eu tive/terei
+  Manipulação com as rotas do servidor
 
+Gustavo:
+-O que eu fiz ontem
+  criei uma tabela para mostar as sessoes no site
+-O que vou fazer amanhã
+  testar para ver se tem erros/bugs
+-Os problemas que eu tive/terei
+  problemas no front com bugs sobreposição de elementos
+  
+
+Vinicius:
+-O que eu fiz ontem
+  Ciei a pagina de ADM, usando senha para acessar, e seus botoes e criei rotas para criar sessão e listar sessão.
+-O que vou fazer amanhã
+  Pagina para adicionar filmes.
+-Os problemas que eu tive/terei
+  Pouco tempo, considerando os trabalhos de outras materias.
 
 ==================== Diario 20/07 (terça) ====================
 Caio:
@@ -33,7 +56,7 @@ Vinicius:
 -O que eu fiz ontem
   Terminei a base e organização dos arquivos da pagina
 -O que vou fazer amanhã
-  Fazer a página para gerenciar os fiolmes e as sessões.
+  Fazer a página para gerenciar os filmes e as sessões.
 -Os problemas que eu tive/terei
   Tempo, muitos trabalhos, pouco tempo.
 
@@ -67,34 +90,6 @@ Vinicius:
 
 
 ==================== Diario 13/07 (terça) ====================
-=======
-==================== Diario --/07 ====================
-Caio:
--O que eu fiz ontem
-  nada
--O que vou fazer amanhã
-  nada
--Os problemas que eu tive/terei
-  nada
-
-Gustavo:
--O que eu fiz ontem
-  nada
--O que vou fazer amanhã
-  nada
--Os problemas que eu tive/terei
-  nada
-  
-Vinicius:
--O que eu fiz ontem
-  nada
--O que vou fazer amanhã
-  nada
--Os problemas que eu tive/terei
-  nada
-
-==================== Diario 13/07 ====================
->>>>>>> 37b9caa9214771f10494317b5acdfafc04729df2
 Caio:
 -O que eu fiz ontem
   nada
@@ -105,21 +100,12 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
-<<<<<<< HEAD
   Estudei jquery e sua funcionalildade na pagina.
 -O que vou fazer amanhã
   Esboço da sessão.
 -Os problemas que eu tive/terei
   Funcionalidades com o front-end.
 
-=======
-  Vi as funcionalidades do gitbash
--O que vou fazer amanhã
-  Desenvolver  basico para implementar a tarefa
--Os problemas que eu tive/terei
-  Pouco tempo para realizar a tarefa devido ao grande quantidade de atividades em um curto periodo de tempo
-  
->>>>>>> 37b9caa9214771f10494317b5acdfafc04729df2
 Vinicius:
 -O que eu fiz ontem
   Aprendi GitHub
