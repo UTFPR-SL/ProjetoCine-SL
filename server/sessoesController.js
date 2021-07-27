@@ -7,7 +7,7 @@ exports.listarSessoes = async (req, res) => {
   console.log("\nListando Sessões Disponíveis");
 
   var sql =
-    "SELECT Sessoes.id, horario, 3d, idioma, qtd_lugares, nome,duracao, " +
+    "SELECT Sessoes.id, horario, e3d, idioma, qtd_lugares, nome,duracao, " +
     "classificacaoIndicativa FROM Sessoes " +
     "INNER JOIN Filmes " +
     "ON Sessoes.id_filme = Filmes.id " +
