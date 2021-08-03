@@ -1,27 +1,39 @@
 .botoesADM{
     background-color:#b69007;
-    margin: 160px auto 0px auto !important;
-    padding: 1%;
-    width: 85%;
-    height: 70px;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    height: 700px;
+    margin-right: 20px;
     border: 5px solid black;
-    border-top-left-radius: 7% 50%;
-    border-top-right-radius: 7% 50%;
+    border-top-left-radius: 50% 7%;
+    border-bottom-left-radius: 35% 7%;
 }
 
 .botaoADM{
-    margin: 0.8% auto;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
     text-align: center;
 }
 
 .iconsADM{
-    color: darkred;
-    height: 80%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-size: 2.75rem;
 }
 
 .iconsADM:hover{
-    margin-top: -1%;
-    color: pink;
-    height: 85%;
+    font-size: 3rem;
+}
+
+.gde{
+    font-size: 3rem;
+}
+
+.gde:hover{
+    font-size: 3.25rem;
 }

@@ -1,13 +1,16 @@
 var express = require("express");
+var cors = require("cors");
 var app = express();
 
-app.use(express.json());
+app.use(cors());
+
 app.use(
   express.urlencoded({
     extended: true,
   })
-);
-
+  );
+  
+  app.use(express.json());
 
 // Rotas de Administradores
 const ADM = require("../server/admController");
@@ -21,6 +24,14 @@ const sessoes = require("../server/sessoesController");
 app.get("/listarSessoes", sessoes.listarSessoes);
 
 app.post("/criarSessao", sessoes.criarSessao);
+
+
+// Rotas de Filmes
+const filmes = require("../server/filmes");
+
+app.get("/filmesEmCartaz", filmes.filmesEmCartaz);
+
+app.post("/addFilme", filmes.addFilme);
 
 
 // Servidor escutando
