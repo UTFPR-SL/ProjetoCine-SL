@@ -10,7 +10,7 @@ function sleep(ms) {
     
     if(page[page.length-2] == "adm"){
         limparTelaADM();
-        bttaddSessao();
+        botoesFilmes();
     }
 
     if(page[page.length-2] == "home"){
