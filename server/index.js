@@ -27,7 +27,7 @@ app.post("/criarSessao", sessoes.criarSessao);
 
 
 // Rotas de Filmes
-const filmes = require("../server/filmes");
+const filmes = require("./filmesController");
 
 app.get("/filmesEmCartaz", filmes.filmesEmCartaz);
 
@@ -35,6 +35,10 @@ app.post("/addFilme", filmes.addFilme);
 
 
 // Servidor escutando
-app.listen(80);
+var server = app.listen(80);
 
 console.log("Servidor Escutando na porta padrão(80).");
+
+
+module.exports = app;
+module.exports = server;

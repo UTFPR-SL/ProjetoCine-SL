@@ -37,6 +37,8 @@ exports.criarSessao = async (req, res) => {
 
   var data = req.body;
 
+  console.log(data);
+
   banco.query(
     "INSERT INTO Sessoes (id_filme, horario, e3d, idioma, sala) VALUES (?)",
     [[data.filme, data.horario, data.e3d, data.idioma, data.sala]],
