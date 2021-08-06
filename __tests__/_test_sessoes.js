@@ -5,7 +5,7 @@ const app = require("../server/index");
 const server = require("../server/index");
 
 server.close();
-app.listen(71);
+app.listen(72);
 
 function respPadrao(response) {
   if (expect(response.statusCode).toBe(200)) return false;
@@ -20,7 +20,7 @@ function respPadrao(response) {
 }
 
 describe("GET`s Sessões", () => {
-  test("Listar os Sessões /listarSessoes", async () => {
+  test("Listar as Sessões /listarSessoes", async () => {
     const response = await supertest(app).get("/listarSessoes");
 
     expect(respPadrao(response)).toBe(true);
