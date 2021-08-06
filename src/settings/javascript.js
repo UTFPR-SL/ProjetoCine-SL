@@ -7,6 +7,7 @@ function sleep(ms) {
 window.onload = async function () {
   await sleep(100);
   var page = window.location.href.split("/");
+  document.getElementById('login').style.display='block';
 
   if (page[page.length - 2] == "adm") {
     limparTelaADM();

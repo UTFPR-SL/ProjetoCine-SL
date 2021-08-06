@@ -72,3 +72,11 @@
 }
 
 li.nav-item{    padding: 10px 20px; cursor: pointer;}
+
+#unlogged{
+  display: block;
+}
+
+#logged{
+  display: none;
+}

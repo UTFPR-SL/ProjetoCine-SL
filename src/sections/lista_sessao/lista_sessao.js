@@ -10,7 +10,6 @@ async function listarSessoes() {
         var resposta = JSON.parse(this.responseText);
 
         const div = document.createElement("div");
-        console.log(resposta.length);
         // div.className = 'rowwww';
         var conteudo = `
           
