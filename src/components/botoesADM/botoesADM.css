@@ -19,6 +19,37 @@
     text-align: center;
 }
 
+.botaoADM ul ul {  
+    position: absolute;  
+    visibility: hidden;  
+    top: 50%;  
+}
+
+.botaoADM ul li:hover ul {  
+    visibility: visible;  
+} 
+
+.botaoADM ul li a {  
+    width: 148px;  
+    height: 50px;  
+    display: block;   
+}  
+
+.botaoADM  ul  
+{  
+    width: 210%;
+     line-height: 0px;  
+} 
+
+.botaoADM li li {  
+    list-style: none;     
+} 
+
+.classific{
+    width: 45px;  
+    height: 45px;
+}
+
 .iconsADM{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(255, 255, 255);

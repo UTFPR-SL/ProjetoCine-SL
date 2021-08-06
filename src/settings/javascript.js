@@ -4,9 +4,14 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-window.onload = async function () {
-  await sleep(100);
-  var page = window.location.href.split("/");
+  window.onload = async function() {
+    await sleep(100);
+    var page = window.location.href.split('/');
+    
+    if(page[page.length-2] == "adm"){
+        limparTelaADM();
+        botoesFilmes();
+    }
 
   if (page[page.length - 2] == "adm") {
     limparTelaADM();
