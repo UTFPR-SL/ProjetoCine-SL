@@ -34,6 +34,13 @@ app.get("/filmesEmCartaz", filmes.filmesEmCartaz);
 app.post("/addFilme", filmes.addFilme);
 
 
+// Rotas de login`s
+const login = require("./loginController");
+
+app.get("/login", login.logar);
+
+
+
 // Servidor escutando
 var server = app.listen(80);
 
