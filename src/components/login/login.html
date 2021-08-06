@@ -1,0 +1,47 @@
+<div class="login">
+  <form
+    class="modal-content loginConteudo animate"
+    action="javascript:window.location.href = '../../paginas/adm/adm.html'"
+    method="post"
+  >
+
+    <div class="container">
+      <i class="bi bi-x-lg close" onclick="document.getElementById('login').style.display='none'"></i>
+      <h1 class="tituloBV"><b>Bem Vindo!</h1></b>
+      <label for="user"><b>Usuario</b></label
+      ><br />
+
+      <div class="input">
+        
+        
+        <i class="bi bi-person-fill iconepeq"></i>
+        <input
+        type="text"
+        placeholder="Digite o Usuario"
+        name="user"
+        required
+        />
+      </div>
+      
+      <br /><label for="senha"><b>Senha</b></label
+        ><br />
+        <div class="input">
+          <i class="bi bi-lock-fill iconepeq"></i>
+          <input
+          type="password"
+          placeholder="Digite a Senha"
+          name="senha"
+          required
+          />
+        </div>
+
+
+      <button class="bttlogin" type="submit"><b>Login</b></button>
+      <button class="bttlogin bttcanc" type="submit" 
+      onclick="document.getElementById('login').style.display='none'"
+      ><b>Cancelar</b></button>
+      
+    </div>
+
+  </form>
+</div>
