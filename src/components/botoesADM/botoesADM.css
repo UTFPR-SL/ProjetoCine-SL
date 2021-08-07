@@ -30,18 +30,18 @@
 } 
 
 .botaoADM ul li a {  
-    width: 148px;  
+    width: 10px;  
     height: 50px;  
     display: block;   
 }  
 
-.botaoADM  ul  
+.botaoADM ul  
 {  
     width: 210%;
      line-height: 0px;  
 } 
 
-.botaoADM li li {  
+.botaoADM li {  
     list-style: none;     
 } 
 
