@@ -46,7 +46,7 @@ exports.addFilme = async (req, res) => {
         throw err;
       }
 
-      console.log("Filmee adicionado com sucesso\n");
+      console.log("Filme adicionado com sucesso\n");
 
       res.write("Filme adicionado com sucesso!");
       res.end();
