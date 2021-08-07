@@ -37,7 +37,7 @@ app.post("/addFilme", filmes.addFilme);
 // Rotas de login`s
 const login = require("./loginController");
 
-app.get("/login", login.logar);
+app.post("/login", login.logar);
 
 
 

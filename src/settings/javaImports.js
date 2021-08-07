@@ -19,4 +19,5 @@ $.getScript('../../components/botoesADM/botoesADM.js', function() {});
 $.getScript('../../components/criarSessao/criarSessao.js', function() {}); 
 $.getScript('../../sections/lista_sessao/lista_sessao.js', function() {}); 
 $.getScript('../../components/addFilme/addFilme.js', function() {}); 
+$.getScript('../../components/login/login.js', function() {}); 
 $.getScript('../../sections/headerADM/headerADM.js', function() {}); 
