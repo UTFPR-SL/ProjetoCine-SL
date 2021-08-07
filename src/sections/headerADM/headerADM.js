@@ -7,6 +7,7 @@ function limparBotoes(){
     document.getElementById("btnAdicionarUsuario").style.display = "none";
     document.getElementById("filtro3d").style.display = "none";
     document.getElementById("fecharfiltro3d").style.display = "none";
+    document.getElementById("filtroClassificacao").style.display = "none";
 };
 
 function botoesFilmes(){
@@ -14,6 +15,7 @@ function botoesFilmes(){
     document.getElementById("btnMostrarFilmes").style.display = "block";
     document.getElementById("btnCriarFilme").style.display = "block";
     document.getElementById("filtro3d").style.display = "block";
+    document.getElementById("filtroClassificacao").style.display = "block";
 };
 
 function botoesSessoes(){
