@@ -1,28 +1,28 @@
 <div class="addFilme">
-  <h1>Adicionar Filme</h1>
+  <center><b>Adicionar Filme</b></center>
+  <br>
   <form
     id="filme"
     onsubmit="addFilme(nome.value, cartaz.value, duracao.value, classificacaoIndicativa.value, genero.value, sinopse.value); return false;"
   >
+  <div class="field padding-bottom--15">
     <label>
       Nome:
-
       <input type="text" name="nome" class="field" />
     </label>
-    <br /><br />
+    <br />
 
     <label
       >Cartaz:
       <input type="text" name="cartaz" class="field" />
     </label>
-    <br /><br />
+    <br />
 
     <label
       >Duração:
-
       <input type="time" name="duracao" required />
     </label>
-    <br /><br />
+    <br />
 
     <label
       >Classificação Indicativa:
