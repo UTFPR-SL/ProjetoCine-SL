@@ -2,8 +2,11 @@
 USE Cinema;
 
 INSERT INTO login (nome, usuario, senha, adm)
-VALUES ("João", "admin", "admin", true),
-		("Juquinha", "juca", "asd123", false);
+VALUES ("Administrador", "admin", "admin", true),
+		("Caio", "dansujaum", "dansujaum", true),
+		("gustavo", "kiboki", "kiboki", true),
+		("Vinicius", "vnks", "vnks", true),
+		("Juca", "juquinha", "asd123", false);
 
 
 INSERT INTO Filmes (nome, cartazURL, duracao, genero, classificacaoIndicativa, sinopse)

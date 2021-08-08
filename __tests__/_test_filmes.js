@@ -1,23 +1,14 @@
-console.log = function() {}
+console.log = function () {};
 
 const supertest = require("supertest");
 const app = require("../server/index");
+const respPadrao = require("./config");
 const server = require("../server/index");
+const banco = require("../server/config");
 
-server.close();
-app.listen(70);
-
-function respPadrao(response) {
-  if (expect(response.statusCode).toBe(200)) return false;
-  if (
-    expect(JSON.stringify(response.headers)).toContain(
-      '"access-control-allow-headers":"Origin, X-Requested-With, Content-Type, Accept"'
-    )
-  )
-    return false;
-
-  return true;
-}
+afterAll(async () => {
+  await banco.query("delete from Filmes order by id desc limit 1");
+});
 
 describe("GET`s Filmes", () => {
   test("Listar os filmez em cartaz /filmesEmCartaz", async () => {
@@ -47,3 +38,5 @@ describe("Post`s Filmes", () => {
     expect(response.text).toBe("Filme adicionado com sucesso!");
   });
 });
+
+server.close();

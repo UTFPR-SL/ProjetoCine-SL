@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Gerenciador de sessões simples de um cinema",
   "main": "/src/paginas/home/home.html",
+  "jest": {
+    "testPathIgnorePatterns": ["__tests__/config"]
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -16,7 +19,8 @@
     "xmlhttprequest": "^1.8.0"
   },
   "scripts": {
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "server": "node server"
   },
   "repository": {
     "type": "git",
