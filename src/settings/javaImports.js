@@ -21,4 +21,8 @@ $.getScript('../../sections/lista_sessao/lista_sessao.js', function() {});
 $.getScript('../../components/addFilme/addFilme.js', function() {}); 
 $.getScript('../../components/login/login.js', function() {}); 
 $.getScript('../../sections/headerADM/headerADM.js', function() {}); 
+<<<<<<< HEAD
 $.getScript('../../sections/filtro_filmes/filtro_filmes.js', function() {}); 
+=======
+$.getScript('../../components/addLogin/addLogin.js', function() {}); 
+>>>>>>> 24d57f414bf236601207f8fe611fc52d411b19f6

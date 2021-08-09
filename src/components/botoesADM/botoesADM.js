@@ -3,7 +3,11 @@ function limparTelaADM(){
     // document.getElementById("lisataSessoes").style.display = "none";
     document.getElementById("criarSessao").style.display = "none";
     document.getElementById("addFilme").style.display = "none";
+<<<<<<< HEAD
     document.getElementById("filtroFilmess").style.display = "none";
+=======
+    document.getElementById("addLogin").style.display = "none";
+>>>>>>> 24d57f414bf236601207f8fe611fc52d411b19f6
 };
 
 function bttShowSessoes(){
@@ -52,4 +56,9 @@ function filtroClassificacao(value){
         case '18':
             break;           
     }
+};
+
+function bttAddLogin(){
+    limparTelaADM();
+    document.getElementById("addLogin").style.display = "block";
 };

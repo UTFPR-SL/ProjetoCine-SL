@@ -18,4 +18,8 @@
 @import '../components/addFilme/addFilme.css'; 
 @import '../components/login/login.css'; 
 @import '../sections/headerADM/headerADM.css'; 
+<<<<<<< HEAD
 @import '../sections/filtro_filmes/filtro_filmes.css'; 
+=======
+@import '../components/addLogin/addLogin.css'; 
+>>>>>>> 24d57f414bf236601207f8fe611fc52d411b19f6

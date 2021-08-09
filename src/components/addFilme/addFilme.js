@@ -3,7 +3,7 @@ async function addFilme(nome, cartaz, tempo, classificacao, genero, sinopse) {
   var duracao = tempo.split(":")[0] + "h " + tempo.split(":")[1] + "min";
   var msg;
   msg =
-    `Você tem certeza que deseja adicionar o Fiome?\n
+    `Você tem certeza que deseja adicionar o Filme?\n
     Filme: ` +
     nome +
     `\n
