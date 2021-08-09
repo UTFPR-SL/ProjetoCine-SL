@@ -21,3 +21,4 @@ $.getScript('../../sections/lista_sessao/lista_sessao.js', function() {});
 $.getScript('../../components/addFilme/addFilme.js', function() {}); 
 $.getScript('../../components/login/login.js', function() {}); 
 $.getScript('../../sections/headerADM/headerADM.js', function() {}); 
+$.getScript('../../sections/filtro_filmes/filtro_filmes.js', function() {}); 
