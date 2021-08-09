@@ -3,6 +3,7 @@ function limparTelaADM(){
     // document.getElementById("lisataSessoes").style.display = "none";
     document.getElementById("criarSessao").style.display = "none";
     document.getElementById("addFilme").style.display = "none";
+    document.getElementById("addLogin").style.display = "none";
 };
 
 function bttShowSessoes(){
@@ -51,4 +52,9 @@ function filtroClassificacao(value){
         case '18':
             break;           
     }
+};
+
+function bttAddLogin(){
+    limparTelaADM();
+    document.getElementById("addLogin").style.display = "block";
 };
