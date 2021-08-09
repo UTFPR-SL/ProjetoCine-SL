@@ -68,8 +68,7 @@
 }
 
 /* Full-width input fields */
-input[type="text"],
-input[type="password"] {
+.campo{
   width: 100%;
   background-color: #232323;
   border-style: none;
