@@ -8,30 +8,7 @@ Marcando e conversando sobre as perguntas individualmente, sendo elas:
 -O que vou fazer amanhã
 -Os problemas que eu tive/terei
 
-==================== Diario 06/08 (sexta) ====================
-Caio:
--O que eu fiz ontem
 
--O que vou fazer amanhã
-
--Os problemas que eu tive/terei
-
-
-Gustavo:
--O que eu fiz ontem
-  
--O que vou fazer amanhã
-  
--Os problemas que eu tive/terei
-  Tive problemas com o banco de dados que não estava carregando, tive que reinstalar o mysql.
-  
-Vinicius:
--O que eu fiz ontem
-  
--O que vou fazer amanhã
-  
--Os problemas que eu tive/terei
-  
 ==================== Diario 03/08 (terça) ====================
 Caio:
 -O que eu fiz ontem
@@ -43,12 +20,11 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
-  Implementei a maoir parte do filtro.(Issue #38)
+
 -O que vou fazer amanhã
-  Terminar de o resto do filtro.(Issue #38)
+
 -Os problemas que eu tive/terei
-  Não ta mostrando o filtro no site.(Issue #38)
-  Pouco tempo para desenvolver o projeto.
+
   
 Vinicius:
 -O que eu fiz ontem
@@ -72,11 +48,11 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
- Testes e correções na tabela de listar sessões.(Issue #19)
+
 -O que vou fazer amanhã
-  Implemantar o filtro de filmes.(Issue #38)
+
 -Os problemas que eu tive/terei
-  Não sei.
+
   
 Vinicius:
 -O que eu fiz ontem
