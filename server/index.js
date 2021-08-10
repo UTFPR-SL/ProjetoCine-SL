@@ -29,6 +29,8 @@ const filmes = require("./filmesController");
 
 app.get("/filmesEmCartaz", filmes.filmesEmCartaz);
 
+app.get("/listarFilmes", filmes.listarFilmes);
+
 app.post("/addFilme", filmes.addFilme);
 
 // Rotas de login`s

@@ -23,6 +23,29 @@ exports.filmesEmCartaz = async (req, res) => {
 };
 
 
+exports.listarFilmes = async (req, res) => {
+  console.log("\nListando todos os filmes!");
+
+  banco.query(
+    "SELECT * FROM Filmes ;",
+    function (err, result) {
+      if (err) {
+        console.log("ERRO!");
+        throw err;
+      }
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+      );
+
+      res.json(result);
+    }
+  );
+};
+
+
+
 // Função Adicionar Filme
 exports.addFilme = async (req, res) => {
   console.log("\nAdicionando Filme");

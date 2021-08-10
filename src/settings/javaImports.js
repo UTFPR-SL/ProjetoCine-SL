@@ -22,3 +22,4 @@ $.getScript('../../components/addFilme/addFilme.js', function() {});
 $.getScript('../../components/login/login.js', function() {}); 
 $.getScript('../../sections/headerADM/headerADM.js', function() {}); 
 $.getScript('../../components/addLogin/addLogin.js', function() {}); 
+$.getScript('../../sections/lista_filmes/lista_filmes.js', function() {}); 
