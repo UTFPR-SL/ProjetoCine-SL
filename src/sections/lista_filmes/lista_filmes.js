@@ -20,7 +20,7 @@ async function filmesdaLista() {
                     <th>&nbsp Duracao &nbsp</th>  
                     <th>&nbsp&nbsp 3D &nbsp &nbsp</th>
                     <th>Classificação Indicativa</th>
-                    <th>cartazURL</th>
+                    <th>em cartaz</th>
                     <th>sinopse</th>
                 </tr>`;
         for (var g = 0; g < resposta.length; g++) {
@@ -48,7 +48,7 @@ async function filmesdaLista() {
             resposta[g].classificacaoIndicativa +
             `</td>
                     <td>` +
-            resposta[g].cartazURL +
+            resposta[g].cartaz +
             `</td>
                     <td>` +
             resposta[g].sinopse.substr(0, 100) +
@@ -60,6 +60,7 @@ async function filmesdaLista() {
             </table>
           `;
         div.innerHTML = conteudo;
+        document.getElementById("listaFilmes").innerHTML="";
         document.getElementById("listaFilmes").appendChild(div);
       }
     };
