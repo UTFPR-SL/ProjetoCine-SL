@@ -3,7 +3,6 @@ function limparTelaADM(){
     // document.getElementById("lisataSessoes").style.display = "none";
     document.getElementById("criarSessao").style.display = "none";
     document.getElementById("addFilme").style.display = "none";
-    document.getElementById("filtroFilmess").style.display = "none";
 };
 
 function bttShowSessoes(){
@@ -19,7 +18,7 @@ function bttAddSessao(){
 
 function bttShowFilmes(){
     limparTelaADM();
-     document.getElementById("filtroFilmes").style.display = "block";
+    // document.getElementById("listaSessoes").style.display = "block";
 };
 
 function bttAddFilme(){
