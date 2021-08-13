@@ -5,6 +5,7 @@ function limparTelaADM(){
     document.getElementById("addFilme").style.display = "none";
     document.getElementById("addLogin").style.display = "none";
     document.getElementById("lista_filmes").style.display = "none";
+    document.getElementById("lista_usuario").style.display = "none";
 };
 
 function bttShowSessoes(){
@@ -59,4 +60,9 @@ function filtroClassificacao(value){
 function bttAddLogin(){
     limparTelaADM();
     document.getElementById("addLogin").style.display = "block";
+};
+function bttShowUsuario(){
+    listarUsuarios();
+    limparTelaADM();
+    document.getElementById("lista_usuario").style.display = "block";
 };
