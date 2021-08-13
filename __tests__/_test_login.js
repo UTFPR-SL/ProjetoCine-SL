@@ -1,10 +1,11 @@
 console.log = function () {};
 
 const supertest = require("supertest");
-const app = require("../server/index");
+const app = require("../server/config");
 const respPadrao = require("./config");
-const server = require("../server/index");
-const banco = require("../server/config");
+const banco = require("../server/banco");
+
+var server = app.listen(50);
 
 afterAll(async () => {
   await banco.query("delete from Login order by id desc limit 1");

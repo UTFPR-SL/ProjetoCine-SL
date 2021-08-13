@@ -10,7 +10,7 @@ VALUES ("Administrador", "admin", "admin", true),
 
 
 INSERT INTO Filmes (nome, cartazURL, duracao, genero, classificacaoIndicativa, sinopse)
-VALUES ("Viúva Negra", "https://cdn.cinepop.com.br/2021/06/viuva-negra-3-1.jpg", "2h 14min", "Ação/Ficção Científica", "12", "Ao nascer, a Viúva Negra, então conhecida como Natasha Romanova, é entregue à KGB, que a prepara para se tornar sua agente suprema. Porém, o seu próprio governo tenta matá-la quando a União Soviética se desfaz."),
+VALUES ("Viúva Negra", "https://br.web.img3.acsta.net/c_310_420/pictures/20/03/09/15/51/4538015.jpg", "2h 14min", "Ação/Ficção Científica", "12", "Ao nascer, a Viúva Negra, então conhecida como Natasha Romanova, é entregue à KGB, que a prepara para se tornar sua agente suprema. Porém, o seu próprio governo tenta matá-la quando a União Soviética se desfaz."),
 		("Vingadores: Guerra Infinita", "https://br.web.img2.acsta.net/pictures/18/03/16/15/08/2019826.jpg", "2h 40min", "Ação/Ficção Científica", "12", "Homem de Ferro, Thor, Hulk e os Vingadores se unem para combater seu inimigo mais poderoso, o maligno Thanos. Em uma missão para coletar todas as seis pedras infinitas, Thanos planeja usá-las para infligir sua vontade maléfica sobre a realidade."),
 		("Velozes e Furiosos 9", "https://br.web.img3.acsta.net/pictures/21/04/14/19/06/3385237.jpg", "2h 25min", "Ação/Aventura", "12", "O longa vem dando continuidade às corridas eletrizantes da equipe de amigos liderada por Dominic Toretto.");
 		
