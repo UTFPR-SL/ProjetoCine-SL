@@ -1,4 +1,4 @@
-const banco = require("./config.js");
+const banco = require("./banco");
 
 // Realizar Login
 exports.logar = async (req, res) => {

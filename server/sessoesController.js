@@ -1,5 +1,5 @@
 const { json } = require("body-parser");
-const banco = require("../server/config");
+const banco = require("./banco");
 
 
 // Listar todas as sessoes

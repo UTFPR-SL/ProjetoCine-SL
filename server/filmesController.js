@@ -1,4 +1,4 @@
-const banco = require("./config.js");
+const banco = require("./banco");
 
 // Listar todos os filmes em cartaz
 exports.filmesEmCartaz = async (req, res) => {
