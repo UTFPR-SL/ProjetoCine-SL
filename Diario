@@ -7,6 +7,8 @@ Marcando e conversando sobre as perguntas individualmente, sendo elas:
 -O que eu fiz ontem
 -O que vou fazer amanhã
 -Os problemas que eu tive/terei
+
+
 ==================== Diario 13/08 (sexta) ====================
 Caio:
 -O que eu fiz ontem
@@ -26,10 +28,11 @@ Gustavo:
   
 Vinicius:
 -O que eu fiz ontem
-  
+  Ajustar os casos de teste. (Issue $37)
 -O que vou fazer amanhã
-  
+  Estudar e testar os filtros do jquery.
 -Os problemas que eu tive/terei
+  Tempo e incentivo, pois estou com problemas pessoais.
 
 ==================== Diario 10/08 (terça) ====================
 Caio:
@@ -51,10 +54,13 @@ Gustavo:
   
 Vinicius:
 -O que eu fiz ontem
-  
+  terminei o login e a sessão para os usuario. (Issue #42)
+  Criei as rotas de login e seus casos de teste. (Issue #37)
 -O que vou fazer amanhã
-  
+  Ajustar os casos de teste. (Issue $37)
+  Estudar sobre filtros em jquery.
 -Os problemas que eu tive/terei
+  Tempo, essa semana ja ocupei quase todos os "buracos" com outros trabalhos/atividades de outras materias. 
 
 ==================== Diario 06/08 (sexta) ====================
 Caio:
@@ -79,7 +85,7 @@ Vinicius:
   iniciei o login e a sessão para os usuario. (Issue #42)
 -O que vou fazer amanhã
   terminar o login e a sessão para os usuario. (Issue #42)
-  Criar as rotas de login e seus casos de teste, (Issue #)
+  Criar as rotas de login e seus casos de teste. (Issue #37)
 -Os problemas que eu tive/terei
   Pouco tempo.
   
