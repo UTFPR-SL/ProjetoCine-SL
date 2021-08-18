@@ -1,6 +1,6 @@
 
 function limparTelaADM(){
-    // document.getElementById("lisataSessoes").style.display = "none";
+    document.getElementById("lista_sessao").style.display = "none";
     document.getElementById("criarSessao").style.display = "none";
     document.getElementById("addFilme").style.display = "none";
     document.getElementById("addLogin").style.display = "none";
@@ -9,8 +9,9 @@ function limparTelaADM(){
 };
 
 function bttShowSessoes(){
+    listarSessoes();
     limparTelaADM();
-    // document.getElementById("listaSessoes").style.display = "block";
+    document.getElementById("lista_sessao").style.display = "block";
 };
 
 function bttAddSessao(){
