@@ -22,29 +22,23 @@ exports.filmesEmCartaz = async (req, res) => {
   );
 };
 
-
 exports.listarFilmes = async (req, res) => {
   console.log("\nListando todos os filmes!");
 
-  banco.query(
-    "SELECT * FROM Filmes ;",
-    function (err, result) {
-      if (err) {
-        console.log("ERRO!");
-        throw err;
-      }
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
-      );
-
-      res.json(result);
+  banco.query("SELECT * FROM Filmes ;", function (err, result) {
+    if (err) {
+      console.log("ERRO!");
+      throw err;
     }
-  );
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+
+    res.json(result);
+  });
 };
-
-
 
 // Função Adicionar Filme
 exports.addFilme = async (req, res) => {
@@ -60,20 +54,43 @@ exports.addFilme = async (req, res) => {
   console.log(data);
 
   banco.query(
-    "INSERT INTO Filmes (nome, cartazURL, duracao, genero, classificacaoIndicativa, sinopse) VALUES (?)",
-    [[data.nome, data.cartazURL, data.duracao, data.genero, data.classificacao, data.sinopse]],
+    `SELECT * FROM Filmes WHERE nome='${data.nome}'`,
     async function (err, result) {
       if (err) {
         console.log("ERRO!\n");
-        res.end("Erro ao adicionar o filme");
+        res.end("Erro ao verificar o filme no sistema");
         throw err;
       }
+      if (!result.length == 0) {
+        console.log("Filme já cadastrado no sistema!");
+        res.end("Filme já cadastrado no sistema!");
+      } else {
+        banco.query(
+          "INSERT INTO Filmes (nome, cartazURL, duracao, genero, classificacaoIndicativa, sinopse) VALUES (?)",
+          [
+            [
+              data.nome,
+              data.cartazURL,
+              data.duracao,
+              data.genero,
+              data.classificacao,
+              data.sinopse,
+            ],
+          ],
+          async function (err, result) {
+            if (err) {
+              console.log("ERRO!\n");
+              res.end("Erro ao adicionar o filme");
+              throw err;
+            }
 
-      console.log("Filme adicionado com sucesso\n");
+            console.log("Filme adicionado com sucesso\n");
 
-      res.write("Filme adicionado com sucesso!");
-      res.end();
+            res.write("Filme adicionado com sucesso!");
+            res.end();
+          }
+        );
+      }
     }
   );
 };
-

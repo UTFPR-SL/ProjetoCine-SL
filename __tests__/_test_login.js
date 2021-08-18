@@ -11,8 +11,8 @@ afterAll(async () => {
   await banco.query("delete from Login order by id desc limit 1");
 });
 
-describe("POST`s Login", () => {
-  test("Realizar Login (usuario errado) /login", async () => {
+describe("POST Login /login", () => {
+  test("Realizar Login (usuario errado)", async () => {
     const response = await supertest(app)
       .post("/login")
       .send({ usuario: "adminn", senha: "admin" });
@@ -22,7 +22,7 @@ describe("POST`s Login", () => {
     expect(response.body[0].mensagem).toBe("Usuário errado");
   });
 
-  test("Realizar Login (Senha Errada) /login", async () => {
+  test("Realizar Login (Senha Errada)", async () => {
     const response = await supertest(app)
       .post("/login")
       .send({ usuario: "admin", senha: "adminn" });
@@ -42,8 +42,10 @@ describe("POST`s Login", () => {
     expect(response.body[0].usuario).toBe("admin");
     expect(response.body[0].adm).toBe(1);
   });
+});
 
-  test("Adicionar Usuário (usuário indisponivel) /addUsuario", async () => {
+describe("POST Adicionar usuário /addUsuario", () => {
+  test("Adicionar Usuário (usuário indisponivel)", async () => {
     const response = await supertest(app).post("/addUsuario").send({
       nome: "Administrador",
       usuario: "admin",
@@ -55,7 +57,7 @@ describe("POST`s Login", () => {
     expect(response.text).toBe("Usuário Indisponível");
   });
 
-  test("Adicionar Usuário /addUsuario", async () => {
+  test("Adicionar Usuário", async () => {
     const response = await supertest(app)
       .post("/addUsuario")
       .send({ nome: "Testerson", usuario: "teste", senha: "123", adm: false });
@@ -65,7 +67,7 @@ describe("POST`s Login", () => {
   });
 });
 
-describe("GET`s Login", () => {
+describe("GET Listar usuários", () => {
   test("Listar usuários (Administrador) /usuarios", async () => {
     const response = await supertest(app).get("/usuarios");
 
