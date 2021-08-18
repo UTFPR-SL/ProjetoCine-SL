@@ -1,7 +1,7 @@
 <div class="addLogin">
     <center><b>Cadastrar Usuário</b></center>
     <br>
-    <form id="addLogin">
+    <form id="addLogin" onsubmit="addLogin(nome.value,login.value, senha.value, adm.checked); return false;">
     <div class="field padding-bottom--15">
       <label>
         Nome:<br>
@@ -20,6 +20,12 @@
         <br />
         <input type="password" name="senha" required />
       <br /><br />
+      <div class="field field-checkbox padding-bottom--15 flex-flex align-center">
+        <label>
+          <input type="checkbox" name="adm" /> &nbsp ADM
+        </label>
+      </div>
+      <br />
       <input type="submit" name="submit" value="Adicionar" />
     </form>
 </div>
