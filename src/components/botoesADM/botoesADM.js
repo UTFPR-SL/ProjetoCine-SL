@@ -1,18 +1,17 @@
 
 function limparTelaADM(){
-    // document.getElementById("lisataSessoes").style.display = "none";
+    document.getElementById("lista_sessao").style.display = "none";
     document.getElementById("criarSessao").style.display = "none";
     document.getElementById("addFilme").style.display = "none";
-<<<<<<< HEAD
-    document.getElementById("filtroFilmess").style.display = "none";
-=======
     document.getElementById("addLogin").style.display = "none";
->>>>>>> 24d57f414bf236601207f8fe611fc52d411b19f6
+    document.getElementById("lista_filmes").style.display = "none";
+    document.getElementById("lista_usuario").style.display = "none";
 };
 
 function bttShowSessoes(){
+    listarSessoes();
     limparTelaADM();
-    // document.getElementById("listaSessoes").style.display = "block";
+    document.getElementById("lista_sessao").style.display = "block";
 };
 
 function bttAddSessao(){
@@ -22,8 +21,9 @@ function bttAddSessao(){
 };
 
 function bttShowFilmes(){
+    filmesdaLista();
     limparTelaADM();
-     document.getElementById("filtroFilmes").style.display = "block";
+    document.getElementById("lista_filmes").style.display = "block";
 };
 
 function bttAddFilme(){
@@ -61,4 +61,9 @@ function filtroClassificacao(value){
 function bttAddLogin(){
     limparTelaADM();
     document.getElementById("addLogin").style.display = "block";
+};
+function bttShowUsuario(){
+    listarUsuarios();
+    limparTelaADM();
+    document.getElementById("lista_usuario").style.display = "block";
 };

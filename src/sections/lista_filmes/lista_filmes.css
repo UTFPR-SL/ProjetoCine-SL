@@ -1,11 +1,9 @@
-.filtro_filmes{
-    margin-top: 160px !important;
-    width: 700px;
-    padding: 5px;
+.lista_filmes{
+    margin-top: 0px !important;
     background-color: #292828;
     margin: auto;
-
-  }
+    width:100%;
+}
 
 
 

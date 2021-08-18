@@ -7,4 +7,5 @@ $(function () { $("#header").load("../../sections/header/header.html"); });
 $(function () { $("#footer").load("../../sections/footer/footer.html"); }); 
 $(function () { $("#lista_sessao").load("../../sections/lista_sessao/lista_sessao.html"); }); 
 $(function () { $("#headerADM").load("../../sections/headerADM/headerADM.html"); }); 
-$(function () { $("#filtro_filmes").load("../../sections/filtro_filmes/filtro_filmes.html"); }); 
+$(function () { $("#lista_filmes").load("../../sections/lista_filmes/lista_filmes.html"); }); 
+$(function () { $("#lista_usuario").load("../../sections/lista_usuario/lista_usuario.html"); }); 

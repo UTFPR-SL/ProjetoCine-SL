@@ -8,6 +8,60 @@ Marcando e conversando sobre as perguntas individualmente, sendo elas:
 -O que vou fazer amanhã
 -Os problemas que eu tive/terei
 
+
+==================== Diario 13/08 (sexta) ====================
+Caio:
+-O que eu fiz ontem
+
+-O que vou fazer amanhã
+
+-Os problemas que eu tive/terei
+
+
+Gustavo:
+-O que eu fiz ontem
+
+-O que vou fazer amanhã
+
+-Os problemas que eu tive/terei
+
+  
+Vinicius:
+-O que eu fiz ontem
+  Ajustar os casos de teste. (Issue #37)
+-O que vou fazer amanhã
+  Estudar e testar os filtros do jquery.
+-Os problemas que eu tive/terei
+  Tempo e incentivo, pois estou com problemas pessoais.
+
+==================== Diario 10/08 (terça) ====================
+Caio:
+-O que eu fiz ontem
+
+-O que vou fazer amanhã
+
+-Os problemas que eu tive/terei
+
+
+Gustavo:
+-O que eu fiz ontem
+  Testei os erros na tabela de mostrar filmes.(Issue #50)
+  consertar os erros(Issue #50)
+-O que vou fazer amanhã
+  Começar a a nova issue de listar usuarios(Issue #52)
+-Os problemas que eu tive/terei
+  não consegui consertar todos os erros na lista de filmes.(Issue #50)
+  
+Vinicius:
+-O que eu fiz ontem
+  terminei o login e a sessão para os usuario. (Issue #42)
+  Criei as rotas de login e seus casos de teste. (Issue #37)
+-O que vou fazer amanhã
+  Ajustar os casos de teste. (Issue $37)
+  Estudar sobre filtros em jquery.
+-Os problemas que eu tive/terei
+  Tempo, essa semana ja ocupei quase todos os "buracos" com outros trabalhos/atividades de outras materias. 
+
 ==================== Diario 06/08 (sexta) ====================
 Caio:
 -O que eu fiz ontem
@@ -19,18 +73,21 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
-  
+  Terminei de mostrar a lista de filmes.(Issue #50)
 -O que vou fazer amanhã
-  
+  Fazer testes para ver se possui erros.(Issue #50)
 -Os problemas que eu tive/terei
-  Tive problemas com o banco de dados que não estava carregando, tive que reinstalar o mysql.
+  Tive problemas com o banco de dados que não estava carregando, tive que reinstalar o mysql.(Issue #50)
   
 Vinicius:
 -O que eu fiz ontem
-  
+  criar casos de teste para as rotas. (Issue #37)
+  iniciei o login e a sessão para os usuario. (Issue #42)
 -O que vou fazer amanhã
-  
+  terminar o login e a sessão para os usuario. (Issue #42)
+  Criar as rotas de login e seus casos de teste. (Issue #37)
 -Os problemas que eu tive/terei
+  Pouco tempo.
   
 ==================== Diario 03/08 (terça) ====================
 Caio:
@@ -43,11 +100,11 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
-  Implementei a maoir parte do filtro.(Issue #38)
+  Implementei a maoir parte do filtro.(Issue #50)
 -O que vou fazer amanhã
-  Terminar de o resto do filtro.(Issue #38)
+  Terminar de o resto do filtro.(Issue #50)
 -Os problemas que eu tive/terei
-  Não ta mostrando o filtro no site.(Issue #38)
+  Não ta mostrando o filtro no site.(Issue #50)
   Pouco tempo para desenvolver o projeto.
   
 Vinicius:
@@ -72,11 +129,11 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
- Testes e correções na tabela de listar sessões.(Issue #19)
+
 -O que vou fazer amanhã
-  Implemantar o filtro de filmes.(Issue #38)
--Os problemas que eu tive/terei
-  Não sei.
+
+Z-Os problemas que eu tive/terei
+
   
 Vinicius:
 -O que eu fiz ontem

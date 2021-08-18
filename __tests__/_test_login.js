@@ -1,17 +1,18 @@
 console.log = function () {};
 
 const supertest = require("supertest");
-const app = require("../server/index");
 const respPadrao = require("./config");
-const server = require("../server/index");
-const banco = require("../server/config");
+const app = require("../server/config");
+const banco = require("../server/banco");
+
+var server = app.listen(50);
 
 afterAll(async () => {
   await banco.query("delete from Login order by id desc limit 1");
 });
 
-describe("POST`s Login", () => {
-  test("Realizar Login (usuario errado) /login", async () => {
+describe("POST Login /login", () => {
+  test("Realizar Login (usuario errado)", async () => {
     const response = await supertest(app)
       .post("/login")
       .send({ usuario: "adminn", senha: "admin" });
@@ -21,7 +22,7 @@ describe("POST`s Login", () => {
     expect(response.body[0].mensagem).toBe("Usuário errado");
   });
 
-  test("Realizar Login (Senha Errada) /login", async () => {
+  test("Realizar Login (Senha Errada)", async () => {
     const response = await supertest(app)
       .post("/login")
       .send({ usuario: "admin", senha: "adminn" });
@@ -41,22 +42,22 @@ describe("POST`s Login", () => {
     expect(response.body[0].usuario).toBe("admin");
     expect(response.body[0].adm).toBe(1);
   });
+});
 
-  test("Adicionar Usuário (usuário indisponivel) /addUsuario", async () => {
-    const response = await supertest(app)
-      .post("/addUsuario")
-      .send({
-        nome: "Administrador",
-        usuario: "admin",
-        senha: "admin",
-        adm: true,
-      });
+describe("POST Adicionar usuário /addUsuario", () => {
+  test("Adicionar Usuário (usuário indisponivel)", async () => {
+    const response = await supertest(app).post("/addUsuario").send({
+      nome: "Administrador",
+      usuario: "admin",
+      senha: "admin",
+      adm: true,
+    });
 
     expect(respPadrao(response)).toBe(true);
     expect(response.text).toBe("Usuário Indisponível");
   });
 
-  test("Adicionar Usuário /addUsuario", async () => {
+  test("Adicionar Usuário", async () => {
     const response = await supertest(app)
       .post("/addUsuario")
       .send({ nome: "Testerson", usuario: "teste", senha: "123", adm: false });
@@ -66,27 +67,39 @@ describe("POST`s Login", () => {
   });
 });
 
-describe("GET`s Login", () => {
-  test("Listar usuários /usuarios", async () => {
+describe("GET Listar usuários", () => {
+  test("Listar usuários (Administrador) /usuarios", async () => {
     const response = await supertest(app).get("/usuarios");
 
     expect(respPadrao(response)).toBe(true);
     expect(response.body[0].nome).toBe("Administrador");
     expect(response.body[0].usuario).toBe("admin");
     expect(response.body[0].adm).toBe(1);
+  });
 
+  test("Listar usuários (Caio) /usuarios", async () => {
+    const response = await supertest(app).get("/usuarios");
     expect(response.body[1].nome).toBe("Caio");
     expect(response.body[1].usuario).toBe("dansujaum");
     expect(response.body[1].adm).toBe(1);
+  });
 
+  test("Listar usuários (Gustavo) /usuarios", async () => {
+    const response = await supertest(app).get("/usuarios");
     expect(response.body[2].nome).toBe("gustavo");
     expect(response.body[2].usuario).toBe("kiboki");
     expect(response.body[2].adm).toBe(1);
+  });
 
+  test("Listar usuários (Vinícius) /usuarios", async () => {
+    const response = await supertest(app).get("/usuarios");
     expect(response.body[3].nome).toBe("Vinicius");
     expect(response.body[3].usuario).toBe("vnks");
     expect(response.body[3].adm).toBe(1);
+  });
 
+  test("Listar usuários (Juca) /usuarios", async () => {
+    const response = await supertest(app).get("/usuarios");
     expect(response.body[4].nome).toBe("Juca");
     expect(response.body[4].usuario).toBe("juquinha");
     expect(response.body[4].adm).toBe(0);
