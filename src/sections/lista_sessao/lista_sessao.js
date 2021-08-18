@@ -9,6 +9,8 @@ async function listarSessoes() {
         // Retorno do Ajax
         var resposta = JSON.parse(this.responseText);
 
+        document.getElementById("listaSessoes").innerText = '';
+        console.log(resposta);
         const div = document.createElement("div");
         // div.className = 'rowwww';
         var conteudo = `
