@@ -1,8 +1,8 @@
 console.log = function () {};
 
 const supertest = require("supertest");
-const app = require("../server/config");
 const respPadrao = require("./config");
+const app = require("../server/config");
 const banco = require("../server/banco");
 
 var server = app.listen(50);
@@ -44,14 +44,12 @@ describe("POST`s Login", () => {
   });
 
   test("Adicionar Usuário (usuário indisponivel) /addUsuario", async () => {
-    const response = await supertest(app)
-      .post("/addUsuario")
-      .send({
-        nome: "Administrador",
-        usuario: "admin",
-        senha: "admin",
-        adm: true,
-      });
+    const response = await supertest(app).post("/addUsuario").send({
+      nome: "Administrador",
+      usuario: "admin",
+      senha: "admin",
+      adm: true,
+    });
 
     expect(respPadrao(response)).toBe(true);
     expect(response.text).toBe("Usuário Indisponível");
@@ -68,26 +66,38 @@ describe("POST`s Login", () => {
 });
 
 describe("GET`s Login", () => {
-  test("Listar usuários /usuarios", async () => {
+  test("Listar usuários (Administrador) /usuarios", async () => {
     const response = await supertest(app).get("/usuarios");
 
     expect(respPadrao(response)).toBe(true);
     expect(response.body[0].nome).toBe("Administrador");
     expect(response.body[0].usuario).toBe("admin");
     expect(response.body[0].adm).toBe(1);
+  });
 
+  test("Listar usuários (Caio) /usuarios", async () => {
+    const response = await supertest(app).get("/usuarios");
     expect(response.body[1].nome).toBe("Caio");
     expect(response.body[1].usuario).toBe("dansujaum");
     expect(response.body[1].adm).toBe(1);
+  });
 
+  test("Listar usuários (Gustavo) /usuarios", async () => {
+    const response = await supertest(app).get("/usuarios");
     expect(response.body[2].nome).toBe("gustavo");
     expect(response.body[2].usuario).toBe("kiboki");
     expect(response.body[2].adm).toBe(1);
+  });
 
+  test("Listar usuários (Vinícius) /usuarios", async () => {
+    const response = await supertest(app).get("/usuarios");
     expect(response.body[3].nome).toBe("Vinicius");
     expect(response.body[3].usuario).toBe("vnks");
     expect(response.body[3].adm).toBe(1);
+  });
 
+  test("Listar usuários (Juca) /usuarios", async () => {
+    const response = await supertest(app).get("/usuarios");
     expect(response.body[4].nome).toBe("Juca");
     expect(response.body[4].usuario).toBe("juquinha");
     expect(response.body[4].adm).toBe(0);

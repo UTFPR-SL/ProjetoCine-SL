@@ -5,7 +5,7 @@ const app = require("../server/config");
 const respPadrao = require("./config");
 const banco = require("../server/banco");
 
-var server = app.listen(50);
+var server = app.listen(51);
 
 afterAll(async () => {
   await banco.query("delete from Filmes order by id desc limit 1");
