@@ -20,8 +20,8 @@ async function filmesdaLista() {
                     <th>&nbsp Duracao &nbsp</th>  
                     <th>&nbsp&nbsp 3D &nbsp &nbsp</th>
                     <th>Classificação Indicativa</th>
-                    <th>em cartaz</th>
-                    <th>sinopse</th>
+                    <th>Em cartaz</th>
+                    <th>Sinopse</th>
                 </tr>`;
         for (var g = 0; g < resposta.length; g++) {
           if (resposta[g].e3d == true) {

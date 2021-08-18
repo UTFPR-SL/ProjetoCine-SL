@@ -4,10 +4,21 @@
     flex-direction: column;
     width: 120px;
     height: 700px;
-    margin-right: 20px;
+    margin-right: 5px;
     border: 5px solid black;
     border-top-left-radius: 50% 7%;
     border-bottom-left-radius: 35% 7%;
+    line-height: 2.5;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 31px;
 }
 
 .botaoADM{
@@ -29,17 +40,11 @@
     visibility: visible;  
 } 
 
-.botaoADM ul li a {  
+.botaoADM li a {  
     width: 10px;  
     height: 50px;  
     display: block;   
 }  
-
-.botaoADM ul  
-{  
-    width: 210%;
-     line-height: 0px;  
-} 
 
 .botaoADM li {  
     list-style: none;     
