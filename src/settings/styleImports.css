@@ -22,3 +22,4 @@
 @import '../sections/lista_filmes/lista_filmes.css'; 
 @import '../sections/lista_usuario/lista_usuario.css'; 
 @import '../components/filtroFilme/filtroFilme.css'; 
+@import '../components/filtroSessao/filtroSessao.css'; 
