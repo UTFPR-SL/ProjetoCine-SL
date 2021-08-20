@@ -5,6 +5,7 @@ function limparTelaADM(){
     document.getElementById("addFilme").style.display = "none";
     document.getElementById("addLogin").style.display = "none";
     document.getElementById("lista_filmes").style.display = "none";
+    document.getElementById("filtroFilme").style.display = "none";
     document.getElementById("lista_usuario").style.display = "none";
 };
 
@@ -24,6 +25,7 @@ function bttShowFilmes(){
     filmesdaLista();
     limparTelaADM();
     document.getElementById("lista_filmes").style.display = "block";
+    document.getElementById("filtroFilme").style.display = "block";
 };
 
 function bttAddFilme(){
