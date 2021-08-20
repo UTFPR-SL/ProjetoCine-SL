@@ -26,9 +26,14 @@ async function filmesdaLista() {
         for (var g = 0; g < resposta.length; g++) {
           if (resposta[g].e3d == true) {
             var e3d = "3D";
-          } else {
+          }else{
             var e3d = "2D";
           }
+            if (resposta[g].cartaz == true) {
+              var cartaz = "✔️";
+            } else {
+              var cartaz = "❌";
+            }
           conteudo +=
             `
                 <tr>
@@ -48,7 +53,7 @@ async function filmesdaLista() {
             resposta[g].classificacaoIndicativa +
             `</td>
                     <td>` +
-            resposta[g].cartaz +
+            cartaz +
             `</td>
                     <td>` +
             resposta[g].sinopse.substr(0, 100) +

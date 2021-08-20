@@ -21,6 +21,11 @@
                       <th>&nbsp ADM &nbsp</th>
                   </tr>`;
           for (var g = 0; g < resposta.length; g++) {
+            if (resposta[g].adm == true) {
+              var adm = "✔️";
+            } else {
+              var adm = "❌";
+            }
             conteudo +=
               `
                   <tr>
@@ -31,7 +36,7 @@
               resposta[g].usuario +
               `</td>
                       <td>` +
-              resposta[g].adm +
+              adm +
               `</td>
                   </tr>
                   `;
