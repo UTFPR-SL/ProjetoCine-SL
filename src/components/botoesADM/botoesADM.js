@@ -1,7 +1,7 @@
 
 function limparTelaADM(){
     document.getElementById("filtroSessao").style.display = "none";
-    document.getElementById("lista_sessao").style.display = "none";
+    document.getElementById("lista_sessao_adm").style.display = "none";
     document.getElementById("criarSessao").style.display = "none";
     document.getElementById("addFilme").style.display = "none";
     document.getElementById("addLogin").style.display = "none";
@@ -11,9 +11,9 @@ function limparTelaADM(){
 };
 
 function bttShowSessoes(){
-    sessoesDisponiveis();
+    listarSessoesADM();
     limparTelaADM();
-    document.getElementById("lista_sessao").style.display = "block";
+    document.getElementById("lista_sessao_adm").style.display = "block";
 };
 
 function bttAddSessao(){
