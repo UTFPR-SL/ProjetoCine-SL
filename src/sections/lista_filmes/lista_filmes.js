@@ -13,21 +13,21 @@ async function filmesdaLista() {
         const div = document.createElement("div");
         var conteudo = `
           
-            <table class="center">
+            <table id="listaFilmes" class="center">
                 <tr>
                     <th>&nbsp Cartaz &nbsp</th>
                     <th>&nbsp Nome &nbsp</th>
-                    <th>&nbsp Duracao &nbsp</th>  
-                    <th>&nbsp&nbsp 3D &nbsp &nbsp</th>
+                    <th>&nbsp Duracao &nbsp</th> 
+                    <th>&nbsp Gênero &nbsp</th> 
                     <th>Classificação Indicativa</th>
                     <th>Em cartaz</th>
                     <th>Sinopse</th>
                 </tr>`;
         for (var g = 0; g < resposta.length; g++) {
-          if (resposta[g].e3d == true) {
-            var e3d = "3D";
+          if (resposta[g].cartaz == true) {
+            var cartaz = "Em Cartaz";
           } else {
-            var e3d = "2D";
+            var cartaz = "Fora de Cartaz";
           }
           conteudo +=
             `
@@ -42,13 +42,13 @@ async function filmesdaLista() {
             resposta[g].duracao +
             `</td>
                     <td>` +
-            e3d +
+            resposta[g].genero +
             `</td>
                     <td>` +
             resposta[g].classificacaoIndicativa +
             `</td>
                     <td>` +
-            resposta[g].cartaz +
+            cartaz +
             `</td>
                     <td>` +
             resposta[g].sinopse.substr(0, 100) +
