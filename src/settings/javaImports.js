@@ -25,3 +25,4 @@ $.getScript('../../components/addLogin/addLogin.js', function() {});
 $.getScript('../../sections/lista_filmes/lista_filmes.js', function() {}); 
 $.getScript('../../sections/lista_usuario/lista_usuario.js', function() {}); 
 $.getScript('../../components/filtroFilme/filtroFilme.js', function() {}); 
+$.getScript('../../sections/lista_sessao_adm/lista_sessao_adm.js', function() {}); 
