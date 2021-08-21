@@ -15,15 +15,15 @@ beforeAll(async () => {
     "insert into filmes (nome, cartaz, cartazURL, duracao, genero, classificacaoIndicativa, sinopse) values ('Filme Teste', '0', 'sem foto', '0h 10min', 'testes', 'Livre', 'Adicionando filme para teste')"
   );
   await banco.query(
-    "select * from filmes order by id desc limit 1",
-    async function (err, result) {
-      id_inesxistente = result[0].id + 10;
-    }
-  );
-  await banco.query(
     "select * from filmes where nome='Filme Teste'",
     async function (err, result) {
       id_indisponivel = result[0].id;
+    }
+  );
+  await banco.query(
+    "select * from filmes order by id desc limit 1",
+    async function (err, result) {
+      id_inesxistente = result[0].id + 10;
     }
   );
 });
@@ -68,9 +68,7 @@ describe("GET Listar as Sessões /sessoesDisponiveis", () => {
       "select * from sessoes where status=1 order by id_filme desc limit 1",
       async function (err, result) {
         expect(respPadrao(response)).toBe(true);
-        expect(response.body[response.body.length - 1].id).toBe(
-          result[0].id_filme
-        );
+        expect(response.body[response.body.length - 1].id).toBe(result[0].id);
       }
     );
   });

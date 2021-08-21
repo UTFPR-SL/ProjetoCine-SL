@@ -8,6 +8,7 @@ function limparTelaADM(){
     document.getElementById("lista_filmes").style.display = "none";
     document.getElementById("filtroFilme").style.display = "none";
     document.getElementById("lista_usuario").style.display = "none";
+    document.getElementById("filtroUsuario").style.display = "none";
 };
 
 function bttShowSessoes(){
@@ -70,4 +71,5 @@ function bttShowUsuario(){
     listarUsuarios();
     limparTelaADM();
     document.getElementById("lista_usuario").style.display = "block";
+    document.getElementById("filtroUsuario").style.display = "block";
 };
