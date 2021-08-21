@@ -1,6 +1,6 @@
-async function listarSessoes() {
+async function sessoesDisponiveis() {
   if (document.getElementById("lista_sessao")) {
-    ajax.open("GET", "http://localhost/listarSessoes", true);
+    ajax.open("GET", "http://localhost/sessoesDisponiveis", true);
     ajax.send();
 
     ajax.onreadystatechange = function () {
@@ -9,6 +9,8 @@ async function listarSessoes() {
         // Retorno do Ajax
         var resposta = JSON.parse(this.responseText);
 
+        document.getElementById("listaSessoes").innerText = '';
+        console.log(resposta);
         const div = document.createElement("div");
         // div.className = 'rowwww';
         var conteudo = `

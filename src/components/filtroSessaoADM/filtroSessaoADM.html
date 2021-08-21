@@ -1,0 +1,43 @@
+<div class="filtroSessaoADM">
+    <form onkeyup="filtrarSessaoADM(this)" onchange="filtrarSessaoADM(this)">
+        
+        <input name="nome" type="text" placeholder="Nome"/>
+        <input name="genero" type="text" placeholder="Genero"/>
+        
+        <select name="idioma">
+            <option>Todos</option>
+            <option>Dublado</option>
+            <option>Legendado</option>
+            <option>Nacional</option>
+        </select>
+        
+        <select name="e3d">
+            <option>Todos</option>
+            <option>2D</option>
+            <option>3D</option>
+        </select>
+        
+        <select name="classificacao">
+            <option>Todos</option selected>
+            <option>Livre</option>
+            <option>10</option>
+            <option>12</option>
+            <option>14</option>
+            <option>16</option>
+            <option>18</option>
+        </select>
+        
+        <select name="disponivel">
+            <option>Todos</option>
+            <option>Disponível</option>
+            <option>Indisponível</option>
+        </select>
+        
+        <input name="sala" type="number" placeholder="Sala" min="1" max="3">
+        <input name="lugaresMin" type="number" placeholder="Lugares" min="0" max="30">
+        <input name="lugaresMax" type="number" placeholder="Lugares" min="0" max="30">
+        <input name="sinopse" type="text" placeholder="Sinopse"/>
+        
+    </form>
+
+</div>

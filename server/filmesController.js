@@ -22,6 +22,7 @@ exports.filmesEmCartaz = async (req, res) => {
   );
 };
 
+// Listar todos os filmes
 exports.listarFilmes = async (req, res) => {
   console.log("\nListando todos os filmes!");
 

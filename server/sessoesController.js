@@ -1,16 +1,36 @@
 const { json } = require("body-parser");
 const banco = require("./banco");
 
-// Listar todas as sessoes
-exports.listarSessoes = async (req, res) => {
+// Listar todas as sessoes disponíveis
+exports.sessoesDisponiveis = async (req, res) => {
   console.log("\nListando Sessões Disponíveis");
 
-  var sql =
-    "SELECT Sessoes.id, cartazURL, horario, e3d, idioma, qtd_lugares, nome,duracao, " +
-    "classificacaoIndicativa FROM Sessoes " +
-    "INNER JOIN Filmes " +
-    "ON Sessoes.id_filme = Filmes.id " +
-    "WHERE status = true;";
+  var sql = `SELECT Filmes.nome, Filmes.duracao, Filmes.genero,
+  Filmes.classificacaoIndicativa, Filmes.sinopse, Filmes.cartazURL,
+  Sessoes.id, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala, Sessoes.qtd_lugares
+  FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id 
+  WHERE status = true;`;
+
+  banco.query(sql, function (err, result) {
+    if (err) throw err;
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+
+    res.json(result);
+  });
+};
+
+// Listar todas as sessoes
+exports.listarSessoes = async (req, res) => {
+  console.log("\nListando Sessões");
+
+  var sql = `SELECT Filmes.nome, Filmes.duracao, Filmes.genero,
+  Filmes.classificacaoIndicativa, Filmes.sinopse, Filmes.cartazURL,
+  Sessoes.id, Sessoes.status, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala, Sessoes.qtd_lugares
+  FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id ;`;
 
   banco.query(sql, function (err, result) {
     if (err) throw err;
@@ -56,7 +76,7 @@ exports.criarSessao = async (req, res) => {
         } else {
           banco.query(
             "INSERT INTO Sessoes (id_filme, horario, e3d, idioma, sala) VALUES (?)",
-            [[data.filme, data.horario, data.e3d, data.idioma, data.sala]],
+            [[data.id_filme, data.horario, data.e3d, data.idioma, data.sala]],
             async function (err, result) {
               if (err) {
                 console.log("ERRO!\n");

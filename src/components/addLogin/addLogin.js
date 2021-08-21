@@ -1,4 +1,3 @@
-const { usuarios } = require("../../../server/loginController");
 
 async function addLogin(nome, usuario, senha, adm) {
     var msg;
@@ -32,6 +31,7 @@ async function addLogin(nome, usuario, senha, adm) {
             var data = ajax.responseText;
             console.log(data);
             alert(data);
+            if(data == 'Usuário adicionado com sucesso!')location.reload();
           }
         };
       }
