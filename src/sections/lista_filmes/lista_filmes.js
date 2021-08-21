@@ -24,14 +24,13 @@ async function filmesdaLista() {
                     <th>Sinopse</th>
                 </tr>`;
         for (var g = 0; g < resposta.length; g++) {
-          if (resposta[g].cartaz == true) {
-            var cartaz = "Em Cartaz";
-          } else {
-            var cartaz = "Fora de Cartaz";
-          }
+            if (resposta[g].cartaz == true) {
+              var cartaz = "✔️";
+            } else {
+              var cartaz = "❌";
+            }
           conteudo +=
-            `
-                <tr>
+            `<tr>
                     <td><img class="cartaz" src="` +
             resposta[g].cartazURL +
             `"></td>

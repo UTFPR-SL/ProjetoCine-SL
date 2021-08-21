@@ -1,9 +1,12 @@
 .lista_sessao{
-    width: 700px;
-    padding: 5px;
-    background-color: #292828;
-    margin: auto;
-
+  background: #fff;
+  width: 70%;
+  height: 100%;
+  overflow:auto; 
+  border: 15px solid rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 5px #aaaaaa;
   }
 
 

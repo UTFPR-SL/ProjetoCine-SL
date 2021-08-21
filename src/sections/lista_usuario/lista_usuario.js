@@ -19,15 +19,15 @@ async function listarUsuarios() {
                       <th>&nbsp Usuario &nbsp</th> 
                       <th>&nbsp ADM &nbsp</th>
                   </tr>`;
-        for (var g = 0; g < resposta.length; g++) {
-          if (resposta[g].adm == true) {
-            var adm = "Administrador";
-          } else {
-            var adm = "Usuário";
-          }
-          conteudo +=
-            `
-                  <tr>
+        
+          for (var g = 0; g < resposta.length; g++) {
+            if (resposta[g].adm == true) {
+              var adm = "✔️";
+            } else {
+              var adm = "❌";
+            }
+            conteudo +=
+              `<tr>
                       <td>` +
             resposta[g].nome +
             `</td>
