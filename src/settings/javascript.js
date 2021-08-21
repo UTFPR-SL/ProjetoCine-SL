@@ -32,6 +32,6 @@ window.onload = async function () {
   }
 
   if (page[page.length - 2] == "home") {
-    listarSessoes();
+    sessoesDisponiveis();
   }
 };
