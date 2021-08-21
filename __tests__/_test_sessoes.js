@@ -33,26 +33,27 @@ afterAll(async () => {
   await banco.query("delete from Filmes order by id desc limit 1");
 });
 
-describe("GET Listar as Sessões /sessoesDisponiveis", () => {
+describe("GET Listar as Sessões Disponíveis /sessoesDisponiveis", () => {
   test("Listar as Sessões", async () => {
     const response = await supertest(app).get("/sessoesDisponiveis");
 
     expect(respPadrao(response)).toBe(true);
-    expect(JSON.stringify(response.body)).toContain(`[{"id":`);
+    expect(JSON.stringify(response.body)).toContain(`[{"nome":`);
+    expect(JSON.stringify(response.body)).toContain(`,"duracao":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"genero":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"classificacaoIndicativa":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"sinopse":"`);
     expect(JSON.stringify(response.body)).toContain(`,"cartazURL":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"id":`);
     expect(JSON.stringify(response.body)).toContain(`,"horario":"`);
     expect(JSON.stringify(response.body)).toContain(`,"e3d":`);
     expect(JSON.stringify(response.body)).toContain(`,"idioma":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"sala":"`);
     expect(JSON.stringify(response.body)).toContain(`,"qtd_lugares":`);
-    expect(JSON.stringify(response.body)).toContain(`,"nome":"`);
-    expect(JSON.stringify(response.body)).toContain(`,"duracao":"`);
-    expect(JSON.stringify(response.body)).toContain(
-      `,"classificacaoIndicativa":"`
-    );
     expect(JSON.stringify(response.body)).toContain(`}]`);
   });
 
-  test("Listar as Sessões (Primeira sessao)", async () => {
+  test("Listar as Sessões Disponíveis (Primeira sessao)", async () => {
     const response = await supertest(app).get("/sessoesDisponiveis");
     const result = await banco.query(
       "select * from sessoes where status=1 order by id_filme asc limit 1",
@@ -62,10 +63,52 @@ describe("GET Listar as Sessões /sessoesDisponiveis", () => {
       }
     );
   });
-  test("Listar as Sessões (Ultima sessao)", async () => {
+  test("Listar as Sessões Disponíveis (Ultima sessao)", async () => {
     const response = await supertest(app).get("/sessoesDisponiveis");
     const result = await banco.query(
       "select * from sessoes where status=1 order by id_filme desc limit 1",
+      async function (err, result) {
+        expect(respPadrao(response)).toBe(true);
+        expect(response.body[response.body.length - 1].id).toBe(result[0].id);
+      }
+    );
+  });
+});
+
+describe("GET Listar as Sessões /listarSessoes", () => {
+  test("Listar as Sessões", async () => {
+    const response = await supertest(app).get("/listarSessoes");
+
+    expect(respPadrao(response)).toBe(true);
+    expect(JSON.stringify(response.body)).toContain(`[{"nome":`);
+    expect(JSON.stringify(response.body)).toContain(`,"duracao":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"genero":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"classificacaoIndicativa":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"sinopse":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"cartazURL":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"id":`);
+    expect(JSON.stringify(response.body)).toContain(`,"horario":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"e3d":`);
+    expect(JSON.stringify(response.body)).toContain(`,"idioma":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"sala":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"qtd_lugares":`);
+    expect(JSON.stringify(response.body)).toContain(`}]`);
+  });
+
+  test("Listar as Sessões (Primeira sessao)", async () => {
+    const response = await supertest(app).get("/listarSessoes");
+    const result = await banco.query(
+      "select * from sessoes order by id_filme asc limit 1",
+      async function (err, result) {
+        expect(respPadrao(response)).toBe(true);
+        expect(response.body[0].id).toBe(result[0].id);
+      }
+    );
+  });
+  test("Listar as Sessões (Ultima sessao)", async () => {
+    const response = await supertest(app).get("/listarSessoes");
+    const result = await banco.query(
+      "select * from sessoes order by id_filme desc limit 1",
       async function (err, result) {
         expect(respPadrao(response)).toBe(true);
         expect(response.body[response.body.length - 1].id).toBe(result[0].id);

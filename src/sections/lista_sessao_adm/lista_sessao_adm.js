@@ -35,9 +35,9 @@ async function listarSessoesADM() {
             var e3d = "2D";
           }
           if (resposta[g].status == true) {
-            var disponivel = "Disponível";
+            var disponivel = "✔️";
           } else {
-            var disponivel = "Indisponível";
+            var disponivel = "❌";
           }
           conteudo +=
             `
