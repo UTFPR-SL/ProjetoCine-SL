@@ -29,7 +29,7 @@ exports.listarSessoes = async (req, res) => {
 
   var sql = `SELECT Filmes.nome, Filmes.duracao, Filmes.genero,
   Filmes.classificacaoIndicativa, Filmes.sinopse, Filmes.cartazURL,
-  Sessoes.id, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala, Sessoes.qtd_lugares
+  Sessoes.id, Sessoes.status, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala, Sessoes.qtd_lugares
   FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id ;`;
 
   banco.query(sql, function (err, result) {
