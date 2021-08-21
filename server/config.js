@@ -20,6 +20,8 @@ const ADM = require("./admController");
 // Rotas de Sessoe
 const sessoes = require("./sessoesController");
 
+app.get("/sessoesDisponiveis", sessoes.sessoesDisponiveis);
+
 app.get("/listarSessoes", sessoes.listarSessoes);
 
 app.post("/criarSessao", sessoes.criarSessao);

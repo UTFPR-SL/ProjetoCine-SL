@@ -1,6 +1,6 @@
 function filtrarFilmes(form) {
   var mostrar;
-  linha = document.getElementById("listaFilmes").getElementsByTagName("tr");
+  linha = document.getElementById("TabelaListaFilmes").getElementsByTagName("tr");
 
   nome = form.nome.value.toUpperCase();
   genero = form.genero.value.toUpperCase();
@@ -14,7 +14,6 @@ function filtrarFilmes(form) {
   for (var i = 1; i < linha.length; i++) {
     mostrar = true;
     if (nome) {
-      console.log("nome");
       campo = linha[i].getElementsByTagName("td")[1];
       txtValue = campo.textContent || campo.innerText;
 
@@ -24,7 +23,6 @@ function filtrarFilmes(form) {
     }
 
     if (genero) {
-      console.log("genero");
       campo = linha[i].getElementsByTagName("td")[3];
       txtValue = campo.textContent || campo.innerText;
 
@@ -34,7 +32,6 @@ function filtrarFilmes(form) {
     }
 
     if (classificacao) {
-      console.log("classificacao");
       campo = linha[i].getElementsByTagName("td")[4];
       txtValue = campo.textContent || campo.innerText;
 
@@ -44,7 +41,6 @@ function filtrarFilmes(form) {
     }
 
     if (cartaz) {
-      console.log("classificacao");
       campo = linha[i].getElementsByTagName("td")[5];
       txtValue = campo.textContent || campo.innerText;
 
@@ -54,7 +50,6 @@ function filtrarFilmes(form) {
     }
 
     if (sinopse) {
-      console.log("nome");
       campo = linha[i].getElementsByTagName("td")[6];
       txtValue = campo.textContent || campo.innerText;
 

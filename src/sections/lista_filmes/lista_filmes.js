@@ -13,7 +13,7 @@ async function filmesdaLista() {
         const div = document.createElement("div");
         var conteudo = `
           
-            <table id="listaFilmes" class="center">
+            <table id="TabelaListaFilmes" class="center">
                 <tr>
                     <th>&nbsp Cartaz &nbsp</th>
                     <th>&nbsp Nome &nbsp</th>

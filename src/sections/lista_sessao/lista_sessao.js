@@ -1,6 +1,6 @@
-async function listarSessoes() {
+async function sessoesDisponiveis() {
   if (document.getElementById("lista_sessao")) {
-    ajax.open("GET", "http://localhost/listarSessoes", true);
+    ajax.open("GET", "http://localhost/sessoesDisponiveis", true);
     ajax.send();
 
     ajax.onreadystatechange = function () {

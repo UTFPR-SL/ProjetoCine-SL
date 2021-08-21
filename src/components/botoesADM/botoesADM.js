@@ -1,5 +1,6 @@
 
 function limparTelaADM(){
+    document.getElementById("filtroSessaoADM").style.display = "none";
     document.getElementById("lista_sessao_adm").style.display = "none";
     document.getElementById("criarSessao").style.display = "none";
     document.getElementById("addFilme").style.display = "none";
@@ -12,6 +13,7 @@ function limparTelaADM(){
 function bttShowSessoes(){
     listarSessoesADM();
     limparTelaADM();
+    document.getElementById("filtroSessaoADM").style.display = "block";
     document.getElementById("lista_sessao_adm").style.display = "block";
 };
 
