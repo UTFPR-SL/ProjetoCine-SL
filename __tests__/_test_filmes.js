@@ -7,9 +7,24 @@ const banco = require("../server/banco");
 
 var server = app.listen(51);
 
+var id_teste = 0;
+var id_inexistente = 0;
+
 beforeAll(async () => {
   await banco.query(
     "insert into filmes (nome, cartazURL, duracao, genero, classificacaoIndicativa, sinopse) values ('Testerson', 'sem cartaz', '0h 10min', 'teste/Aventura', 'Livre', 'Adicionando filme para teste')"
+  );
+  await banco.query(
+    "select * from filmes where nome='Testerson'",
+    async function (err, result) {
+      id_teste = result[0].id;
+    }
+  );
+  await banco.query(
+    "select * from filmes order by id desc limit 1",
+    async function (err, result) {
+      id_inexistente = result[0].id + 10;
+    }
   );
 });
 
@@ -83,8 +98,8 @@ describe("GET Filmes Cadastrados /listarFilmes", () => {
   });
 });
 
-describe("Post`s Filmes", () => {
-  test("Adicionar Filme (Filme ja cadastrado) /addFilme", async () => {
+describe("Post`s Adicionar Filmes /addFilme", () => {
+  test("Adicionar Filme (Filme ja cadastrado)", async () => {
     const response = await supertest(app).post("/addFilme").send({
       nome: "Testerson",
       cartazURL: "sem cartaz",
@@ -97,7 +112,7 @@ describe("Post`s Filmes", () => {
     expect(respPadrao(response)).toBe(true);
     expect(response.text).toBe("Filme já cadastrado no sistema!");
   });
-  test("Adicionar Filme /addFilme", async () => {
+  test("Adicionar Filme", async () => {
     const response = await supertest(app).post("/addFilme").send({
       nome: "Testerson 2",
       cartazURL: "sem cartaz",
@@ -109,6 +124,29 @@ describe("Post`s Filmes", () => {
 
     expect(respPadrao(response)).toBe(true);
     expect(response.text).toBe("Filme adicionado com sucesso!");
+  });
+});
+
+describe("Put Atualizar Status (Em Cartaz) do Filmes /attStatusFilme", () => {
+  test("Atualizando Filme (Filme Inexistente)", async () => {
+    const response = await supertest(app).put("/attStatusFilme/"+id_inexistente);
+
+    expect(response.body.cod).toBe(0);
+    expect(response.body.msg).toBe("Filme Inexistente!");
+  });
+  test("Atualizando Filme para indisponivel", async () => {
+    const response = await supertest(app).put("/attStatusFilme/"+id_teste);
+
+    expect(response.body.cod).toBe(1);
+    expect(response.body.msg).toBe("Filme Atualizado!");
+    expect(response.body.status).toBe(false);
+  });
+  test("Atualizando Filme para disponivel", async () => {
+    const response = await supertest(app).put("/attStatusFilme/"+id_teste);
+
+    expect(response.body.cod).toBe(1);
+    expect(response.body.msg).toBe("Filme Atualizado!");
+    expect(response.body.status).toBe(true);
   });
 });
 

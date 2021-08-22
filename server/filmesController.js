@@ -119,7 +119,7 @@ exports.attStatusFilme = async (req, res) => {
 
       if (result.length == 0) {
         console.log("Filme Inesxistente!");
-        res.end({cod:0, msg:"Filme Inexistente!"});
+        res.json({cod:0, msg:"Filme Inexistente!"});
       } else {
         console.log("Atualizando o Filme:");
         console.log(result[0]);
