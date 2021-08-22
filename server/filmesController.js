@@ -95,3 +95,50 @@ exports.addFilme = async (req, res) => {
     }
   );
 };
+
+// Função para muda o status (em cartaz) do filme
+exports.attStatusFilme = async (req, res) => {
+  console.log("\nAtualizando Filme");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    
+    var id = req.params.id;
+    console.log(id);
+
+  banco.query(
+    `SELECT * FROM Filmes WHERE id='${id}'`,
+    async function (err, result) {
+      if (err) {
+        console.log("ERRO!\n");
+        res.json({cod:-1, msg:"Erro ao verificar o filme no sistema"});
+        throw err;
+      }
+
+      if (result.length == 0) {
+        console.log("Filme Inesxistente!");
+        res.end({cod:0, msg:"Filme Inexistente!"});
+      } else {
+        console.log("Atualizando o Filme:");
+        console.log(result[0]);
+        var status = true;
+        if (result[0].cartaz == true) status = false;
+        else status = true;
+        
+        banco.query(
+          `UPDATE Filmes set cartaz=${status} WHERE id='${id}'`,
+          async function (err, result) {
+            if (err) {
+              console.log("ERRO!\n");
+              res.json({cod:-1, msg:"Erro ao atualizar o filme!"});
+              throw err;
+            }
+            console.log("Filme Atualizado!");
+            res.json({cod:1, msg:"Filme Atualizado!", status:status});
+          });
+      }
+    }
+  );
+};

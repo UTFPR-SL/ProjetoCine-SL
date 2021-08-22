@@ -35,6 +35,8 @@ app.get("/listarFilmes", filmes.listarFilmes);
 
 app.post("/addFilme", filmes.addFilme);
 
+app.put("/attStatusFilme/:id", filmes.attStatusFilme);
+
 // Rotas de login`s
 const login = require("./loginController");
 
