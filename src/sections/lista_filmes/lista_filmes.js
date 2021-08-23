@@ -1,9 +1,7 @@
- 
 async function filmesdaLista() {
   if (document.getElementById("lista_filmes")) {
     ajax.open("GET", "http://localhost/listarFilmes", true);
     ajax.send();
-    console.log();
     ajax.onreadystatechange = function () {
       // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
       if (ajax.readyState == 4 && ajax.status == 200) {
@@ -24,11 +22,11 @@ async function filmesdaLista() {
                     <th>Sinopse</th>
                 </tr>`;
         for (var g = 0; g < resposta.length; g++) {
-            if (resposta[g].cartaz == true) {
-              var cartaz = "✔️";
-            } else {
-              var cartaz = "❌";
-            }
+          if (resposta[g].cartaz == true) {
+            var cartaz = "✔️";
+          } else {
+            var cartaz = "❌";
+          }
           conteudo +=
             `<tr>
                     <td><img class="cartaz" src="` +
@@ -46,9 +44,9 @@ async function filmesdaLista() {
                     <td>` +
             resposta[g].classificacaoIndicativa +
             `</td>
-                    <td>` +
+                    <td id='status${resposta[g].id}'>` +
             cartaz +
-            `</td>
+            `&nbsp <i class="bi bi-arrow-repeat" onclick="attStatusFilme(${resposta[g].id}, status${resposta[g].id}.innerHTML)" ></i> </td>
                     <td>` +
             resposta[g].sinopse.substr(0, 100) +
             `</td>
@@ -59,9 +57,30 @@ async function filmesdaLista() {
             </table>
           `;
         div.innerHTML = conteudo;
-        document.getElementById("listaFilmes").innerHTML="";
+        document.getElementById("listaFilmes").innerHTML = "";
         document.getElementById("listaFilmes").appendChild(div);
       }
     };
   }
+}
+
+function attStatusFilme(id, texto) {
+  ajax.open("PUT", "http://localhost/attStatusFilme/"+id, true);
+  ajax.send();
+  ajax.onreadystatechange = function () {
+    // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
+    if (ajax.readyState == 4 && ajax.status == 200) {
+      // Retorno do Ajax
+      var resposta =  JSON.parse(this.responseText);
+
+      if(resposta.cod != 1){
+        alert(resposta.msg);
+      }else{
+        if(resposta.status == true)
+        document.getElementById(`status${id}`).innerHTML = '✔️' + texto.substr(1)
+        else
+        document.getElementById(`status${id}`).innerHTML = '❌' + texto.substr(1)
+      }
+    }
+  };
 }

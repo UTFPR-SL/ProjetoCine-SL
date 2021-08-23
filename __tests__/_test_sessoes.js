@@ -8,6 +8,7 @@ const banco = require("../server/banco");
 var server = app.listen(52);
 
 var id_indisponivel = 0;
+var id_disponivel = 0;
 var id_inesxistente = 0;
 
 beforeAll(async () => {
@@ -24,6 +25,12 @@ beforeAll(async () => {
     "select * from filmes order by id desc limit 1",
     async function (err, result) {
       id_inesxistente = result[0].id + 10;
+    }
+  );
+  await banco.query(
+    "select * from filmes where cartaz=1",
+    async function (err, result) {
+      id_disponivel = result[0].id;
     }
   );
 });
@@ -146,7 +153,7 @@ describe("Post Adicionar Sessão /criarSessao", () => {
 
   test("Adicionar Sessão", async () => {
     const response = await supertest(app).post("/criarSessao").send({
-      id_filme: "1",
+      id_filme: id_disponivel,
       horario: "20:30",
       e3d: false,
       idioma: "legendado",
