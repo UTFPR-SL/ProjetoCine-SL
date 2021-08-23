@@ -103,41 +103,49 @@ exports.attStatusFilme = async (req, res) => {
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    
-    var id = req.params.id;
-    console.log(id);
+  );
+
+  var id = req.params.id;
+  console.log(id);
 
   banco.query(
     `SELECT * FROM Filmes WHERE id='${id}'`,
     async function (err, result) {
       if (err) {
         console.log("ERRO!\n");
-        res.json({cod:-1, msg:"Erro ao verificar o filme no sistema"});
+        res.json({ cod: -1, msg: "Erro ao verificar o filme no sistema" });
         throw err;
       }
 
       if (result.length == 0) {
         console.log("Filme Inesxistente!");
-        res.json({cod:0, msg:"Filme Inexistente!"});
+        res.json({ cod: 0, msg: "Filme Inexistente!" });
       } else {
         console.log("Atualizando o Filme:");
         console.log(result[0]);
         var status = true;
+        var sql = "";
         if (result[0].cartaz == true) status = false;
         else status = true;
-        
-        banco.query(
-          `UPDATE Filmes set cartaz=${status} WHERE id='${id}'`,
-          async function (err, result) {
-            if (err) {
-              console.log("ERRO!\n");
-              res.json({cod:-1, msg:"Erro ao atualizar o filme!"});
-              throw err;
-            }
-            console.log("Filme Atualizado!");
-            res.json({cod:1, msg:"Filme Atualizado!", status:status});
-          });
+
+        sql = `UPDATE Filmes set cartaz=${status} WHERE id='${id}'`;
+
+        if (!status)
+          sql += `;UPDATE Sessoes set status=${status} WHERE id_filme='${id}';`;
+        banco.query(sql, async function (err, result) {
+          if (err) {
+            console.log("ERRO!\n");
+            res.json({ cod: -1, msg: "Erro ao atualizar o filme!" });
+            throw err;
+          }
+          console.log("Filme Atualizado!\n");
+          var resposta = { cod: 1, msg: "Filme Atualizado!", status: status };
+
+          if(result[1])
+            resposta.sessoes=result[1].changedRows;
+
+          res.json(resposta);
+        });
       }
     }
   );

@@ -65,21 +65,33 @@ async function filmesdaLista() {
 }
 
 function attStatusFilme(id, texto) {
-  ajax.open("PUT", "http://localhost/attStatusFilme/"+id, true);
+  ajax.open("PUT", "http://localhost/attStatusFilme/" + id, true);
   ajax.send();
   ajax.onreadystatechange = function () {
     // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
     if (ajax.readyState == 4 && ajax.status == 200) {
       // Retorno do Ajax
-      var resposta =  JSON.parse(this.responseText);
+      var resposta = JSON.parse(this.responseText);
 
-      if(resposta.cod != 1){
+      if (resposta.cod != 1) {
         alert(resposta.msg);
-      }else{
-        if(resposta.status == true)
-        document.getElementById(`status${id}`).innerHTML = '✔️' + texto.substr(1)
-        else
-        document.getElementById(`status${id}`).innerHTML = '❌' + texto.substr(1)
+      } else {
+        if (resposta.status == true)
+          document.getElementById(`status${id}`).innerHTML =
+            "✔️" + texto.substr(1);
+        else {
+          document.getElementById(`status${id}`).innerHTML =
+            "❌" + texto.substr(1);
+          if (resposta.sessoes != 0)
+            if (resposta.sessoes == 1)
+              alert(
+                `${resposta.sessoes} Sessão foi atualizada para indisponível`
+              );
+            else
+              alert(
+                `${resposta.sessoes} Sessões foram atualizadas para indisponível`
+              );
+        }
       }
     }
   };

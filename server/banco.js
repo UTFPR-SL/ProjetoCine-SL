@@ -5,6 +5,7 @@ var banco = mysql.createConnection({
   user: "root",
   password: "root",
   database: "Cinema",
+  multipleStatements: true
 });
 
 banco.connect(function (err) {
