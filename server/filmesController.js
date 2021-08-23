@@ -96,7 +96,7 @@ exports.addFilme = async (req, res) => {
   );
 };
 
-// Função para muda o status (em cartaz) do filme
+// Função para mudar o status (em cartaz) do filme
 exports.attStatusFilme = async (req, res) => {
   console.log("\nAtualizando Filme");
   res.header("Access-Control-Allow-Origin", "*");
@@ -106,7 +106,7 @@ exports.attStatusFilme = async (req, res) => {
   );
 
   var id = req.params.id;
-  console.log(id);
+  console.log('ID do filme: ', id);
 
   banco.query(
     `SELECT * FROM Filmes WHERE id='${id}'`,
@@ -121,7 +121,7 @@ exports.attStatusFilme = async (req, res) => {
         console.log("Filme Inesxistente!");
         res.json({ cod: 0, msg: "Filme Inexistente!" });
       } else {
-        console.log("Atualizando o Filme:");
+        console.log("Filme:");
         console.log(result[0]);
         var status = true;
         var sql = "";

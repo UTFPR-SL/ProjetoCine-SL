@@ -49,7 +49,7 @@ exports.logar = async (req, res) => {
 exports.usuarios = async (req, res) => {
   console.log("\nListando Usuários cadastrados");
 
-  banco.query("SELECT nome, usuario, adm FROM login;", function (err, result) {
+  banco.query("SELECT * FROM login;", function (err, result) {
     if (err) throw err;
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
@@ -103,6 +103,57 @@ exports.addUsuario = async (req, res) => {
             res.end();
           }
         );
+      }
+    }
+  );
+};
+
+// Função para mudar a permissão (Administrador) do usuário
+exports.attADMUsuarios = async (req, res) => {
+  console.log("\nAtualizando Usuario");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+
+  var id = req.params.id;
+  console.log('ID do usuário: ', id);
+
+  banco.query(
+    `SELECT * FROM Login WHERE id='${id}'`,
+    async function (err, result) {
+      if (err) {
+        console.log("ERRO!\n");
+        res.json({ cod: -1, msg: "Erro ao verificar o usuário no sistema" });
+        throw err;
+      }
+
+      if (result.length == 0) {
+        console.log("Usuário Inesxistente!");
+        res.json({ cod: 0, msg: "Usuário Inexistente!" });
+      } else {
+        console.log("Atualizando o Usuário:");
+        console.log(result[0]);
+
+        var status = true;
+        var sql = "";
+        if (result[0].adm == true) status = false;
+        else status = true;
+
+        sql = `UPDATE Login set ADM=${status} WHERE id='${id}'`;
+
+        banco.query(sql, async function (err, result) {
+          if (err) {
+            console.log("ERRO!\n");
+            res.json({ cod: -1, msg: "Erro ao atualizar o Usuário!" });
+            throw err;
+          }
+          console.log("Usuário Atualizado!\n");
+          var resposta = { cod: 1, msg: "Usuário Atualizado!", status: status };
+
+          res.json(resposta);
+        });
       }
     }
   );
