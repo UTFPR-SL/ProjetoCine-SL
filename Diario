@@ -20,11 +20,11 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
-
+Terminei a issue de listar sessão pelo botão ADM(Issue #54)
 -O que vou fazer amanhã
-
+Refazendo a issue de listar sessão pelo botão ADM(Issue #61)
 -Os problemas que eu tive/terei
-
+ não criei outra instancia para a mesma sessão
   
 Vinicius:
 -O que eu fiz ontem
@@ -48,11 +48,11 @@ Caio:
 
 Gustavo:
 -O que eu fiz ontem
-
+Começando a nova issue de listar sessão pelo botão ADM(Issue #54)
 -O que vou fazer amanhã
-
+Terminei a issue de listar sessão pelo botão ADM(Issue #54)
 -Os problemas que eu tive/terei
-
+Nenhum
   
 Vinicius:
 -O que eu fiz ontem
@@ -73,11 +73,12 @@ Comunicação com o Css que as vezes é complexa e fim de semestre pode me deixa
 
 Gustavo:
 -O que eu fiz ontem
-
+Começar a nova issue de listar usuarios(Issue #52)
 -O que vou fazer amanhã
-
+Terminei issue de listar usuarios(Issue #52)
+Começando a nova issue de listar sessão pelo botão ADM(Issue #54)
 -Os problemas que eu tive/terei
-
+Duvida sobre se deve criar outra instancia ou não
   
 Vinicius:
 -O que eu fiz ontem
@@ -101,7 +102,7 @@ Gustavo:
   Testei os erros na tabela de mostrar filmes.(Issue #50)
   consertar os erros(Issue #50)
 -O que vou fazer amanhã
-  Começar a a nova issue de listar usuarios(Issue #52)
+  Começar a nova issue de listar usuarios(Issue #52)
 -Os problemas que eu tive/terei
   não consegui consertar todos os erros na lista de filmes.(Issue #50)
   
