@@ -29,7 +29,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  await banco.query("delete from Filmes order by id desc limit 2");
+  await banco.query("delete from Filmes where nome='Testerson' OR nome='Testerson 2'");
 });
 
 describe("GET Filmes em Cartaz /filmesEmCartaz", () => {
@@ -127,7 +127,7 @@ describe("Post`s Adicionar Filmes /addFilme", () => {
   });
 });
 
-describe("Put Atualizar Status (Em Cartaz) do Filmes /attStatusFilme", () => {
+describe("PUT Atualizar Status (Em Cartaz) do Filmes /attStatusFilme/:id", () => {
   test("Atualizando Filme (Filme Inexistente)", async () => {
     const response = await supertest(app).put("/attStatusFilme/"+id_inexistente);
 

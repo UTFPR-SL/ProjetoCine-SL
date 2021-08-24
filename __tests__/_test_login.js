@@ -7,8 +7,10 @@ const banco = require("../server/banco");
 
 var server = app.listen(50);
 
+var id_teste;
+
 afterAll(async () => {
-  await banco.query("delete from Login order by id desc limit 1");
+  await banco.query("delete from Login where usuario='teste'");
 });
 
 describe("POST Login /login", () => {
@@ -64,6 +66,13 @@ describe("POST Adicionar usuário /addUsuario", () => {
 
     expect(respPadrao(response)).toBe(true);
     expect(response.text).toBe("Usuário adicionado com sucesso!");
+
+    await banco.query(
+      "select * from Login where usuario='teste'",
+      async function (err, result) {
+        id_teste = result[0].id;
+      }
+    );
   });
 });
 
@@ -74,35 +83,53 @@ describe("GET Listar usuários", () => {
     expect(respPadrao(response)).toBe(true);
     expect(response.body[0].nome).toBe("Administrador");
     expect(response.body[0].usuario).toBe("admin");
-    expect(response.body[0].adm).toBe(1);
   });
 
   test("Listar usuários (Caio) /usuarios", async () => {
     const response = await supertest(app).get("/usuarios");
     expect(response.body[1].nome).toBe("Caio");
     expect(response.body[1].usuario).toBe("dansujaum");
-    expect(response.body[1].adm).toBe(1);
   });
 
   test("Listar usuários (Gustavo) /usuarios", async () => {
     const response = await supertest(app).get("/usuarios");
     expect(response.body[2].nome).toBe("gustavo");
     expect(response.body[2].usuario).toBe("kiboki");
-    expect(response.body[2].adm).toBe(1);
   });
 
   test("Listar usuários (Vinícius) /usuarios", async () => {
     const response = await supertest(app).get("/usuarios");
     expect(response.body[3].nome).toBe("Vinicius");
     expect(response.body[3].usuario).toBe("vnks");
-    expect(response.body[3].adm).toBe(1);
   });
 
   test("Listar usuários (Juca) /usuarios", async () => {
     const response = await supertest(app).get("/usuarios");
     expect(response.body[4].nome).toBe("Juca");
     expect(response.body[4].usuario).toBe("juquinha");
-    expect(response.body[4].adm).toBe(0);
+  });
+});
+
+describe("PUT Atualizar permissão (Administrador) do Usuário /attADMUsuario/:id", () => {
+  test("Atualizar Usuário (Usuário Inexistente ) ", async () => {
+    const response = await supertest(app).put("/attADMUsuario/" + id_teste+10);
+  
+    expect(response.body.cod).toBe(0);
+    expect(response.body.msg).toBe("Usuário Inexistente!");
+  });
+  test("Atualizar Usuário para Administrador ", async () => {
+    const response = await supertest(app).put("/attADMUsuario/" + id_teste);
+  
+    expect(response.body.cod).toBe(1);
+    expect(response.body.msg).toBe("Usuário Atualizado!");
+    expect(response.body.status).toBe(true);
+  });
+  test("Atualizar Usuário para não Administrador ", async () => {
+    const response = await supertest(app).put("/attADMUsuario/" + id_teste);
+  
+    expect(response.body.cod).toBe(1);
+    expect(response.body.msg).toBe("Usuário Atualizado!");
+    expect(response.body.status).toBe(false);
   });
 });
 
