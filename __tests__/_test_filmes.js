@@ -8,7 +8,7 @@ const banco = require("../server/banco");
 var server = app.listen(51);
 
 var id_teste = 0;
-var id_inexistente = 0;
+var id_inexistente = -1;
 
 beforeAll(async () => {
   await banco.query(
@@ -18,12 +18,6 @@ beforeAll(async () => {
     "select * from filmes where nome='Testerson'",
     async function (err, result) {
       id_teste = result[0].id;
-    }
-  );
-  await banco.query(
-    "select * from filmes order by id desc limit 1",
-    async function (err, result) {
-      id_inexistente = result[0].id + 10;
     }
   );
 });
