@@ -132,6 +132,7 @@ exports.attStatusFilme = async (req, res) => {
 
         if (!status)
           sql += `;UPDATE Sessoes set status=${status} WHERE id_filme='${id}';`;
+          
         banco.query(sql, async function (err, result) {
           if (err) {
             console.log("ERRO!\n");

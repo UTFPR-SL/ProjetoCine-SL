@@ -95,3 +95,64 @@ exports.criarSessao = async (req, res) => {
     }
   );
 };
+
+// Função para mudar o status (em cartaz) da Sessão
+exports.attStatusSessao = async (req, res) => {
+  console.log("\nAtualizando a Sessão");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+
+  var id = req.params.id;
+  console.log('ID da Sessão: ', id);
+  
+  banco.query(
+    `SELECT * FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id WHERE Sessoes.id='${id}'`,
+    async function (err, result) {
+      if (err) {
+        console.log("ERRO!\n");
+        res.json({ cod: -1, msg: "Erro ao verificar a sessão no sistema" });
+        throw err;
+      }
+
+      if (result.length == 0) {
+        console.log("Sessão Inesxistente!");
+        res.json({ cod: 0, msg: "Sessão Inexistente!" });
+      } else {
+        console.log("Sessão:");
+        console.log(result[0]);
+
+        var status = true;
+        var id_filme = result[0].id_filme;
+        var filme = result[0].nome;
+        var sql = "";
+
+        if (result[0].status == true) status = false;
+        else status = true;
+
+        sql = `UPDATE Sessoes set status=${status} WHERE id='${id}'`;
+
+        if (status)
+          sql += `;UPDATE Filmes set cartaz=${status} WHERE id='${id_filme}';`;
+
+        banco.query(sql, async function (err, result) {
+          if (err) {
+            console.log("ERRO!\n");
+            res.json({ cod: -1, msg: "Erro ao atualizar a Sessão!" });
+            throw err;
+          }
+          console.log("Sessão Atualizado!\n");
+          var resposta = { cod: 1, msg: "Sessão Atualizado!", status: status };
+
+          if(result[1])
+            if (result[1].changedRows == 1)
+              resposta.filme=filme;
+
+          res.json(resposta);
+        });
+      }
+    }
+  );
+}
