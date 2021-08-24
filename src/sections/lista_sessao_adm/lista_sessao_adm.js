@@ -74,11 +74,11 @@ async function listarSessoesADM() {
             `</td>
                       <td>` +
             resposta[g].qtd_lugares +
-            `</td>
-                      <td>` +
+            `<td><div class="myDIV">Ver Sinopse</div><div class="hide">` +
             resposta[g].sinopse +
-            `</td>
-                  </tr>
+            //.substr(0, 100)
+            `</div></td>
+                </tr>
                   `;
         }
         conteudo += `
