@@ -1,10 +1,11 @@
 .lista_filmes{
   background: #fff;
   width: 100%;
-  height: 100%;
-  overflow:auto; 
+  height: 660px;
+  position:relative;
+  overflow: auto; 
   border: 15px solid rgb(255, 255, 255);
-  padding: 10px;
+  padding: 5px;
   border-radius: 25px;
   box-shadow: 10px 10px 5px #aaaaaa;
 }
@@ -26,4 +27,14 @@ td {
 .cartaz{
   max-height: 200px;
   margin: 10px 0px;
+}
+
+.hide{
+  display: none;
+  position:absolute;
+  background: #ebebeb;
+  left: 150px;
+}
+.myDIV:hover + .hide {
+  display: block;
 }

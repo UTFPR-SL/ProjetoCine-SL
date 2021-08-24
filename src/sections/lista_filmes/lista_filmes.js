@@ -47,9 +47,10 @@ async function filmesdaLista() {
                     <td id='status${resposta[g].id}'>` +
             cartaz +
             `&nbsp <i class="bi bi-arrow-repeat" onclick="attStatusFilme(${resposta[g].id}, status${resposta[g].id}.innerHTML)" ></i> </td>
-                    <td>` +
-            resposta[g].sinopse.substr(0, 100) +
-            `</td>
+                    <td><div class="myDIV">Ver Sinopse</div><div class="hide">` +
+            resposta[g].sinopse +
+            //.substr(0, 100)
+            `</div></td>
                 </tr>
                 `;
         }
