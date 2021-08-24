@@ -46,4 +46,6 @@ app.get("/usuarios", login.usuarios);
 
 app.post("/addUsuario", login.addUsuario);
 
+app.put("/attADMUsuario/:id", login.attADMUsuarios);
+
  module.exports = app;

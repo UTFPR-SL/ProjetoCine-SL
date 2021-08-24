@@ -16,7 +16,7 @@ id int auto_increment NOT NULL,
 nome varchar(80) NOT NULL,
 usuario varchar(80) NOT NULL UNIQUE,
 senha varchar(80) NOT NULL,
-adm bool NOT NULL,
+adm bool default false,
 PRIMARY KEY(id)
 );
 

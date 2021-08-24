@@ -13,7 +13,7 @@ var id_inesxistente = 0;
 
 beforeAll(async () => {
   await banco.query(
-    "insert into filmes (nome, cartaz, cartazURL, duracao, genero, classificacaoIndicativa, sinopse) values ('Filme Teste', '0', 'sem foto', '0h 10min', 'testes', 'Livre', 'Adicionando filme para teste')"
+    "insert into filmes (nome, cartaz, cartazURL, duracao, genero, classificacaoIndicativa, sinopse) values ('Filme Teste', '0', 'sem foto', '0h 10min', 'testes', 'Livre', 'Adicionando filme para teste'), ('Filme Teste 2', '1', 'sem foto', '0h 10min', 'testes', 'Livre', 'Adicionando filme 2 para teste')"
   );
   await banco.query(
     "select * from filmes where nome='Filme Teste'",
@@ -28,7 +28,7 @@ beforeAll(async () => {
     }
   );
   await banco.query(
-    "select * from filmes where cartaz=1",
+    "select * from filmes where nome='Filme Teste 2'",
     async function (err, result) {
       id_disponivel = result[0].id;
     }
@@ -36,8 +36,8 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  await banco.query("delete from sessoes order by id desc limit 1");
-  await banco.query("delete from Filmes order by id desc limit 1");
+  await banco.query("delete from sessoes where id_filme=" + id_disponivel);
+  await banco.query("delete from Filmes where nome='Filme Teste' OR nome='Filme Teste 2'");
 });
 
 describe("GET Listar as Sessões Disponíveis /sessoesDisponiveis", () => {
@@ -48,7 +48,9 @@ describe("GET Listar as Sessões Disponíveis /sessoesDisponiveis", () => {
     expect(JSON.stringify(response.body)).toContain(`[{"nome":`);
     expect(JSON.stringify(response.body)).toContain(`,"duracao":"`);
     expect(JSON.stringify(response.body)).toContain(`,"genero":"`);
-    expect(JSON.stringify(response.body)).toContain(`,"classificacaoIndicativa":"`);
+    expect(JSON.stringify(response.body)).toContain(
+      `,"classificacaoIndicativa":"`
+    );
     expect(JSON.stringify(response.body)).toContain(`,"sinopse":"`);
     expect(JSON.stringify(response.body)).toContain(`,"cartazURL":"`);
     expect(JSON.stringify(response.body)).toContain(`,"id":`);
@@ -90,7 +92,9 @@ describe("GET Listar as Sessões /listarSessoes", () => {
     expect(JSON.stringify(response.body)).toContain(`[{"nome":`);
     expect(JSON.stringify(response.body)).toContain(`,"duracao":"`);
     expect(JSON.stringify(response.body)).toContain(`,"genero":"`);
-    expect(JSON.stringify(response.body)).toContain(`,"classificacaoIndicativa":"`);
+    expect(JSON.stringify(response.body)).toContain(
+      `,"classificacaoIndicativa":"`
+    );
     expect(JSON.stringify(response.body)).toContain(`,"sinopse":"`);
     expect(JSON.stringify(response.body)).toContain(`,"cartazURL":"`);
     expect(JSON.stringify(response.body)).toContain(`,"id":`);
