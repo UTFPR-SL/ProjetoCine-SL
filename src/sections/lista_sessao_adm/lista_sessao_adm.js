@@ -66,9 +66,9 @@ async function listarSessoesADM() {
                       <td>` +
             resposta[g].classificacaoIndicativa +
             `</td>
-                      <td>` +
+                      <td id='sessao${resposta[g].id}'>` +
             disponivel +
-            `</td>
+            `&nbsp <i class="bi bi-arrow-repeat" onclick="attSessao(${resposta[g].id}, sessao${resposta[g].id}.innerHTML)" ></i> </td>
                       <td>` +
             resposta[g].sala +
             `</td>
@@ -89,4 +89,29 @@ async function listarSessoesADM() {
       }
     };
   }
+}
+
+function attSessao(id, texto) {
+  ajax.open("PUT", "http://localhost/attStatusSessao/" + id, true);
+  ajax.send();
+  ajax.onreadystatechange = function () {
+    // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
+    if (ajax.readyState == 4 && ajax.status == 200) {
+      // Retorno do Ajax
+      var resposta = JSON.parse(this.responseText);
+
+      if (resposta.cod != 1) {
+        alert(resposta.msg);
+      } else {
+        if (resposta.status == true)
+          document.getElementById(`sessao${id}`).innerHTML =
+            "✔️" + texto.substr(1);
+        else
+          document.getElementById(`sessao${id}`).innerHTML =
+            "❌" + texto.substr(1);
+        if (resposta.filme)
+          alert(`${resposta.filme} foi atualizado para Disponível`);
+      }
+    }
+  };
 }

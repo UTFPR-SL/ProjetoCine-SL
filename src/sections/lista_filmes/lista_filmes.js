@@ -44,9 +44,9 @@ async function filmesdaLista() {
                     <td>` +
             resposta[g].classificacaoIndicativa +
             `</td>
-                    <td id='status${resposta[g].id}'>` +
+                    <td id='cartaz${resposta[g].id}'>` +
             cartaz +
-            `&nbsp <i class="bi bi-arrow-repeat" onclick="attStatusFilme(${resposta[g].id}, status${resposta[g].id}.innerHTML)" ></i> </td>
+            `&nbsp <i class="bi bi-arrow-repeat" onclick="attStatusFilme(${resposta[g].id}, cartaz${resposta[g].id}.innerHTML)" ></i> </td>
                     <td><div class="myDIV">Ver Sinopse</div><div class="hide">` +
             resposta[g].sinopse +
             //.substr(0, 100)
@@ -78,10 +78,10 @@ function attStatusFilme(id, texto) {
         alert(resposta.msg);
       } else {
         if (resposta.status == true)
-          document.getElementById(`status${id}`).innerHTML =
+          document.getElementById(`cartaz${id}`).innerHTML =
             "✔️" + texto.substr(1);
         else {
-          document.getElementById(`status${id}`).innerHTML =
+          document.getElementById(`cartaz${id}`).innerHTML =
             "❌" + texto.substr(1);
           if (resposta.sessoes != 0)
             if (resposta.sessoes == 1)

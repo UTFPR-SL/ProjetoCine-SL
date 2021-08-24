@@ -34,9 +34,9 @@ async function listarUsuarios() {
                       <td>` +
             resposta[g].usuario +
             `</td>
-                      <td id='status${resposta[g].id}'>` +
+                      <td id='ADM${resposta[g].id}'>` +
             adm +
-            `&nbsp <i class="bi bi-arrow-repeat" onclick="attUsuario(${resposta[g].id}, status${resposta[g].id}.innerHTML)" ></i> </td>
+            `&nbsp <i class="bi bi-arrow-repeat" onclick="attUsuario(${resposta[g].id}, ADM${resposta[g].id}.innerHTML)" ></i> </td>
                   </tr>
                   `;
         }
@@ -64,10 +64,10 @@ function attUsuario(id, texto) {
         alert(resposta.msg);
       } else {
         if (resposta.status == true)
-          document.getElementById(`status${id}`).innerHTML =
+          document.getElementById(`ADM${id}`).innerHTML =
             "✔️" + texto.substr(1);
         else {
-          document.getElementById(`status${id}`).innerHTML =
+          document.getElementById(`ADM${id}`).innerHTML =
             "❌" + texto.substr(1);
         }
       }
