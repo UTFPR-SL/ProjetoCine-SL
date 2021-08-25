@@ -21,11 +21,25 @@ VALUES (true, 1, "20:30", false, "Dublado", 1, 30),
 		(false, 2, "22:00", false, "Dublado", 3, 30);
 
 
-
 INSERT INTO Assentos (cod)
 VALUES ("A01"), ("A02"), ("A03"), ("A04"), ("A05"), ("A06"),
         ("B01"), ("B02"), ("B03"), ("B04"), ("B05"), ("B06"),
         ("C01"), ("C02"), ("C03"), ("C04"), ("C05"), ("C06"),
         ("D01"), ("D02"), ("D03"), ("D04"), ("D05"), ("D06"),
         ("E01"), ("E02"), ("E03"), ("E04"), ("E05"), ("E06");
+
+
+INSERT INTO Compra (id_vendedor, cliente, cfp, qtd_ingressos, valor)
+VALUES (4, "Osvaldo", "12345678900", 5, 80),
+		(4, "Luiz", "00987654321", 2, 40);
+
+
+INSERT INTO Ingressos (id_sessao, cod_assento, id_compra, data, meia)
+VALUES (1, "A01", 1, "2021-09-03", false),
+		(1, "A02", 1, "2021-09-03", false),
+		(1, "A03", 1, "2021-09-03", false),
+		(1, "A04", 1, "2021-09-03", true),
+		(1, "A05", 1, "2021-09-03", true),
+		(2, "A01", 2, "2021-09-03", false),
+		(2, "A02", 2, "2021-09-03", false);
 
