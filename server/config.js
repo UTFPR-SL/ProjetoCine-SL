@@ -26,6 +26,9 @@ app.get("/listarSessoes", sessoes.listarSessoes);
 
 app.post("/criarSessao", sessoes.criarSessao);
 
+app.put("/attStatusSessao/:id", sessoes.attStatusSessao);
+
+
 // Rotas de Filmes
 const filmes = require("./filmesController");
 

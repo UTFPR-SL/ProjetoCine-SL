@@ -2,14 +2,17 @@ console.log = function () {};
 
 const supertest = require("supertest");
 const respPadrao = require("./config");
+const sleep = require("./config");
 const app = require("../server/config");
 const banco = require("../server/banco");
 
 var server = app.listen(52);
 
-var id_indisponivel = 0;
-var id_disponivel = 0;
-var id_inesxistente = 0;
+var id_filme_indisponivel = 0;
+var id_filme_disponivel = 0;
+var id_filme_inexistente = -1;
+var id_sessao_inexistente = -1;
+var id_sessao_teste = 0;
 
 beforeAll(async () => {
   await banco.query(
@@ -18,26 +21,24 @@ beforeAll(async () => {
   await banco.query(
     "select * from filmes where nome='Filme Teste'",
     async function (err, result) {
-      id_indisponivel = result[0].id;
-    }
-  );
-  await banco.query(
-    "select * from filmes order by id desc limit 1",
-    async function (err, result) {
-      id_inesxistente = result[0].id + 10;
+      id_filme_indisponivel = result[0].id;
     }
   );
   await banco.query(
     "select * from filmes where nome='Filme Teste 2'",
     async function (err, result) {
-      id_disponivel = result[0].id;
+      id_filme_disponivel = result[0].id;
     }
   );
 });
 
 afterAll(async () => {
-  await banco.query("delete from sessoes where id_filme=" + id_disponivel);
-  await banco.query("delete from Filmes where nome='Filme Teste' OR nome='Filme Teste 2'");
+  await banco.query(
+    `delete from sessoes where id_filme='${id_filme_disponivel}' OR id_filme='${id_filme_indisponivel}' OR id_filme='${id_filme_inexistente}'`
+  );
+  await banco.query(
+    "delete from Filmes where nome='Filme Teste' OR nome='Filme Teste 2'"
+  );
 });
 
 describe("GET Listar as Sessões Disponíveis /sessoesDisponiveis", () => {
@@ -131,7 +132,7 @@ describe("GET Listar as Sessões /listarSessoes", () => {
 describe("Post Adicionar Sessão /criarSessao", () => {
   test("Adicionar Sessão (Filmes Inesxistente)", async () => {
     const response = await supertest(app).post("/criarSessao").send({
-      id_filme: id_inesxistente,
+      id_filme: id_filme_inexistente,
       horario: "20:30",
       e3d: false,
       idioma: "legendado",
@@ -144,7 +145,7 @@ describe("Post Adicionar Sessão /criarSessao", () => {
 
   test("Adicionar Sessão (Filme Indisponível/Fora de cartaz)", async () => {
     const response = await supertest(app).post("/criarSessao").send({
-      id_filme: id_indisponivel,
+      id_filme: id_filme_indisponivel,
       horario: "20:30",
       e3d: false,
       idioma: "legendado",
@@ -157,7 +158,7 @@ describe("Post Adicionar Sessão /criarSessao", () => {
 
   test("Adicionar Sessão", async () => {
     const response = await supertest(app).post("/criarSessao").send({
-      id_filme: id_disponivel,
+      id_filme: id_filme_disponivel,
       horario: "20:30",
       e3d: false,
       idioma: "legendado",
@@ -166,6 +167,41 @@ describe("Post Adicionar Sessão /criarSessao", () => {
 
     expect(respPadrao(response)).toBe(true);
     expect(response.text).toBe("Sessão Criada com Sucesso!");
+    await banco.query(
+      `select * from sessoes where id_filme=${id_filme_disponivel}`,
+      async function (err, result) {
+        id_sessao_teste = result[0].id;
+      }
+    );
+  });
+});
+
+describe("PUT Atualizar o status da Sessão /attStatusSessao/:id", () => {
+  test("Atualizando Sessão (Filme Inexistente)", async () => {
+    const response = await supertest(app).put(
+      "/attStatusSessao/" + id_sessao_inexistente
+    );
+
+    expect(response.body.cod).toBe(0);
+    expect(response.body.msg).toBe("Sessão Inexistente!");
+  });
+  test("Atualizando Sessão para indisponivel", async () => {
+    const response = await supertest(app).put(
+      "/attStatusSessao/" + id_sessao_teste
+    );
+
+    expect(response.body.cod).toBe(1);
+    expect(response.body.msg).toBe("Sessão Atualizado!");
+    expect(response.body.status).toBe(false);
+  });
+  test("Atualizando Sessão para disponivel", async () => {
+    const response = await supertest(app).put(
+      "/attStatusSessao/" + id_sessao_teste
+    );
+
+    expect(response.body.cod).toBe(1);
+    expect(response.body.msg).toBe("Sessão Atualizado!");
+    expect(response.body.status).toBe(true);
   });
 });
 

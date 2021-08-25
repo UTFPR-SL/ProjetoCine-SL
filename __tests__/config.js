@@ -9,3 +9,7 @@ module.exports = function respPadrao(response) {
 
   return true;
 };
+
+module.expports = function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
