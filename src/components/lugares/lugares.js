@@ -1,3 +1,3 @@
- function A1(){
-    document.getElementById('A1').style.background="blue";
- }
+  function i (){
+    lsd.style.background = '#00ccff'
+  }
