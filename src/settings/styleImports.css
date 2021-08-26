@@ -25,3 +25,5 @@
 @import '../components/filtroSessaoADM/filtroSessaoADM.css'; 
 @import '../sections/lista_sessao_adm/lista_sessao_adm.css'; 
 @import '../components/filtroUsuario/filtroUsuario.css'; 
+@import '../components/components/components.css'; 
+@import '../components/lugares/lugares.css'; 
