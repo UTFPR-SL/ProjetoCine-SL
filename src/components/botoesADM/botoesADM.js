@@ -25,8 +25,8 @@ function bttAddSessao(){
 };
 
 function bttShowFilmes(){
-    filmesdaLista();
     limparTelaADM();
+    filmesdaLista();
     document.getElementById("lista_filmes").style.display = "block";
     document.getElementById("filtroFilme").style.display = "block";
 };
@@ -36,40 +36,13 @@ function bttAddFilme(){
     document.getElementById("addFilme").style.display = "block";
 };
 
-function filtro3d(){
-    document.getElementById("filtro3d").style.display = "none";
-    document.getElementById("fecharfiltro3d").style.display = "block";
-};
-
-function fecharfiltro3d(){
-    document.getElementById("fecharfiltro3d").style.display = "none";
-    document.getElementById("filtro3d").style.display = "block";
-};
-
-function filtroClassificacao(value){
-    switch(value){
-        case 'livre':
-            break;
-        case '10':
-            break;
-        case '12':
-            break;
-        case '14':
-            break;
-        case '16':
-            break;
-        case '18':
-            break;           
-    }
-};
-
 function bttAddLogin(){
     limparTelaADM();
     document.getElementById("addLogin").style.display = "block";
 };
 function bttShowUsuario(){
-    listarUsuarios();
     limparTelaADM();
+    listarUsuarios();
     document.getElementById("lista_usuario").style.display = "block";
     document.getElementById("filtroUsuario").style.display = "block";
 };

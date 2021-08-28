@@ -43,7 +43,7 @@ afterAll(async () => {
 
 describe("GET Listar as Sessões Disponíveis /sessoesDisponiveis", () => {
   test("Listar as Sessões", async () => {
-    const response = await supertest(app).get("/sessoesDisponiveis");
+    const response = await supertest(app).get("/sessoesDisponiveis/2021-09-03");
 
     expect(respPadrao(response)).toBe(true);
     expect(JSON.stringify(response.body)).toContain(`[{"nome":`);
@@ -64,7 +64,7 @@ describe("GET Listar as Sessões Disponíveis /sessoesDisponiveis", () => {
   });
 
   test("Listar as Sessões Disponíveis (Primeira sessao)", async () => {
-    const response = await supertest(app).get("/sessoesDisponiveis");
+    const response = await supertest(app).get("/sessoesDisponiveis/2021-09-03");
     const result = await banco.query(
       "select * from sessoes where status=1 order by id_filme asc limit 1",
       async function (err, result) {
@@ -74,7 +74,7 @@ describe("GET Listar as Sessões Disponíveis /sessoesDisponiveis", () => {
     );
   });
   test("Listar as Sessões Disponíveis (Ultima sessao)", async () => {
-    const response = await supertest(app).get("/sessoesDisponiveis");
+    const response = await supertest(app).get("/sessoesDisponiveis/2021-09-03");
     const result = await banco.query(
       "select * from sessoes where status=1 order by id_filme desc limit 1",
       async function (err, result) {
@@ -103,14 +103,13 @@ describe("GET Listar as Sessões /listarSessoes", () => {
     expect(JSON.stringify(response.body)).toContain(`,"e3d":`);
     expect(JSON.stringify(response.body)).toContain(`,"idioma":"`);
     expect(JSON.stringify(response.body)).toContain(`,"sala":"`);
-    expect(JSON.stringify(response.body)).toContain(`,"qtd_lugares":`);
     expect(JSON.stringify(response.body)).toContain(`}]`);
   });
 
   test("Listar as Sessões (Primeira sessao)", async () => {
     const response = await supertest(app).get("/listarSessoes");
     const result = await banco.query(
-      "select * from sessoes order by id_filme asc limit 1",
+      "select * from sessoes order by id asc limit 1",
       async function (err, result) {
         expect(respPadrao(response)).toBe(true);
         expect(response.body[0].id).toBe(result[0].id);
@@ -120,7 +119,7 @@ describe("GET Listar as Sessões /listarSessoes", () => {
   test("Listar as Sessões (Ultima sessao)", async () => {
     const response = await supertest(app).get("/listarSessoes");
     const result = await banco.query(
-      "select * from sessoes order by id_filme desc limit 1",
+      "select * from sessoes order by id desc limit 1",
       async function (err, result) {
         expect(respPadrao(response)).toBe(true);
         expect(response.body[response.body.length - 1].id).toBe(result[0].id);
