@@ -1,5 +1,3 @@
-const { json } = require("body-parser");
-const { count } = require("console");
 const banco = require("./banco");
 
 // Listar todas as sessoes disponíveis
@@ -40,7 +38,7 @@ exports.sessoesDisponiveis = (req, res) => {
 
               element.qtd_lugares = result[0].lugares;
               wait++;
-              
+
               if (sessoes.length == wait) res.json(sessoes);
             }
           );
@@ -69,6 +67,48 @@ exports.listarSessoes = async (req, res) => {
 
     res.json(result);
   });
+};
+
+// Mostrar Informações de uma sessão específica
+exports.infoSessao = async (req, res) => {
+  var id = req.params.id;
+  console.log("\nMostrando Sessão: " + id);
+
+  banco.query(
+    "SELECT status FROM Sessoes WHERE id=" + id,
+    function (err, result) {
+      if (err) throw err;
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+      );
+
+      if (result.length == 0) {
+        console.log("Sessão Inesxitente/Indisponível!");
+        res.json("Sessão Inesxitente/Indisponível!");
+      } else {
+        var sql = `SELECT Filmes.nome, Filmes.duracao, Filmes.genero,
+        Filmes.classificacaoIndicativa, Filmes.sinopse, Filmes.cartazURL,
+        Sessoes.id, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala
+        FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id 
+        WHERE Sessoes.id=${id};`;
+
+        banco.query(sql, function (err, result) {
+          if (err) throw err;
+          res.header("Access-Control-Allow-Origin", "*");
+          res.header(
+            "Access-Control-Allow-Headers",
+            "Origin, X-Requested-With, Content-Type, Accept"
+          );
+
+          console.log(result);
+
+          res.json(result);
+        });
+      }
+    }
+  );
 };
 
 // Função Criar Sessao

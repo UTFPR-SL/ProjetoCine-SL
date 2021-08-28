@@ -9,6 +9,63 @@ Marcando e conversando sobre as perguntas individualmente, sendo elas:
 -Os problemas que eu tive/terei
 
 
+==================== Diario 27/08 (Sexta) ====================
+Caio:
+-O que eu fiz ontem
+
+-O que vou fazer amanhã
+
+-Os problemas que eu tive/terei
+
+
+Gustavo:
+-O que eu fiz ontem
+
+-O que vou fazer amanhã
+
+-Os problemas que eu tive/terei
+  
+
+Vinicius:
+-O que eu fiz ontem
+  Criei e implementar a rota e os casos de teste para atualizar o status (Em Cartaz) das Sessões (Issue #75).
+  Ajustes gerais no front e na rota de sessões disponíveis para enviar a quantidade de lugares (Issue #81).
+-O que vou fazer amanhã
+  Criei a rota e os casos de teste para listar os assentos indisponíveis para uma sessão.
+  Criei a rota e os casos de teste para inserir a compra e os ingressos no banco.
+-Os problemas que eu tive/terei
+  Pouco tempo para muitos trabalhos, provas, e atividades de outras máterias.
+
+
+==================== Diario 24/08 (Terça) ====================
+Caio:
+-O que eu fiz ontem
+
+-O que vou fazer amanhã
+
+-Os problemas que eu tive/terei
+
+
+Gustavo:
+-O que eu fiz ontem
+
+-O que vou fazer amanhã
+
+-Os problemas que eu tive/terei
+  
+
+Vinicius:
+-O que eu fiz ontem
+  Criei casos de teste para a rota de listar todas as sessões (Issue #67).
+  Criei e implementei a rota e os casos de teste para atualizar o status (Em Cartaz) dos filmes (Issue #69).
+  Criei e implementei a rota e os casos de teste para atualizar a permissão (Administrador) dos Usuários (Issue #72).
+-O que vou fazer amanhã
+  Criar e implementar a rota e os casos de teste para atualizar o status (Em Cartaz) das Sessões.
+  Ajustes gerais no front e na rota de sessões disponíveis para enviar a quantidade de lugares.
+-Os problemas que eu tive/terei
+  Pouco tempo para muitos trabalhos, provas, e atividades de outras máterias.
+
+
 ==================== Diario 20/08 (sexta) ====================
 Caio:
 -O que eu fiz ontem
@@ -37,6 +94,7 @@ Vinicius:
 -Os problemas que eu tive/terei
   Tempo e pouca execução, pois estou com problemas pessoais.
 
+
 ==================== Diario 17/08 (Terça) ====================
 Caio:
 -O que eu fiz ontem
@@ -61,6 +119,7 @@ Vinicius:
   Implementar os filtros do jquery (Issue #38 #60 #64).
 -Os problemas que eu tive/terei
   Tempo e crises causadas por Burnout/Exaustão Emocional.
+
 
 ==================== Diario 13/08 (sexta) ====================
 Caio:
@@ -87,6 +146,7 @@ Vinicius:
   Estudar e testar os filtros do jquery.
 -Os problemas que eu tive/terei
   Tempo e incentivo, pois estou com problemas pessoais.
+
 
 ==================== Diario 10/08 (terça) ====================
 Caio:
@@ -116,6 +176,7 @@ Vinicius:
 -Os problemas que eu tive/terei
   Tempo, essa semana ja ocupei quase todos os "buracos" com outros trabalhos/atividades de outras materias. 
 
+
 ==================== Diario 06/08 (sexta) ====================
 Caio:
 -O que eu fiz ontem
@@ -142,7 +203,8 @@ Vinicius:
   Criar as rotas de login e seus casos de teste. (Issue #37)
 -Os problemas que eu tive/terei
   Pouco tempo.
-  
+
+
 ==================== Diario 03/08 (terça) ====================
 Caio:
 -O que eu fiz ontem
@@ -197,6 +259,7 @@ Vinicius:
 -Os problemas que eu tive/terei
   Pouco tempo, semana para descanso/rever a família.
 
+
 ==================== Diario 23/07 (sexta) ====================
 Caio:
 -O que eu fiz ontem
@@ -222,6 +285,7 @@ Vinicius:
 -Os problemas que eu tive/terei
   Pouco tempo, considerando os trabalhos de outras materias.
 
+
 ==================== Diario 20/07 (terça) ====================
 Caio:
 -O que eu fiz ontem
@@ -246,7 +310,6 @@ Vinicius:
   Fazer a página para gerenciar os filmes e as sessões.
 -Os problemas que eu tive/terei
   Tempo, muitos trabalhos, pouco tempo.
-
 
 
 ==================== Diario 16/07 (sexta) ====================

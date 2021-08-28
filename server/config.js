@@ -12,10 +12,10 @@ app.use(
 
 app.use(express.json());
 
-// Rotas de Administradores
-const ADM = require("./admController");
+// Rotas de Ingressos
+const ingresso = require("./ingressosController");
 
-// app.post("/teste", ADM.teste);
+app.get("/ingressosIndisponiveis/:id/:data", ingresso.ingressosIndisponiveis);
 
 // Rotas de Sessoe
 const sessoes = require("./sessoesController");
@@ -23,6 +23,8 @@ const sessoes = require("./sessoesController");
 app.get("/sessoesDisponiveis/:data", sessoes.sessoesDisponiveis);
 
 app.get("/listarSessoes", sessoes.listarSessoes);
+
+app.get("/infoSessao/:id", sessoes.infoSessao);
 
 app.post("/criarSessao", sessoes.criarSessao);
 
