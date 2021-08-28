@@ -1,5 +1,3 @@
-const { json } = require("body-parser");
-const { count } = require("console");
 const banco = require("./banco");
 
 // Listar todas as sessoes disponíveis
