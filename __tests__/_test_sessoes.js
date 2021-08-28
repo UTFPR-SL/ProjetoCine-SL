@@ -127,6 +127,37 @@ describe("GET Listar as Sessões /listarSessoes", () => {
   });
 });
 
+describe("GET Informações de uma Sessão Específica /infoSessao", () => {
+  test("Informações de uma Sessão Específica", async () => {
+    const response = await supertest(app).get("/infoSessao/1");
+
+    expect(respPadrao(response)).toBe(true);
+    expect(JSON.stringify(response.body)).toContain(`[{"nome":`);
+    expect(JSON.stringify(response.body)).toContain(`,"duracao":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"genero":"`);
+    expect(JSON.stringify(response.body)).toContain(
+      `,"classificacaoIndicativa":"`
+    );
+    expect(JSON.stringify(response.body)).toContain(`,"sinopse":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"cartazURL":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"id":`);
+    expect(JSON.stringify(response.body)).toContain(`,"horario":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"e3d":`);
+    expect(JSON.stringify(response.body)).toContain(`,"idioma":"`);
+    expect(JSON.stringify(response.body)).toContain(`,"sala":"`);
+    expect(JSON.stringify(response.body)).toContain(`}]`);
+  });
+  
+  test("Informações de uma Sessão Específica (Sessão Inexistente/Indisponível)", async () => {
+    const response = await supertest(app).get(
+      "/infoSessao/" + id_sessao_inexistente
+    );
+
+    expect(respPadrao(response)).toBe(true);
+    expect(JSON.stringify(response.body)).toContain(`Sessão Inesxitente/Indisponível!`);
+  });
+});
+
 describe("Post Adicionar Sessão /criarSessao", () => {
   test("Adicionar Sessão (Filmes Inesxistente)", async () => {
     const response = await supertest(app).post("/criarSessao").send({
