@@ -1,6 +1,9 @@
 async function sessoesDisponiveis() {
   if (document.getElementById("lista_sessao")) {
-    ajax.open("GET", "http://localhost/sessoesDisponiveis", true);
+    var data = new Date();
+    data =
+      data.getFullYear() + "-" + (data.getMonth() + 1) + "-" + data.getDate();
+    ajax.open("GET", "http://localhost/sessoesDisponiveis/" + data, true);
     ajax.send();
 
     ajax.onreadystatechange = function () {
@@ -9,8 +12,7 @@ async function sessoesDisponiveis() {
         // Retorno do Ajax
         var resposta = JSON.parse(this.responseText);
 
-        document.getElementById("listaSessoes").innerText = '';
-        console.log(resposta);
+        document.getElementById("listaSessoes").innerText = "";
         const div = document.createElement("div");
         // div.className = 'rowwww';
         var conteudo = `
@@ -24,6 +26,7 @@ async function sessoesDisponiveis() {
                     <th>&nbsp Idioma &nbsp</th>
                     <th>&nbsp&nbsp 3D &nbsp &nbsp</th>
                     <th>Classificação Indicativa</th>
+                    <th>Lugares</th>
                 </tr>`;
         for (var g = 0; g < resposta.length; g++) {
           if (resposta[g].e3d == true) {
@@ -54,6 +57,9 @@ async function sessoesDisponiveis() {
             `</td>
                     <td>` +
             resposta[g].classificacaoIndicativa +
+            `</td>
+                    <td>` +
+            resposta[g].qtd_lugares +
             `</td>
                 </tr>
                 `;

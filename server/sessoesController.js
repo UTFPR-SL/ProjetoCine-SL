@@ -1,17 +1,19 @@
 const { json } = require("body-parser");
+const { count } = require("console");
 const banco = require("./banco");
 
 // Listar todas as sessoes disponíveis
-exports.sessoesDisponiveis = async (req, res) => {
+exports.sessoesDisponiveis = (req, res) => {
   console.log("\nListando Sessões Disponíveis");
+  var data = req.params.data;
 
   var sql = `SELECT Filmes.nome, Filmes.duracao, Filmes.genero,
   Filmes.classificacaoIndicativa, Filmes.sinopse, Filmes.cartazURL,
-  Sessoes.id, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala, Sessoes.qtd_lugares
-  FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id 
+  Sessoes.id, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala
+  FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id
   WHERE status = true;`;
 
-  banco.query(sql, function (err, result) {
+  banco.query(sql, function (err, sessoes) {
     if (err) throw err;
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
@@ -19,7 +21,32 @@ exports.sessoesDisponiveis = async (req, res) => {
       "Origin, X-Requested-With, Content-Type, Accept"
     );
 
-    res.json(result);
+    var wait = 0;
+    var lugares = 0;
+    banco.query(
+      "SELECT count(*) AS lugares FROM Assentos",
+      function (err, result) {
+        if (err) throw err;
+        lugares = result[0].lugares;
+
+        for (let i = 0; i < sessoes.length; i++) {
+          const element = sessoes[i];
+
+          banco.query(
+            `SELECT ${lugares}-count(Ingressos.id_sessao) AS lugares
+            FROM Ingressos WHERE id_sessao = ${element.id} AND data='${data}'`,
+            function (err, result) {
+              if (err) throw err;
+
+              element.qtd_lugares = result[0].lugares;
+              wait++;
+              
+              if (sessoes.length == wait) res.json(sessoes);
+            }
+          );
+        }
+      }
+    );
   });
 };
 
@@ -29,7 +56,7 @@ exports.listarSessoes = async (req, res) => {
 
   var sql = `SELECT Filmes.nome, Filmes.duracao, Filmes.genero,
   Filmes.classificacaoIndicativa, Filmes.sinopse, Filmes.cartazURL,
-  Sessoes.id, Sessoes.status, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala, Sessoes.qtd_lugares
+  Sessoes.id, Sessoes.status, Sessoes.horario, Sessoes.e3d, Sessoes.idioma, Sessoes.sala
   FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id ;`;
 
   banco.query(sql, function (err, result) {
@@ -106,8 +133,8 @@ exports.attStatusSessao = async (req, res) => {
   );
 
   var id = req.params.id;
-  console.log('ID da Sessão: ', id);
-  
+  console.log("ID da Sessão: ", id);
+
   banco.query(
     `SELECT * FROM Sessoes INNER JOIN Filmes ON Sessoes.id_filme = Filmes.id WHERE Sessoes.id='${id}'`,
     async function (err, result) {
@@ -146,13 +173,11 @@ exports.attStatusSessao = async (req, res) => {
           console.log("Sessão Atualizado!\n");
           var resposta = { cod: 1, msg: "Sessão Atualizado!", status: status };
 
-          if(result[1])
-            if (result[1].changedRows == 1)
-              resposta.filme=filme;
+          if (result[1]) if (result[1].changedRows == 1) resposta.filme = filme;
 
           res.json(resposta);
         });
       }
     }
   );
-}
+};

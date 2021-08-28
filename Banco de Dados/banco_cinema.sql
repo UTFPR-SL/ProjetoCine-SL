@@ -51,7 +51,6 @@ horario time,
 e3d bool,
 idioma varchar(32),
 sala varchar(16),
-qtd_lugares int default 30,
 PRIMARY KEY(id),
 CONSTRAINT id_filme FOREIGN KEY (id_filme) REFERENCES Filmes(id)
 );

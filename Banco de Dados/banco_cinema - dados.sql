@@ -15,10 +15,10 @@ VALUES ("Viúva Negra", "https://br.web.img3.acsta.net/c_310_420/pictures/20/03/
 		("Velozes e Furiosos 9", "https://br.web.img3.acsta.net/pictures/21/04/14/19/06/3385237.jpg", "2h 25min", "Ação/Aventura", "12", "O longa vem dando continuidade às corridas eletrizantes da equipe de amigos liderada por Dominic Toretto.");
 		
 
-INSERT INTO Sessoes (status, id_filme, horario, e3d, idioma, sala, qtd_lugares)
-VALUES (true, 1, "20:30", false, "Dublado", 1, 30),
-		(true, 2, "20:00", true, "Dublado", 2, 30),
-		(false, 2, "22:00", false, "Dublado", 3, 30);
+INSERT INTO Sessoes (status, id_filme, horario, e3d, idioma, sala)
+VALUES (true, 1, "20:30", false, "Dublado", 1),
+		(true, 2, "20:00", true, "Dublado", 2),
+		(false, 2, "22:00", false, "Dublado", 3);
 
 
 INSERT INTO Assentos (cod)
