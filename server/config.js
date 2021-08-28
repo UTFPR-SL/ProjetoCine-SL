@@ -24,6 +24,8 @@ app.get("/sessoesDisponiveis/:data", sessoes.sessoesDisponiveis);
 
 app.get("/listarSessoes", sessoes.listarSessoes);
 
+app.get("/infoSessao/:id", sessoes.infoSessao);
+
 app.post("/criarSessao", sessoes.criarSessao);
 
 app.put("/attStatusSessao/:id", sessoes.attStatusSessao);
