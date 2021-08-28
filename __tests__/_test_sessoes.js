@@ -2,7 +2,6 @@ console.log = function () {};
 
 const supertest = require("supertest");
 const respPadrao = require("./config");
-const sleep = require("./config");
 const app = require("../server/config");
 const banco = require("../server/banco");
 
