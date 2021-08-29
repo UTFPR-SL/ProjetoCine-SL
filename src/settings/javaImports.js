@@ -29,3 +29,4 @@ $.getScript('../../components/filtroSessaoADM/filtroSessaoADM.js', function() {}
 $.getScript('../../sections/lista_sessao_adm/lista_sessao_adm.js', function() {}); 
 $.getScript('../../components/filtroUsuario/filtroUsuario.js', function() {}); 
 $.getScript('../../components/lugares/lugares.js', function() {}); 
+$.getScript('../../sections/assento/assento.js', function() {}); 
