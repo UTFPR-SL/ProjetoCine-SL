@@ -1,5 +1,4 @@
 .assento{
-<<<<<<< HEAD
   background: #fff;
   width: 70%;
   overflow:auto; 
@@ -11,22 +10,6 @@
 
 table.center {
   text-align: center;
-=======
-background: #fff;
-width: 70%;
-height: 100%;
-overflow:auto; 
-border: 15px solid rgb(255, 255, 255);
-padding: 10px;
-border-radius: 25px;
-box-shadow: 10px 10px 5px #aaaaaa;
-}
-
-
-
-table.center {
-text-align: center;
->>>>>>> 1e600b4eb09bc02a140fae590be6dc975549e23e
 }
 table, th, td {
   color: rgb(0, 0, 0) !important;
