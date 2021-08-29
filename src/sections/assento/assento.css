@@ -1,0 +1,39 @@
+.assento{
+background: #fff;
+width: 70%;
+height: 100%;
+overflow:auto; 
+border: 15px solid rgb(255, 255, 255);
+padding: 10px;
+border-radius: 25px;
+box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+
+
+table.center {
+text-align: center;
+}
+table, th, td {
+  color: rgb(0, 0, 0) !important;
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  min-width: 100px;
+}
+
+.cartaz{
+  max-height: 200px;
+  margin: 10px 0px;
+}
+
+.hide{
+  display: none;
+  position:absolute;
+  background: #ebebeb;
+  left: 150px;
+}
+.myDIV:hover + .hide {
+  display: block;
+}

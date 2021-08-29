@@ -1,5 +1,5 @@
-async function sessoesDisponiveis() {
-  if (document.getElementById("lista_sessao")) {
+async function MostrarAssentos() {
+  if (document.getElementById("assento")) {
     ajax.open("GET", "http://localhost/sessoesDisponiveis", true);
     ajax.send();
 
@@ -9,7 +9,7 @@ async function sessoesDisponiveis() {
         // Retorno do Ajax
         var resposta = JSON.parse(this.responseText);
 
-        document.getElementById("listaSessoes").innerText = '';
+        document.getElementById("showassento").innerText = '';
         console.log(resposta);
         const div = document.createElement("div");
         // div.className = 'rowwww';
@@ -57,12 +57,13 @@ async function sessoesDisponiveis() {
             `</td>
                 </a></tr>
                 `;
+            break;
         }
         conteudo += `
             </table>
           `;
         div.innerHTML = conteudo;
-        document.getElementById("listaSessoes").appendChild(div);
+        document.getElementById("showassento").appendChild(div);
       }
     };
   }
