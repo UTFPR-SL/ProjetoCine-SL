@@ -30,22 +30,32 @@ exports.ingressosVendidos = async (req, res) => {
 
   banco.query(`SELECT * FROM Compra WHERE id=${id};`, function (err, compra) {
     if (err) throw err;
-    banco.query(`SELECT * FROM Ingressos WHERE id_compra=${id};`, function (err, ingressos) {
-      if (err) throw err;
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    console.log(compra);
+
+    if (compra.length == 0) {
+      console.log("Compra Inexistente!");
+      res.end("Compra Inexistente!");
+    } else {
+      banco.query(
+        `SELECT * FROM Ingressos WHERE id_compra=${id};`,
+        function (err, ingressos) {
+          if (err) throw err;
+
+          var result = JSON.stringify(compra);
+          result = result.substr(0, result.length - 2);
+          result += `,"ingressos":`;
+          result += JSON.stringify(ingressos);
+          result += "}]";
+          result = JSON.parse(result);
+
+          res.json(result);
+        }
       );
-
-      var result = JSON.stringify(compra);
-      result = result.substr(0, result.length - 2);
-      result += `,"ingressos":`;
-      result += JSON.stringify(ingressos);
-      result += '}]';
-      result = JSON.parse(result);
-
-      res.json(result);
-    });
+    }
   });
 };

@@ -29,7 +29,7 @@ VALUES ("A01"), ("A02"), ("A03"), ("A04"), ("A05"), ("A06"),
         ("E01"), ("E02"), ("E03"), ("E04"), ("E05"), ("E06");
 
 
-INSERT INTO Compra (id_vendedor, cliente, cfp, qtd_ingressos, valor)
+INSERT INTO Compra (id_vendedor, cliente, cpf, qtd_ingressos, valor)
 VALUES (4, "Osvaldo", "12345678900", 5, 80),
 		(4, "Luiz", "00987654321", 2, 40);
 

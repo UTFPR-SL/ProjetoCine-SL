@@ -85,8 +85,8 @@ exports.infoSessao = async (req, res) => {
       );
 
       if (result.length == 0) {
-        console.log("Sessão Inesxitente/Indisponível!");
-        res.json("Sessão Inesxitente/Indisponível!");
+        console.log("Sessão Inexistente/Indisponível!");
+        res.json("Sessão Inexistente/Indisponível!");
       } else {
         var sql = `SELECT Filmes.nome, Filmes.duracao, Filmes.genero,
         Filmes.classificacaoIndicativa, Filmes.sinopse, Filmes.cartazURL,

@@ -154,7 +154,7 @@ describe("GET Informações de uma Sessão Específica /infoSessao", () => {
     );
 
     expect(respPadrao(response)).toBe(true);
-    expect(JSON.stringify(response.body)).toContain(`Sessão Inesxitente/Indisponível!`);
+    expect(JSON.stringify(response.body)).toContain(`Sessão Inexistente/Indisponível!`);
   });
 });
 
