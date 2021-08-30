@@ -2,7 +2,7 @@ async function MostraAssento(id_sessao) {
   document.getElementById("ShowAssentoData").innerText = "";
   const div = document.createElement("div");
   div.innerHTML=`<a href="javascript:bttSubmitDate(`+id_sessao+`)">
-  <input type="submit" value="Submit">
+  <input type="submit" class="cancelar" value="Confirmar">
   </a>`
   document.getElementById("ShowAssentoData").appendChild(div);
   if (document.getElementById("assento")) {
@@ -98,6 +98,11 @@ async function recebeData(id_sessao) {
             // Retorno do Ajax
             var resposta = JSON.parse(this.responseText);
             console.log(resposta)
+            for (var g = 0; g < resposta.length; g++) {
+                var id = resposta[g].cod_assento;
+                var element = document.getElementById(id);
+                element.classList.add("vago");
+             } 
           }
         }
     }
