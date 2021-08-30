@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Compra(
 id int auto_increment NOT NULL,
 id_vendedor int NOT NULL,
 cliente varchar(64) NOT NULL,
-cfp varchar(12),
+cpf varchar(12),
 qtd_ingressos int NOT NULL,
 valor float NOT NULL,
 PRIMARY KEY(id),
