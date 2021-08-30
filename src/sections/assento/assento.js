@@ -1,9 +1,7 @@
-async function sessoesDisponiveis() {
-  if (document.getElementById("lista_sessao")) {
-    var data = new Date();
-    data =
-      data.getFullYear() + "-" + (data.getMonth() + 1) + "-" + data.getDate();
-    ajax.open("GET", "http://localhost/sessoesDisponiveis/" + data, true);
+ async function MostraAssento(id_filme) {
+  if (document.getElementById("assento")) {
+    console.log(id_filme)
+    ajax.open("GET", "http://localhost/infoSessao/"+id_filme, true);
     ajax.send();
 
     ajax.onreadystatechange = function () {
@@ -12,7 +10,7 @@ async function sessoesDisponiveis() {
         // Retorno do Ajax
         var resposta = JSON.parse(this.responseText);
 
-        document.getElementById("listaSessoes").innerText = "";
+        document.getElementById("ShowAssento").innerText = "";
         const div = document.createElement("div");
         // div.className = 'rowwww';
         var conteudo = `
@@ -21,12 +19,14 @@ async function sessoesDisponiveis() {
                 <tr>
                     <th>&nbsp Cartaz &nbsp</th>
                     <th>&nbsp Nome &nbsp</th>
+                    <th>&nbsp Genero &nbsp</th>
                     <th>&nbsp Horario &nbsp</th>
                     <th>&nbsp Duracao &nbsp</th>
                     <th>&nbsp Idioma &nbsp</th>
                     <th>&nbsp&nbsp 3D &nbsp &nbsp</th>
                     <th>Classificação Indicativa</th>
-                    <th>Lugares</th>
+                    <th>Sala</th>
+                    <th>Sinopse</th>
                 </tr>`;
         for (var g = 0; g < resposta.length; g++) {
           if (resposta[g].e3d == true) {
@@ -37,11 +37,14 @@ async function sessoesDisponiveis() {
           conteudo +=
             `
                 <tr>
-                    <td><a href="javascript:bttShowAssento(`+resposta[g].id+`)"><img class="cartaz" src="` +
+                    <td><img class="cartaz" src="` +
             resposta[g].cartazURL +
             `"></td>
                     <td>` +
             resposta[g].nome +
+            `</td>
+                    <td>` +
+            resposta[g].genero +
             `</td>
                     <td>` +
             resposta[g].horario +
@@ -59,16 +62,20 @@ async function sessoesDisponiveis() {
             resposta[g].classificacaoIndicativa +
             `</td>
                     <td>` +
-            resposta[g].qtd_lugares +
+            resposta[g].sala +
+            `</td>
+                    <td>` +
+            resposta[g].sinopse +
             `</td>
                 </tr>
                 `;
+            break;
         }
         conteudo += `
             </table>
           `;
         div.innerHTML = conteudo;
-        document.getElementById("listaSessoes").appendChild(div);
+        document.getElementById("ShowAssento").appendChild(div);
       }
     };
   }
