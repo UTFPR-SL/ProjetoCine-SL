@@ -17,6 +17,8 @@ const ingresso = require("./ingressosController");
 
 app.get("/ingressosIndisponiveis/:id/:data", ingresso.ingressosIndisponiveis);
 
+app.get("/ingressosVendidos/:id", ingresso.ingressosVendidos);
+
 // Rotas de Sessoe
 const sessoes = require("./sessoesController");
 
