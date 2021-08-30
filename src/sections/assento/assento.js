@@ -19,9 +19,9 @@
                 <tr>
                     <th>&nbsp Cartaz &nbsp</th>
                     <th>&nbsp Nome &nbsp</th>
-                    <th>&nbsp Genero &nbsp</th>
-                    <th>&nbsp Horario &nbsp</th>
-                    <th>&nbsp Duracao &nbsp</th>
+                    <th>&nbsp Gênero &nbsp</th>
+                    <th>&nbsp Horário &nbsp</th>
+                    <th>&nbsp Duração &nbsp</th>
                     <th>&nbsp Idioma &nbsp</th>
                     <th>&nbsp&nbsp 3D &nbsp &nbsp</th>
                     <th>Classificação Indicativa</th>
@@ -64,9 +64,10 @@
                     <td>` +
             resposta[g].sala +
             `</td>
-                    <td>` +
+            <td><div class="myDIV">Ver Sinopse</div><div class="hide">` +
             resposta[g].sinopse +
-            `</td>
+            //.substr(0, 100)
+            `</div></td>
                 </tr>
                 `;
             break;
