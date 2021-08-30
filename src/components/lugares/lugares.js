@@ -1,3 +1,7 @@
-  function i (){
-    lsd.style.background = '#00ccff'
-  }
+function myFunction(id) {
+    var element = document.getElementById(id);
+    element.classList.toggle("selecionado");
+    //Vago = !Vago
+ }
+
+
