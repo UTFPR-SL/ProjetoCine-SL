@@ -1,7 +1,12 @@
- async function MostraAssento(id_filme) {
+async function MostraAssento(id_sessao) {
+  document.getElementById("ShowAssentoData").innerText = "";
+  const div = document.createElement("div");
+  div.innerHTML=`<a href="javascript:bttSubmitDate(`+id_sessao+`)">
+  <input type="submit" value="Submit">
+  </a>`
+  document.getElementById("ShowAssentoData").appendChild(div);
   if (document.getElementById("assento")) {
-    console.log(id_filme)
-    ajax.open("GET", "http://localhost/infoSessao/"+id_filme, true);
+    ajax.open("GET", "http://localhost/infoSessao/"+id_sessao, true);
     ajax.send();
 
     ajax.onreadystatechange = function () {
@@ -79,4 +84,20 @@
       }
     };
   }
+}
+
+async function recebeData(id_sessao) {
+   var dateControl = document.getElementById('date').value;
+   if (document.getElementById("assento")) {
+        ajax.open("GET", "http://localhost/ingressosIndisponiveis/"+id_sessao+"/"+dateControl, true);
+        ajax.send();
+        ajax.onreadystatechange = function () {
+          // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
+          if (ajax.readyState == 4 && ajax.status == 200) {
+            // Retorno do Ajax
+            var resposta = JSON.parse(this.responseText);
+            console.log(resposta)
+          }
+        }
+    }
 }
