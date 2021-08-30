@@ -29,11 +29,11 @@ function criarSessao(id, filme, horario, e3d, idioma, sala) {
 
   var msg;
   msg =
-    `você tem certeza que deseja adicionar a Sessão?\n
+    `Você tem certeza que deseja adicionar a Sessão?\n
     Filme: ` +
     filme +
     `\n
-    horario: ` +
+    Horário: ` +
     horario +
     `\n
     3D: ` +

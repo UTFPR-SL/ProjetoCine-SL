@@ -15,7 +15,7 @@ async function filmesdaLista() {
                 <tr>
                     <th>&nbsp Cartaz &nbsp</th>
                     <th>&nbsp Nome &nbsp</th>
-                    <th>&nbsp Duracao &nbsp</th> 
+                    <th>&nbsp Duração &nbsp</th> 
                     <th>&nbsp Gênero &nbsp</th> 
                     <th>Classificação Indicativa</th>
                     <th>Em cartaz</th>

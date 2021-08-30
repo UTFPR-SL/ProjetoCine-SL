@@ -34,3 +34,19 @@ td {
 .myDIV:hover + .hide {
   display: block;
 }
+
+.cancelar{
+  background-color: rgb(202, 65, 65);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+              rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, 
+              rgb(151, 31, 31) 0px 0px 0px 1px, 
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+              rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  color: #fff;
+  width: 30%;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
