@@ -7,7 +7,7 @@ async function addFilme(nome, cartaz, tempo, classificacao, genero, sinopse) {
     Filme: ` +
     nome +
     `\n
-    duração: ` +
+    Duração: ` +
     duracao +
     `\n
     Genero: ` +

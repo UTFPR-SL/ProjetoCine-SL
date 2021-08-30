@@ -16,7 +16,7 @@ async function listarUsuarios() {
               <table id="tabelaListaUsuarios" class="center">
                   <tr>
                       <th>&nbsp Nome &nbsp</th>
-                      <th>&nbsp Usuario &nbsp</th> 
+                      <th>&nbsp Usuário &nbsp</th> 
                       <th>&nbsp ADM &nbsp</th>
                   </tr>`;
 
