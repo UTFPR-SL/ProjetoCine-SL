@@ -59,3 +59,63 @@ exports.ingressosVendidos = async (req, res) => {
     }
   });
 };
+
+// Inserindo a compra e os ingressos vendidos em uma compra
+exports.compraDosIngressos = async (req, res) => {
+  var compra = req.body;
+
+  console.log(`\nInserindo a compra no banco`);
+
+  console.log(compra);
+  for (let i = 0; i < compra[0].ingressos.length; i++) {
+    const ingresso = compra[0].ingressos[i];
+    console.log(ingresso);
+  }
+  banco.query(
+    `INSERT INTO Compra (id_vendedor, cliente, cpf, qtd_ingressos, valor)
+  VALUES (?)`,
+    [
+      [
+        compra[0].id_vendedor,
+        compra[0].cliente,
+        compra[0].cpf,
+        compra[0].qtd_ingressos,
+        compra[0].valor,
+      ],
+    ],
+    function (err, result) {
+      if (err) throw err;
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+      );
+      banco.query(
+        `SELECT id FROM Compra WHERE id_vendedor=${compra[0].id_vendedor} ORDER BY id DESC LIMIT 1`,
+        function (err, id_compra) {
+          console.log(id_compra[0].id);
+
+          var ingressos = [];
+
+          for (var i = 0; i < compra[0].ingressos.length; i++)
+            ingressos.push([
+              id_compra[0].id,
+              compra[0].id_sessao,
+              compra[0].data,
+              compra[0].ingressos[i].cod_assento,
+              compra[0].ingressos[i].meia,
+            ]);
+
+          banco.query(
+            "INSERT INTO Ingressos (id_compra, id_sessao, data, cod_assento, meia) VALUES ?",
+            [ingressos],
+            function (err, result) {
+              if (err) throw err;
+              res.json(id_compra[0].id);
+            }
+          );
+        }
+      );
+    }
+  );
+};
