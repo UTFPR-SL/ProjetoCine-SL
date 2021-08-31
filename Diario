@@ -20,11 +20,12 @@ Fazer a venda de ingressos (Issue #16)
 
 Gustavo:
 -O que eu fiz ontem
-
+  Passar as informações pelo botão para ter a rota esperada(Issue #87)
+  Iniciar a passagem de valores para o lugar(a matriz de assentos)(Issue #94)
 -O que vou fazer amanhã
-
+  Terminar a passagem de valores para o lugar(a matriz de assentos)(Issue #94)
 -Os problemas que eu tive/terei
-
+  Passar os valores que previsa para a rota
 
 Vinicius:
 -O que eu fiz ontem
@@ -47,12 +48,12 @@ Fazer os assentos trocarem de cor ao serem clicados.
 Não imaginei que fosse ter problemas para trocar a cor das cadeiras ao clicar
 
 Gustavo:
--O que eu fiz ontem
-
+-O que eu fiz ontem 
+  Iniciei a tela de mostrar as informações da sessão escolhida para os lugares(Issue #87)
 -O que vou fazer amanhã
-
+  Passar as informações pelo botão para ter a rota esperada(Issue #87)
 -Os problemas que eu tive/terei
-  
+  Passar os valores pelo clicar dos botões
 
 Vinicius:
 -O que eu fiz ontem
