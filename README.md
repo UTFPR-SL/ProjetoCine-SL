@@ -8,7 +8,11 @@ Sistema gerenciador de cinema
 
 ### Inicialização
 
-----Não definido----
+instalar arquivos .sql: banco_cinema e banco_cinema-dados
+
+npm install
+
+node server/index
 
 ### Funções
 
