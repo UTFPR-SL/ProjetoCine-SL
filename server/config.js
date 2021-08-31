@@ -19,6 +19,8 @@ app.get("/ingressosIndisponiveis/:id/:data", ingresso.ingressosIndisponiveis);
 
 app.get("/ingressosVendidos/:id", ingresso.ingressosVendidos);
 
+app.post("/compraDosIngressos", ingresso.compraDosIngressos);
+
 // Rotas de Sessoe
 const sessoes = require("./sessoesController");
 
