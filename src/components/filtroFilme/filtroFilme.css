@@ -1,3 +1,9 @@
-.filtroFilme{
-
-}
+input[type=text], select {
+    padding: 5px 10px;
+    width: 165px;
+    margin: 1px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
