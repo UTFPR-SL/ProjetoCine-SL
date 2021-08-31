@@ -8,7 +8,7 @@ Sistema gerenciador de cinema
 
 ### Inicialização
 
-----Não definido----
+node server
 
 ### Funções
 
