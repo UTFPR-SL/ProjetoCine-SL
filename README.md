@@ -22,3 +22,9 @@ node server
 
 -Compra de Ingresso:Escolhe forma de pagamento e gera um recibo do pagamento, valores serão somados de acordo com a quantidade de assentos reservados e os do tipo meia entrada o valor é dividido por 2.
 
+
+
+### Caso de Teste
+
+npm run test
+
