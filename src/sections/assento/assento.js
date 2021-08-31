@@ -101,7 +101,7 @@ async function recebeData(id_sessao) {
             for (var g = 0; g < resposta.length; g++) {
                 var id = resposta[g].cod_assento;
                 var element = document.getElementById(id);
-                element.classList.add("vago");
+                element.classList.add("ocupado");
              } 
           }
         }
