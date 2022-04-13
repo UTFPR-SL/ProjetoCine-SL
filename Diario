@@ -9,6 +9,258 @@ Marcando e conversando sobre as perguntas individualmente, sendo elas:
 -Os problemas que eu tive/terei
 
 
+==================== Diario 27/08 (Sexta) ====================
+Caio:
+-O que eu fiz ontem
+Os assentos da Issue #11 agora trocam de cor corretamente, tanto ao clicar quanto quando ocupados.
+-O que vou fazer amanhã
+Fazer a venda de ingressos (Issue #16)
+-Os problemas que eu tive/terei
+  Não sei ainda como fazer algumas coisas da issue #16 ainda e estou com pouco tempo
+
+Gustavo:
+-O que eu fiz ontem
+  Passar as informações pelo botão para ter a rota esperada(Issue #87)
+  Iniciar a passagem de valores para o lugar(a matriz de assentos)(Issue #94)
+-O que vou fazer amanhã
+  Terminar a passagem de valores para o lugar(a matriz de assentos)(Issue #94)
+-Os problemas que eu tive/terei
+  Passar os valores que previsa para a rota
+
+Vinicius:
+-O que eu fiz ontem
+  Criei e implementar a rota e os casos de teste para atualizar o status (Em Cartaz) das Sessões (Issue #75).
+  Ajustes gerais no front e na rota de sessões disponíveis para enviar a quantidade de lugares (Issue #81).
+-O que vou fazer amanhã
+  Criei a rota e os casos de teste para listar os assentos indisponíveis para uma sessão.
+  Criei a rota e os casos de teste para inserir a compra e os ingressos no banco.
+-Os problemas que eu tive/terei
+  Pouco tempo para muitos trabalhos, provas, e atividades de outras máterias.
+
+
+==================== Diario 24/08 (Terça) ====================
+Caio:
+-O que eu fiz ontem
+Iniciei a tela de escolher lugar, fazendo os assentos (Issue #11)
+-O que vou fazer amanhã
+Fazer os assentos trocarem de cor ao serem clicados.
+-Os problemas que eu tive/terei
+Não imaginei que fosse ter problemas para trocar a cor das cadeiras ao clicar
+
+Gustavo:
+-O que eu fiz ontem 
+  Iniciei a tela de mostrar as informações da sessão escolhida para os lugares(Issue #87)
+-O que vou fazer amanhã
+  Passar as informações pelo botão para ter a rota esperada(Issue #87)
+-Os problemas que eu tive/terei
+  Passar os valores pelo clicar dos botões
+
+Vinicius:
+-O que eu fiz ontem
+  Criei casos de teste para a rota de listar todas as sessões (Issue #67).
+  Criei e implementei a rota e os casos de teste para atualizar o status (Em Cartaz) dos filmes (Issue #69).
+  Criei e implementei a rota e os casos de teste para atualizar a permissão (Administrador) dos Usuários (Issue #72).
+-O que vou fazer amanhã
+  Criar e implementar a rota e os casos de teste para atualizar o status (Em Cartaz) das Sessões.
+  Ajustes gerais no front e na rota de sessões disponíveis para enviar a quantidade de lugares.
+-Os problemas que eu tive/terei
+  Pouco tempo para muitos trabalhos, provas, e atividades de outras máterias.
+
+
+==================== Diario 20/08 (sexta) ====================
+Caio:
+-O que eu fiz ontem
+Correções de problemas gerais do site e melhorias visuais
+-O que vou fazer amanhã
+Iniciar a tela de escolher lugar (Issue #11)
+-Os problemas que eu tive/terei
+Falta de tempo e excesso de estresse e o meu Zenhub parou de funcionar
+
+Gustavo:
+-O que eu fiz ontem
+Terminei a issue de listar sessão pelo botão ADM(Issue #54)
+-O que vou fazer amanhã
+Refazendo a issue de listar sessão pelo botão ADM(Issue #61)
+-Os problemas que eu tive/terei
+ não criei outra instancia para a mesma sessão
+  
+Vinicius:
+-O que eu fiz ontem
+  Implementei o filtro de filmes (Issue #38).
+  Implementei o filtro de Sessões (Issue #60).
+  Implementei o filtro de Usuários (Issue #64).
+-O que vou fazer amanhã
+  Rotas e casos de teste para atualização dos filmes, sessões, e usuários.
+  Casos de teste para a rota de listar todas as sessões.
+-Os problemas que eu tive/terei
+  Tempo e pouca execução, pois estou com problemas pessoais.
+
+
+==================== Diario 17/08 (Terça) ====================
+Caio:
+-O que eu fiz ontem
+Nada
+-O que vou fazer amanhã
+Correções de problemas gerais do site e melhorias visuais
+-Os problemas que eu tive/terei
+Falta de tempo e excesso de estresse
+
+Gustavo:
+-O que eu fiz ontem
+Começando a nova issue de listar sessão pelo botão ADM(Issue #54)
+-O que vou fazer amanhã
+Terminei a issue de listar sessão pelo botão ADM(Issue #54)
+-Os problemas que eu tive/terei
+Nenhum
+  
+Vinicius:
+-O que eu fiz ontem
+  Estudei e testei os filtros do jquery.
+-O que vou fazer amanhã
+  Implementar os filtros do jquery (Issue #38 #60 #64).
+-Os problemas que eu tive/terei
+  Tempo e crises causadas por Burnout/Exaustão Emocional.
+
+
+==================== Diario 13/08 (sexta) ====================
+Caio:
+-O que eu fiz ontem
+Correções de problemas gerais do site e melhorias visuais
+-O que vou fazer amanhã
+Continuar trabalhando nisso conforme os outros modificam também
+-Os problemas que eu tive/terei
+Comunicação com o Css que as vezes é complexa e fim de semestre pode me deixar sem tempo
+
+Gustavo:
+-O que eu fiz ontem
+Começar a nova issue de listar usuarios(Issue #52)
+-O que vou fazer amanhã
+Terminei issue de listar usuarios(Issue #52)
+Começando a nova issue de listar sessão pelo botão ADM(Issue #54)
+-Os problemas que eu tive/terei
+Duvida sobre se deve criar outra instancia ou não
+  
+Vinicius:
+-O que eu fiz ontem
+  Ajustar os casos de teste. (Issue #37)
+-O que vou fazer amanhã
+  Estudar e testar os filtros do jquery.
+-Os problemas que eu tive/terei
+  Tempo e incentivo, pois estou com problemas pessoais.
+
+
+==================== Diario 10/08 (terça) ====================
+Caio:
+-O que eu fiz ontem
+Trabalhei nos botões (Issue #41)
+-O que vou fazer amanhã
+Corrigir falhas visuais gerais do site e aproveitar para deixar mais bonito
+-Os problemas que eu tive/terei
+Comunicação com o Css que as vezes é complexa
+
+Gustavo:
+-O que eu fiz ontem
+  Testei os erros na tabela de mostrar filmes.(Issue #50)
+  consertar os erros(Issue #50)
+-O que vou fazer amanhã
+  Começar a nova issue de listar usuarios(Issue #52)
+-Os problemas que eu tive/terei
+  não consegui consertar todos os erros na lista de filmes.(Issue #50)
+  
+Vinicius:
+-O que eu fiz ontem
+  terminei o login e a sessão para os usuario. (Issue #42)
+  Criei as rotas de login e seus casos de teste. (Issue #37)
+-O que vou fazer amanhã
+  Ajustar os casos de teste. (Issue $37)
+  Estudar sobre filtros em jquery.
+-Os problemas que eu tive/terei
+  Tempo, essa semana ja ocupei quase todos os "buracos" com outros trabalhos/atividades de outras materias. 
+
+
+==================== Diario 06/08 (sexta) ====================
+Caio:
+-O que eu fiz ontem
+Implemantar algumas funções dos botões (Issue #41)
+-O que vou fazer amanhã
+Continuar trabalhando nesta issue
+-Os problemas que eu tive/terei
+Tempo e falhas imprevistas
+
+Gustavo:
+-O que eu fiz ontem
+  Terminei de mostrar a lista de filmes.(Issue #50)
+-O que vou fazer amanhã
+  Fazer testes para ver se possui erros.(Issue #50)
+-Os problemas que eu tive/terei
+  Tive problemas com o banco de dados que não estava carregando, tive que reinstalar o mysql.(Issue #50)
+  
+Vinicius:
+-O que eu fiz ontem
+  criar casos de teste para as rotas. (Issue #37)
+  iniciei o login e a sessão para os usuario. (Issue #42)
+-O que vou fazer amanhã
+  terminar o login e a sessão para os usuario. (Issue #42)
+  Criar as rotas de login e seus casos de teste. (Issue #37)
+-Os problemas que eu tive/terei
+  Pouco tempo.
+
+
+==================== Diario 03/08 (terça) ====================
+Caio:
+-O que eu fiz ontem
+Modifiquei o header do Admin e adicionar os novos botões (Issue #40 e #41)
+-O que vou fazer amanhã
+Implemantar algumas funções deles (Issue #41)
+-Os problemas que eu tive/terei
+Tempo
+
+Gustavo:
+-O que eu fiz ontem
+  Implementei a maoir parte do filtro.(Issue #50)
+-O que vou fazer amanhã
+  Terminar de o resto do filtro.(Issue #50)
+-Os problemas que eu tive/terei
+  Não ta mostrando o filtro no site.(Issue #50)
+  Pouco tempo para desenvolver o projeto.
+  
+Vinicius:
+-O que eu fiz ontem
+  Estudei casos de teste para as rotas. (Issue #37)
+  Estudei sessionStorage para os logins e sessões. (issue #42)
+-O que vou fazer amanhã
+  criar casos de teste para as rotas. (Issue #37)
+  fazer login e sessão para os usuario. (Issue #42)
+-Os problemas que eu tive/terei
+  Pouco tempo.
+
+
+==================== Diario 27/07 (terça) ====================
+Caio:
+-O que eu fiz ontem
+Finalizei o criador de sessão (Issue #19)
+-O que vou fazer amanhã
+Modificar o header do Admin e adicionar os novos botões (Issue #40 e #41)
+-Os problemas que eu tive/terei
+
+
+Gustavo:
+-O que eu fiz ontem
+
+-O que vou fazer amanhã
+
+Z-Os problemas que eu tive/terei
+
+  
+Vinicius:
+-O que eu fiz ontem
+  Página adicionar filmes. Ajustes gerais.
+-O que vou fazer amanhã
+  Estudar casos de teste para as rotas. (Issue #37)
+-Os problemas que eu tive/terei
+  Pouco tempo, semana para descanso/rever a família.
+
+
 ==================== Diario 23/07 (sexta) ====================
 Caio:
 -O que eu fiz ontem
@@ -25,7 +277,6 @@ Gustavo:
   testar para ver se tem erros/bugs
 -Os problemas que eu tive/terei
   problemas no front com bugs sobreposição de elementos
-  
 
 Vinicius:
 -O que eu fiz ontem
@@ -34,6 +285,7 @@ Vinicius:
   Pagina para adicionar filmes.
 -Os problemas que eu tive/terei
   Pouco tempo, considerando os trabalhos de outras materias.
+
 
 ==================== Diario 20/07 (terça) ====================
 Caio:
@@ -59,7 +311,6 @@ Vinicius:
   Fazer a página para gerenciar os filmes e as sessões.
 -Os problemas que eu tive/terei
   Tempo, muitos trabalhos, pouco tempo.
-
 
 
 ==================== Diario 16/07 (sexta) ====================

@@ -1,14 +1,18 @@
 # Projeto-Integrador
 
 Linguagens utilizadas:
-JavaScript com HTML/CSS
+JavaScript com HTML/CSS/my SQL
 
 ## Propostas do Projeto-Integrador
 Sistema gerenciador de cinema
 
 ### Inicialização
 
-----Não definido----
+instalar arquivos .sql: banco_cinema e banco_cinema-dados
+
+npm install
+
+node server/index
 
 ### Funções
 

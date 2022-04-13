@@ -16,25 +16,26 @@ id int auto_increment NOT NULL,
 nome varchar(80) NOT NULL,
 usuario varchar(80) NOT NULL UNIQUE,
 senha varchar(80) NOT NULL,
-adm bool NOT NULL,
+adm bool default false,
 PRIMARY KEY(id)
 );
 
-CREATE TABLE IF NOT EXISTS Compras(
+CREATE TABLE IF NOT EXISTS Compra(
 id int auto_increment NOT NULL,
 id_vendedor int NOT NULL,
-cliente varchar(80) NOT NULL,
-cfp varchar(80),
-valor int NOT NULL,
+cliente varchar(64) NOT NULL,
+cpf varchar(12),
+qtd_ingressos int NOT NULL,
+valor float NOT NULL,
 PRIMARY KEY(id),
 CONSTRAINT id_vendedor FOREIGN KEY (id_vendedor) REFERENCES login(id)
 );
 
 CREATE TABLE IF NOT EXISTS Filmes(
 id int auto_increment NOT NULL,
-nome varchar(80) NOT NULL,
-duracao varchar(80),
-genero varchar(80),
+nome varchar(64) NOT NULL,
+duracao varchar(16),
+genero varchar(32),
 classificacaoIndicativa char(8),
 sinopse varchar(1024),
 cartazURL varchar(256),
@@ -50,7 +51,6 @@ horario time,
 e3d bool,
 idioma varchar(32),
 sala varchar(16),
-qtd_lugares int default 30,
 PRIMARY KEY(id),
 CONSTRAINT id_filme FOREIGN KEY (id_filme) REFERENCES Filmes(id)
 );
@@ -59,13 +59,15 @@ CREATE TABLE IF NOT EXISTS Assentos(
 cod char(3) PRIMARY KEY
 );
 
-CREATE TABLE IF NOT EXISTS Ingresso(
+CREATE TABLE IF NOT EXISTS Ingressos(
     id int auto_increment NOT NULL,
     id_sessao int,
-    id_assento varchar(8),
+    cod_assento varchar(8),
     id_compra int,
+    meia bool,
+    data date,
     PRIMARY KEY (id),
     CONSTRAINT id_sessao FOREIGN KEY (id_sessao) REFERENCES Sessoes(id),
-    CONSTRAINT id_assento FOREIGN KEY (id_assento) REFERENCES Assentos(cod),
-	CONSTRAINT id_compra FOREIGN KEY (id_compra) REFERENCES Compras(id)
+    CONSTRAINT cod_assento FOREIGN KEY (cod_assento) REFERENCES Assentos(cod),
+	CONSTRAINT id_compra FOREIGN KEY (id_compra) REFERENCES Compra(id)
 );

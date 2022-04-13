@@ -21,7 +21,7 @@ function listarFilmes() {
   }
 }
 
-function criarSessao(filme, horario, e3d, idioma, sala) {
+function criarSessao(id, filme, horario, e3d, idioma, sala) {
   var form = document.getElementById("sessao");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -29,11 +29,11 @@ function criarSessao(filme, horario, e3d, idioma, sala) {
 
   var msg;
   msg =
-    `você tem certeza que deseja adicionar a Sessão?\n
+    `Você tem certeza que deseja adicionar a Sessão?\n
     Filme: ` +
     filme +
     `\n
-    horario: ` +
+    Horário: ` +
     horario +
     `\n
     3D: ` +
@@ -46,7 +46,7 @@ function criarSessao(filme, horario, e3d, idioma, sala) {
     sala;
   if (confirm(msg)) {
     const obj = {
-      filme: filme,
+      id_filme: id,
       horario: horario,
       e3d: e3d,
       idioma: idioma,

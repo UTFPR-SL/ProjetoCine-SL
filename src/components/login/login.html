@@ -1,0 +1,48 @@
+<div class="login">
+  <form
+    class="modal-content loginConteudo animate"
+    onsubmit="logar(user.value, senha.value); return false;"
+  >
+
+    <div class="container">
+      <i class="bi bi-x-lg close" onclick="document.getElementById('login').style.display='none'"></i>
+      <h1 class="tituloBV"><b>Bem-vindo!</h1></b>
+      <label for="user"><b>Usuário</b></label
+      ><br />
+
+      <div class="input">
+        
+        
+        <i class="bi bi-person-fill iconepeq"></i>
+        <input
+        type="text"
+        placeholder="Digite o Usuario"
+        name="user"
+        class="campo"
+        required
+        />
+      </div>
+      
+      <br /><label for="senha"><b>Senha</b></label
+        ><br />
+        <div class="input">
+          <i class="bi bi-lock-fill iconepeq"></i>
+          <input
+          type="password"
+          placeholder="Digite a Senha"
+          name="senha"
+          class="campo"
+          required
+          />
+        </div>
+
+
+      <button class="bttlogin" type="submit"><b>Login</b></button>
+      <button class="bttlogin bttcanc" type="submit" 
+      onclick="document.getElementById('login').style.display='none'"
+      ><b>Cancelar</b></button>
+      
+    </div>
+
+  </form>
+</div>

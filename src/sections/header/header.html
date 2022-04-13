@@ -18,17 +18,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link textoItens" href="../../paginas/home/home.html">Início <span class="sr-only">(atual)</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link textoItens" href="#header">Filmes</a>
+            <a class="nav-link textoItens" href="javascript:ShowFilme()">Filmes</a>
             </li>
           <li class="nav-item">
-            <a class="nav-link textoItens" href="#header">Sessões</a>
+            <a class="nav-link textoItens" href="javascript:ShowSessao()">Sessões</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link textoItens" href="javascript:loginADM()">Administrador</a>
+            <a class="nav-link textoItens" onclick="loginADM()">Administrador</a>
+          </li>
+          </li>
+          <li id="unlogged" class="nav-item unlogged">
+            <a class="nav-link textoItens" onclick="document.getElementById('login').style.display='block'">Login</a>
+          </li>
+          <li id="logged" class="nav-item logged">
+            <a id="ReLogin" class="nav-link textoItens" onclick="document.getElementById('login').style.display='block'">Bem-vindo, Usuário!
+            </a>
+          </li>
+          <li id="logged" class="nav-item logged">
+            <a class="nav-link textoItens" onclick="sessionStorage.clear(); location.reload();">
+              <i class="bi bi-power">Sair</i>
+            </a>
           </li>
         </ul>
       </div>

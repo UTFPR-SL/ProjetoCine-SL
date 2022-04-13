@@ -1,0 +1,52 @@
+.assento{
+  background: #fff;
+  width: 90%;
+  overflow:auto; 
+  border: 15px solid rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+table.center {
+  text-align: center;
+}
+table, th, td {
+  color: rgb(0, 0, 0) !important;
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  min-width: 100px;
+}
+
+.cartaz{
+  max-height: 200px;
+  margin: 10px 0px;
+}
+
+.hide{
+  display: none;
+  position:absolute;
+  background: #ebebeb;
+  left: 150px;
+}
+.myDIV:hover + .hide {
+  display: block;
+}
+
+.cancelar{
+  background-color: rgb(202, 65, 65);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+              rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, 
+              rgb(151, 31, 31) 0px 0px 0px 1px, 
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+              rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  color: #fff;
+  width: 30%;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}

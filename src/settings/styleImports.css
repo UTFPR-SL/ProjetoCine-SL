@@ -16,3 +16,14 @@
 @import '../components/criarSessao/criarSessao.css'; 
 @import '../sections/lista_sessao/lista_sessao.css'; 
 @import '../components/addFilme/addFilme.css'; 
+@import '../components/login/login.css'; 
+@import '../sections/headerADM/headerADM.css'; 
+@import '../components/addLogin/addLogin.css'; 
+@import '../sections/lista_filmes/lista_filmes.css'; 
+@import '../sections/lista_usuario/lista_usuario.css'; 
+@import '../components/filtroFilme/filtroFilme.css'; 
+@import '../components/filtroSessaoADM/filtroSessaoADM.css'; 
+@import '../sections/lista_sessao_adm/lista_sessao_adm.css'; 
+@import '../components/filtroUsuario/filtroUsuario.css'; 
+@import '../components/lugares/lugares.css'; 
+@import '../sections/assento/assento.css'; 
